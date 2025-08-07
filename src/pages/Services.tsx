@@ -21,7 +21,7 @@ const Services = () => {
         'Real estate portfolio management',
         'Property valuation and market analysis',
       ],
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UmVhbCUyMEVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D',
     },
     {
       id: 'business-transformation',
@@ -36,7 +36,7 @@ const Services = () => {
         'Technology stack selection and implementation',
         'Organizational design and talent acquisition',
       ],
-      image: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://plus.unsplash.com/premium_photo-1661598804060-c8321e472092?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJ1c2luZXNzJTIwdHJhbnNmb3JtYXRpb258ZW58MHx8MHx8fDA%3D',
     },
     {
       id: 'business-development-partnership',
@@ -51,7 +51,7 @@ const Services = () => {
         'Co-marketing and co-development initiatives',
         'Revenue share partnerships',
       ],
-      image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://plus.unsplash.com/premium_photo-1661288459621-fabc38863ee6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJ1c2luZXNzJTIwZGV2ZWxvcG1lbnQlMjBwYXJ0bmVyc2hpcHxlbnwwfHwwfHx8MA%3D%3D',
     },
     {
       id: 'market-expansion',
@@ -66,7 +66,7 @@ const Services = () => {
         'Local partner identification',
         'Go-to-market execution support',
       ],
-      image: 'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://images.unsplash.com/photo-1641327524708-0246aa928f16?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGUlMjBtYXJrZXQlMjBleHBhbnNpb258ZW58MHx8MHx8fDA%3D',
     },
     {
       id: 'capital-investment',
@@ -81,7 +81,7 @@ const Services = () => {
         'Financial restructuring',
         'Investment portfolio management',
       ],
-      image: 'https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://plus.unsplash.com/premium_photo-1661725369804-898807815b52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FwaXRhbCUyMGludmVzdG1lbnR8ZW58MHx8MHx8fDA%3D',
     },
   ];
 

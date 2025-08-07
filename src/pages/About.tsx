@@ -97,7 +97,7 @@ const About = () => {
   const FOUNDER_INFO = {
     name: 'Adarsh Srivastava',
     position: 'Founder & CEO',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg',
+    image: 'https://media.licdn.com/dms/image/v2/D5603AQECRqG2QDJNOg/profile-displayphoto-shrink_200_200/B56ZRAjzR0H0Ac-/0/1736249916228?e=2147483647&v=beta&t=UlbblVSE25loL7zmB4epaUUJfzjGZy-HP9gLqVTVhWY',
     quote: 'We believe in the power of entrepreneurship to solve pressing challenges and create lasting impact.',
     description: [
       '15+ years experience in entrepreneurship and venture capital.',

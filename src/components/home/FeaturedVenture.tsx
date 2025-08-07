@@ -17,6 +17,7 @@ import {
   Rocket,
   Eye
 } from 'lucide-react';
+import codeeternity from '../../assets/codeeternity.png';
 
 const ventureMetrics = [
   {
@@ -317,7 +318,7 @@ const FeaturedVenture = () => {
                 {/* Image Section */}
                 <div className="relative h-80 overflow-hidden">
                   <img
-                    src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src={codeeternity}
                     alt="CodeEternity Platform Interface"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   />
