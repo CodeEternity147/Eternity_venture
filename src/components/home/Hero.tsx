@@ -1,254 +1,318 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { 
+  ArrowRight, 
+  ChevronDown, 
+  Sparkles, 
+  TrendingUp, 
+  Zap, 
+  Layers, 
+  Globe,
+  Play,
+  Star,
+  Trophy
+} from 'lucide-react';
 
 const Hero = () => {
+  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
+
+  useEffect(() => {
+    // Handle window size
+    const updateWindowSize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    // Set initial window size
+    updateWindowSize();
+
+    // Add event listeners
+    window.addEventListener('resize', updateWindowSize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', updateWindowSize);
+    };
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Gradient Background with Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-900 via-primary-800 to-secondary-900">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0)_0%,rgba(0,0,0,0.5)_100%)]"></div>
+    <section className="relative min-h-screen mt-6  overflow-hidden">
+      {/* Static Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950">
+        <div className="absolute inset-0">
+          {/* Static Background Blobs */}
+          <div
+            className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-15 blur-3xl"
+            style={{
+              background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(147, 51, 234, 0.1) 50%, transparent 100%)'
+            }}
+          />
+          
+          <div
+            className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-20 blur-3xl"
+            style={{
+              background: 'radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)'
+            }}
+          />
+
+          <div
+            className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-10 blur-3xl"
+            style={{
+              background: 'radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)'
+            }}
+          />
+        </div>
+
+        {/* Static Grid Pattern */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
+          }}
+        />
       </div>
 
-      {/* Animated Shapes */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.1 }}
-        transition={{ duration: 1 }}
-        className="absolute inset-0"
-      >
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent-500 rounded-full filter blur-3xl opacity-20"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-primary-500 rounded-full filter blur-3xl opacity-20"></div>
-      </motion.div>
-      
-      <div className="container-custom relative z-10 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center lg:text-left"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="inline-block"
-            >
-              <span className="inline-flex items-center bg-accent-500/90 backdrop-blur-sm text-primary-900 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 shadow-lg">
-                <span className="animate-pulse mr-2 h-2 w-2 rounded-full bg-primary-900"></span>
-                Venture Capital & Innovation
-              </span>
-            </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
-            >
-              YOUR VISION,{" "}
-              <span className="relative">
-                <span className="relative z-10 text-accent-500">OUR VENTURE!</span>
-                <motion.span
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ delay: 1, duration: 0.8 }}
-                  className="absolute bottom-2 left-0 h-3 bg-accent-500/20 z-0"
-                ></motion.span>
-              </span>
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-gray-200 text-lg md:text-xl mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed"
-            >
-              We partner with visionary entrepreneurs to transform innovative ideas into 
-              market-leading companies through strategic investment and business expertise.
-            </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="space-y-4 sm:space-y-0 sm:space-x-4"
-            >
-              <a 
-                href="/contact" 
-                className="group inline-flex items-center bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Schedule Investment Call
-                <motion.span
-                  initial={{ x: 0 }}
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                >
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </motion.span>
-              </a>
-              
-              <a 
-                href="/ventures" 
-                className="inline-flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 backdrop-blur-sm"
-              >
-                View Our Portfolio
-              </a>
-            </motion.div>
-          </motion.div>
-          
-          {/* Right Content - Stats Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="hidden lg:block"
-          >
-            <div className="relative">
-              {/* Decorative Elements */}
-              <motion.div
-                animate={{ 
-                  rotate: 360,
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{ 
-                  rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-                }}
-                className="absolute -top-6 -left-6 w-24 h-24 bg-accent-500/30 rounded-lg backdrop-blur-xl"
-              ></motion.div>
-              <motion.div
-                animate={{ 
-                  rotate: -360,
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{ 
-                  rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }
-                }}
-                className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary-500/30 rounded-lg backdrop-blur-xl"
-              ></motion.div>
-
-              {/* Stats Card */}
-              <div className="bg-white/10 backdrop-blur-xl p-8 rounded-2xl shadow-2xl relative z-10 border border-white/20">
-                <h3 className="text-2xl font-bold mb-6 text-white">Investment Metrics</h3>
-                <div className="space-y-6">
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300 font-medium">Portfolio Companies</span>
-                      <motion.span
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1, duration: 0.5 }}
-                        className="text-accent-400 font-bold"
-                      >
-                        55+
-                      </motion.span>
-                    </div>
-                    <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        animate={{ width: '75%' }}
-                        transition={{ delay: 1.2, duration: 1.5, ease: "easeOut" }}
-                        className="h-full bg-accent-500 rounded-full"
-                      ></motion.div>
-                    </div>
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 max-w-7xl pt-4 pb-24">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[80vh] pt-16">
+          {/* Main Hero Content */}
+          <div className="lg:col-span-7 space-y-8">
+            {/* Simple Badge */}
+            <div className="inline-block">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
+                <div className="relative flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-full">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
+                    <Sparkles className="w-4 h-4 text-white" />
                   </div>
-                  
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300 font-medium">Total Investment</span>
-                      <motion.span
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.4, duration: 0.5 }}
-                        className="text-primary-400 font-bold"
-                      >
-                        ₹2.3 Crores
-                      </motion.span>
-                    </div>
-                    <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        animate={{ width: '60%' }}
-                        transition={{ delay: 1.6, duration: 1.5, ease: "easeOut" }}
-                        className="h-full bg-primary-500 rounded-full"
-                      ></motion.div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300 font-medium">Average Return</span>
-                      <motion.span
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.8, duration: 0.5 }}
-                        className="text-secondary-400 font-bold"
-                      >
-                        32%
-                      </motion.span>
-                    </div>
-                    <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        animate={{ width: '85%' }}
-                        transition={{ delay: 2, duration: 1.5, ease: "easeOut" }}
-                        className="h-full bg-secondary-500 rounded-full"
-                      ></motion.div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Additional Stats */}
-                <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-white/10">
-                  <div className="text-center">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 2.2, duration: 0.5, type: "spring" }}
-                      className="text-2xl font-bold text-white mb-1"
-                    >
-                      15+
-                    </motion.div>
-                    <span className="text-gray-400 text-sm">Years Experience</span>
-                  </div>
-                  <div className="text-center">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 2.4, duration: 0.5, type: "spring" }}
-                      className="text-2xl font-bold text-white mb-1"
-                    >
-                      98%
-                    </motion.div>
-                    <span className="text-gray-400 text-sm">Success Rate</span>
-                  </div>
+                  <span className="text-white font-medium">Next-Gen Venture Capital</span>
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                 </div>
               </div>
             </div>
-          </motion.div>
+
+            {/* Hero Title */}
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-black leading-none">
+                <div className="text-white mb-4">
+                  FUTURE
+                </div>
+                <div className="relative">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400">
+                    VENTURES
+                  </span>
+                  <div className="absolute -bottom-2 lg:-bottom-4 left-0 w-full h-1 lg:h-2 bg-gradient-to-r from-blue-400/30 to-purple-500/30 rounded-full" />
+                </div>
+              </h1>
+            </div>
+
+            {/* Subtitle with Glass Effect */}
+            <div className="relative">
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-lg"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 lg:p-8">
+                <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed font-light">
+                  We don't just invest in companies—we{' '}
+                  <span className="text-blue-400 font-semibold">architect futures</span>, 
+                  transforming visionary concepts into{' '}
+                  <span className="text-purple-400 font-semibold">market dominance</span>.
+                </p>
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="flex flex-col md:flex-row gap-6 pt-8">
+              <div className="group relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl opacity-50 blur-sm group-hover:opacity-75 transition-all duration-300"></div>
+                <button className="relative flex items-center justify-center px-8 py-4 bg-white text-black rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden">
+                  <span className="relative flex items-center gap-3">
+                    <Zap className="w-5 h-5" />
+                    Launch Your Vision
+                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </button>
+              </div>
+
+              <div className="group relative">
+                <button className="flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300">
+                  <span className="flex items-center gap-3">
+                    <Play className="w-5 h-5" />
+                    Explore Portfolio
+                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Static Stats Dashboard */}
+          <div className="lg:col-span-5">
+            <div className="relative">
+              {/* Main Stats Glass Panel */}
+              <div className="relative bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 lg:p-8 shadow-2xl">
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl lg:text-2xl font-bold text-white">Live Metrics</h3>
+                    <p className="text-gray-400 text-sm">Real-time performance</p>
+                  </div>
+                </div>
+
+                {/* Metrics Grid */}
+                <div className="grid grid-cols-2 gap-4 lg:gap-6 mb-8">
+                  {[
+                    { icon: Trophy, value: '55+', label: 'Portfolio', color: 'from-yellow-400 to-orange-500' },
+                    { icon: Globe, value: '₹2.3Cr', label: 'Invested', color: 'from-blue-400 to-cyan-500' },
+                    { icon: Star, value: '32%', label: 'Returns', color: 'from-green-400 to-emerald-500' },
+                    { icon: Layers, value: '98%', label: 'Success', color: 'from-purple-400 to-pink-500' }
+                  ].map((metric, i) => (
+                    <div
+                      key={i}
+                      className="group relative hover:scale-105 transition-transform duration-200"
+                    >
+                      <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-3 lg:p-4 text-center">
+                        <div className={`w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r ${metric.color} rounded-xl flex items-center justify-center mx-auto mb-2 lg:mb-3`}>
+                          <metric.icon className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
+                        </div>
+                        <div className={`text-lg lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${metric.color} mb-1`}>
+                          {metric.value}
+                        </div>
+                        <div className="text-gray-400 text-xs lg:text-sm">{metric.label}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Progress Indicators */}
+                <div className="space-y-4">
+                  {[
+                    { label: 'Market Growth', progress: 85, color: 'from-blue-500 to-cyan-400' },
+                    { label: 'Portfolio Health', progress: 92, color: 'from-green-500 to-emerald-400' },
+                    { label: 'Innovation Index', progress: 78, color: 'from-purple-500 to-pink-400' }
+                  ].map((item, i) => (
+                    <div key={i}>
+                      <div className="flex justify-between text-sm mb-2">
+                        <span className="text-gray-300">{item.label}</span>
+                        <span className="text-white font-semibold">{item.progress}%</span>
+                      </div>
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div
+                          className={`h-full bg-gradient-to-r ${item.color} rounded-full transition-all duration-1000`}
+                          style={{ width: `${item.progress}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.6, duration: 0.8 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-        >
-          <span className="text-gray-400 text-sm mb-2">Scroll to explore</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          >
-            <ChevronDown className="h-6 w-6 text-accent-500" />
-          </motion.div>
-        </motion.div>
+        {/* Simple Floating Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Static Geometric Shapes */}
+          <div className="hidden lg:block absolute top-1/4 right-16 w-16 h-16 border-2 border-blue-400/20 rounded-lg backdrop-blur-sm opacity-30" />
+          <div className="hidden lg:block absolute bottom-1/4 left-16 w-12 h-12 bg-purple-500/15 rounded-full backdrop-blur-sm border border-purple-400/20 opacity-20" />
+          <div className="hidden lg:block absolute top-3/4 right-1/4 w-8 h-8 bg-gradient-to-br from-pink-400/20 to-orange-400/20 transform rotate-45 backdrop-blur-sm opacity-25" />
+        </div>
+
+        {/* Mobile Stats Quick View */}
+        <div className="lg:hidden mt-24">
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6">
+            <h3 className="text-xl font-bold text-white mb-4 text-center">Quick Stats</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { value: '55+', label: 'Companies', color: 'text-yellow-400' },
+                { value: '₹2.3Cr', label: 'Investment', color: 'text-blue-400' },
+                { value: '32%', label: 'Returns', color: 'text-green-400' },
+                { value: '98%', label: 'Success', color: 'text-purple-400' }
+              ].map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className={`text-2xl font-bold ${stat.color} mb-1`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-gray-400 text-sm">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Enhanced Mobile-First Responsive Styles */}
+      <style>{`
+        @media (max-width: 1024px) {
+          .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .hero-title {
+            font-size: 3rem !important;
+            line-height: 1.1;
+          }
+          
+          .hero-subtitle {
+            font-size: 1.125rem !important;
+            padding: 1.5rem !important;
+          }
+          
+          .liquid-blob {
+            width: 300px !important;
+            height: 300px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .hero-title {
+            font-size: 2.5rem !important;
+          }
+          
+          .hero-subtitle {
+            font-size: 1rem !important;
+            padding: 1rem !important;
+          }
+          
+          .cta-buttons {
+            flex-direction: column;
+            gap: 1rem;
+          }
+          
+          .bottom-nav {
+            padding: 0.75rem 1rem;
+            gap: 1rem;
+          }
+        }
+
+        /* Custom scrollbar for modern browsers */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: rgba(59, 130, 246, 0.3);
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: rgba(59, 130, 246, 0.5);
+        }
+      `}</style>
     </section>
   );
 };

@@ -1,85 +1,551 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { 
+  ExternalLink, 
+  TrendingUp, 
+  Users, 
+  BookOpen, 
+  DollarSign, 
+  ArrowRight, 
+  Star,
+  Sparkles,
+  Award,
+  Zap,
+  Globe,
+  Play,
+  Trophy,
+  Target,
+  Rocket,
+  Eye
+} from 'lucide-react';
+
+const ventureMetrics = [
+  {
+    icon: Users,
+    value: '50,000+',
+    label: 'Active Students',
+    description: 'Growing community of learners',
+    gradient: 'from-cyan-400 via-blue-500 to-purple-600',
+    glow: 'shadow-cyan-500/25',
+    progress: 85,
+    delay: 0.2
+  },
+  {
+    icon: BookOpen,
+    value: '100+',
+    label: 'Interactive Courses',
+    description: 'Comprehensive learning paths',
+    gradient: 'from-emerald-400 via-green-500 to-teal-600',
+    glow: 'shadow-emerald-500/25',
+    progress: 92,
+    delay: 0.4
+  },
+  {
+    icon: TrendingUp,
+    value: '92%',
+    label: 'Completion Rate',
+    description: 'Industry-leading retention',
+    gradient: 'from-orange-400 via-red-500 to-pink-600',
+    glow: 'shadow-orange-500/25',
+    progress: 92,
+    delay: 0.6
+  },
+  {
+    icon: Award,
+    value: '₹1.2Cr',
+    label: 'Annual Revenue',
+    description: 'Sustainable growth trajectory',
+    gradient: 'from-yellow-400 via-gold-500 to-amber-600',
+    glow: 'shadow-yellow-500/25',
+    progress: 78,
+    delay: 0.8
+  },
+];
 
 const FeaturedVenture = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
+
+  useEffect(() => {
+    const updateWindowSize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    updateWindowSize();
+    window.addEventListener('resize', updateWindowSize);
+
+    return () => {
+      window.removeEventListener('resize', updateWindowSize);
+    };
+  }, []);
+
   return (
-    <section className="section bg-white py-20">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-800 rounded-full text-sm font-medium mb-4">
-              Featured Venture
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">CodeEternity</h2>
-            <p className="text-gray-600 mb-8 text-lg">
-              A revolutionary coding education platform that makes learning programming accessible to everyone 
-              through interactive, project-based curriculum and AI-powered guidance.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <span className="block text-primary-800 font-bold text-xl mb-1">50,000+</span>
-                <span className="text-gray-600">Active Students</span>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <span className="block text-primary-800 font-bold text-xl mb-1">100+</span>
-                <span className="text-gray-600">Interactive Courses</span>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <span className="block text-primary-800 font-bold text-xl mb-1">92%</span>
-                <span className="text-gray-600">Completion Rate</span>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <span className="block text-primary-800 font-bold text-xl mb-1">₹1.2 Cr</span>
-                <span className="text-gray-600">Annual Revenue</span>
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Static Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950">
+        <div className="absolute inset-0">
+          {/* Static Background Blobs */}
+          <div
+            className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-12 blur-3xl"
+            style={{
+              background: 'radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(147, 51, 234, 0.12) 50%, transparent 100%)'
+            }}
+          />
+          
+          <div
+            className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-15 blur-3xl"
+            style={{
+              background: 'radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 100%)'
+            }}
+          />
+
+          <div
+            className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-8 blur-3xl"
+            style={{
+              background: 'radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 100%)'
+            }}
+          />
+        </div>
+
+        {/* Static Grid Pattern */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
+          }}
+        />
+      </div>
+
+      {/* Static Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
+            style={{
+              left: `${(i * 120) % 1200}px`,
+              top: `${(i * 80) % 800}px`
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        
+        {/* Header Section */}
+        <div className="text-center mb-20">
+          {/* Featured Badge */}
+          <div className="inline-block mb-8">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-40 blur-sm group-hover:opacity-60 transition-all duration-300"></div>
+              <div className="relative flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-full">
+                <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-white font-medium">Featured Innovation</span>
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
               </div>
             </div>
-            
-            <a 
-              href="https://codeeternity.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center bg-secondary-600 hover:bg-secondary-700 text-white py-3 px-6 rounded-lg transition-colors"
-            >
-              Visit CodeEternity
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </motion.div>
+          </div>
+
+          {/* Section Title */}
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6">
+            <span className="text-white">SPOTLIGHT</span>{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-400">
+              VENTURE
+            </span>
+          </h2>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <div className="absolute -top-6 -right-6 w-20 h-20 bg-secondary-200 rounded-full"></div>
-            <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-primary-200 rounded-full"></div>
-            
-            <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="CodeEternity platform interface showing programming course" 
-                className="w-full h-auto"
-              />
+          {/* LEFT CONTENT */}
+          <div className="space-y-8">
+            {/* Title */}
+            <div className="space-y-6">
+              <h1 className="text-6xl lg:text-8xl font-black">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 drop-shadow-lg">
+                  Code
+                </span>
+                <span className="text-white">Eternity</span>
+              </h1>
               
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end">
-                <div className="p-6">
-                  <span className="text-accent-400 font-semibold mb-2 block">Success Story</span>
-                  <p className="text-white text-lg">
-                    "From a small startup to India's leading coding education platform in just 3 years."
+              <div className="relative">
+                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-2xl blur-lg"></div>
+                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Zap className="w-6 h-6 text-yellow-400" />
+                    <span className="text-yellow-400 font-semibold">The Future of Learning</span>
+                  </div>
+                  <p className="text-gray-300 leading-relaxed">
+                    Revolutionary coding education platform powered by{' '}
+                    <span className="text-cyan-400 font-semibold">AI-driven curriculum</span>, making programming accessible through immersive, project-based learning experiences.
                   </p>
                 </div>
               </div>
             </div>
-          </motion.div>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-6">
+              {ventureMetrics.map((metric, index) => (
+                <div
+                  key={index}
+                  className="group relative cursor-pointer hover:scale-105 transition-transform duration-200"
+                >
+                  {/* Glow Effect */}
+                  <div className={`absolute -inset-1 bg-gradient-to-r ${metric.gradient} rounded-2xl blur opacity-0 group-hover:opacity-50 transition-opacity duration-300`}></div>
+                  
+                  {/* Main Card */}
+                  <div className="relative bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-6 hover:border-white/30 transition-all duration-300">
+                    {/* Icon Container */}
+                    <div className="relative mb-4">
+                      <div className={`w-14 h-14 bg-gradient-to-br ${metric.gradient} rounded-xl p-0.5 ${metric.glow} shadow-2xl`}>
+                        <div className="w-full h-full bg-slate-900 rounded-xl flex items-center justify-center">
+                          <metric.icon className="w-7 h-7 text-white" />
+                        </div>
+                      </div>
+                      <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 rounded-full opacity-90 flex items-center justify-center">
+                        <div className="w-2 h-2 bg-white rounded-full"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="space-y-3">
+                      <div className={`text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${metric.gradient}`}>
+                        {metric.value}
+                      </div>
+                      <div className="text-white font-semibold text-lg">
+                        {metric.label}
+                      </div>
+                      <p className="text-gray-400 text-sm">
+                        {metric.description}
+                      </p>
+                      
+                      {/* Progress Bar */}
+                      <div className="pt-2">
+                        <div className="flex justify-between text-xs mb-1">
+                          <span className="text-gray-500">Progress</span>
+                          <span className="text-gray-400">{metric.progress}%</span>
+                        </div>
+                        <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full bg-gradient-to-r ${metric.gradient} rounded-full transition-all duration-1000`}
+                            style={{ width: `${metric.progress}%` }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 pt-4">
+              <div className="group relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-2xl opacity-60 blur-sm group-hover:opacity-100 transition-opacity duration-300"></div>
+                <a
+                  href="https://codeeternity.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative flex items-center justify-center gap-3 bg-white text-black px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105"
+                >
+                  <Play className="w-5 h-5" />
+                  <span>Explore Platform</span>
+                  <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
+              </div>
+
+              <div className="group">
+                <a
+                  href="/ventures"
+                  className="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 hover:scale-105 transition-all duration-300"
+                >
+                  <Trophy className="w-5 h-5" />
+                  <span>All Ventures</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT CONTENT - Enhanced Card Design */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* Static Floating Elements */}
+            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-cyan-500/15 to-purple-500/15 rounded-3xl backdrop-blur-xl border border-white/10 z-10 opacity-80"></div>
+            
+            <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-pink-500/15 to-orange-500/15 rounded-3xl backdrop-blur-xl border border-white/10 z-10 opacity-60"></div>
+            
+            <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-emerald-500/15 to-teal-500/15 rounded-2xl backdrop-blur-xl border border-white/10 z-10 opacity-70"></div>
+
+            {/* Main Featured Card */}
+            <div
+              className={`relative z-20 transition-all duration-400 ${isHovered ? 'hover:scale-105 hover:-translate-y-2' : ''}`}
+            >
+              {/* Glow Effect */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl opacity-40 transition-opacity duration-500"></div>
+              
+              {/* Main Container */}
+              <div className="relative bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl overflow-hidden shadow-2xl hover:border-white/30 transition-all duration-500">
+                
+                {/* Top Status Bar */}
+                <div className="relative p-4 bg-gradient-to-r from-slate-800/60 to-slate-700/60 backdrop-blur-xl border-b border-white/10">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center">
+                        <Globe className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-white font-semibold">CodeEternity Platform</div>
+                        <div className="text-gray-400 text-sm">Learning Management System</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                      <span className="text-green-400 font-medium text-sm">Live & Growing</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Image Section */}
+                <div className="relative h-80 overflow-hidden">
+                  <img
+                    src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="CodeEternity Platform Interface"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  />
+                  
+                  {/* Interactive Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent"></div>
+                  
+                  {/* Static Interactive Elements */}
+                  <div className="absolute top-6 left-6">
+                    <div className="bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 px-4 py-2 rounded-xl">
+                      <div className="flex items-center gap-2">
+                        <Users className="w-4 h-4 text-blue-400" />
+                        <span className="text-blue-400 font-medium text-sm">2,847 online</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute top-20 right-6">
+                    <div className="bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 px-4 py-2 rounded-xl">
+                      <div className="flex items-center gap-2">
+                        <TrendingUp className="w-4 h-4 text-emerald-400" />
+                        <span className="text-emerald-400 font-medium text-sm">+12% growth</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                          <Sparkles className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <span className="text-cyan-400 font-bold text-lg">Success Story</span>
+                          <div className="text-gray-400 text-sm">Transforming Education</div>
+                        </div>
+                      </div>
+                      <p className="text-white text-xl font-medium leading-relaxed">
+                        "From ambitious vision to India's most innovative coding education platform, 
+                        <span className="text-cyan-400"> empowering 50,000+ developers</span> and revolutionizing the learning experience."
+                      </p>
+                      
+                      {/* Achievement Badges */}
+                      <div className="flex gap-3">
+                        {[
+                          { icon: Award, label: 'Best EdTech 2024', color: 'from-yellow-400 to-orange-500' },
+                          { icon: Star, label: 'Top Rated', color: 'from-purple-400 to-pink-500' },
+                          { icon: Target, label: 'Mission Driven', color: 'from-green-400 to-emerald-500' }
+                        ].map((badge, i) => (
+                          <div
+                            key={i}
+                            className="group/badge"
+                          >
+                            <div className={`flex items-center gap-2 bg-gradient-to-r ${badge.color} rounded-full px-3 py-1`}>
+                              <badge.icon className="w-3 h-3 text-white" />
+                              <span className="text-white text-xs font-medium">{badge.label}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Stats Bar */}
+                <div className="relative p-8 bg-gradient-to-r from-slate-900/80 to-slate-800/80 backdrop-blur-xl border-t border-white/10">
+                  {/* Performance Metrics */}
+                  <div className="grid grid-cols-3 gap-6 mb-6">
+                    {[
+                      { label: 'Student Rating', value: '4.9', icon: Star, color: 'text-yellow-400' },
+                      { label: 'Course Completion', value: '92%', icon: Trophy, color: 'text-green-400' },
+                      { label: 'Job Placement', value: '87%', icon: Target, color: 'text-blue-400' }
+                    ].map((stat, i) => (
+                      <div
+                        key={i}
+                        className="text-center"
+                      >
+                        <div className={`flex items-center justify-center gap-2 mb-2`}>
+                          <stat.icon className={`w-4 h-4 ${stat.color}`} />
+                          <div className={`text-2xl font-bold ${stat.color}`}>
+                            {stat.value}
+                          </div>
+                        </div>
+                        <div className="text-gray-400 text-sm">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom Action Bar */}
+                  <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                    <div className="flex items-center gap-3">
+                      <div className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                        10k+ Reviews
+                      </div>
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                        ))}
+                      </div>
+                    </div>
+                    <div className="group/btn hover:scale-105 transition-transform duration-200">
+                      <div className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-white/20 hover:border-white/30 px-4 py-2 rounded-xl transition-all duration-300 cursor-pointer">
+                        <Eye className="w-4 h-4 text-white" />
+                        <span className="text-white font-medium">View Details</span>
+                        <ArrowRight className="w-4 h-4 text-white group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                     {/* Bottom CTA Section */}
+           <section className="mt-24 text-center col-span-full">
+             <div className="relative max-w-4xl mx-auto">
+               <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl blur-2xl"></div>
+               <div className="relative bg-white/5 backdrop-blur-2xl border border-white/15 rounded-3xl p-8 lg:p-12">
+                
+                <div className="mb-8">
+                  <div className="flex items-center justify-center gap-4 mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                      <Rocket className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-white">
+                      Ready to Launch Your Vision?
+                    </h3>
+                  </div>
+                  <p className="text-xl text-gray-300 leading-relaxed">
+                    Join CodeEternity's success story. Partner with us to{' '}
+                    <span className="text-cyan-400 font-semibold">transform your ideas</span> into{' '}
+                    <span className="text-purple-400 font-semibold">market-leading platforms</span>.
+                  </p>
+                </div>
+
+                {/* Quick Stats */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                  {[
+                    { value: '3 Years', label: 'To Success' },
+                    { value: '₹1.2Cr', label: 'Revenue' },
+                    { value: '50k+', label: 'Users' },
+                    { value: '92%', label: 'Satisfaction' }
+                  ].map((stat, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 mb-1">
+                        {stat.value}
+                      </div>
+                      <div className="text-gray-400 text-sm">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="hover:scale-105 transition-transform duration-200">
+                    <a
+                      href="/contact"
+                      className="flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-300"
+                    >
+                      <Target className="w-5 h-5" />
+                      <span>Start Your Journey</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </a>
+                  </div>
+
+                  <div className="hover:scale-105 transition-transform duration-200">
+                    <a
+                      href="/portfolio"
+                      className="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
+                    >
+                      <Globe className="w-5 h-5" />
+                      <span>View Portfolio</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Static Floating Geometric Elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="hidden lg:block absolute top-1/4 right-16 w-16 h-16 border-2 border-cyan-400/20 rounded-lg backdrop-blur-sm opacity-30" />
+            <div className="hidden lg:block absolute bottom-1/4 left-16 w-12 h-12 bg-purple-500/15 rounded-full backdrop-blur-sm border border-purple-400/20 opacity-20" />
+          </div>
+
         </div>
+
+        {/* Enhanced Responsive Styles */}
+        <style>{`
+          @media (max-width: 1024px) {
+            .venture-title {
+              font-size: 4rem !important;
+            }
+          }
+          
+          @media (max-width: 768px) {
+            .venture-title {
+              font-size: 3rem !important;
+            }
+            
+            .venture-grid {
+              grid-template-columns: 1fr !important;
+              gap: 2rem;
+            }
+            
+            .stats-grid {
+              grid-template-columns: 1fr !important;
+              gap: 1rem;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .venture-title {
+              font-size: 2.5rem !important;
+            }
+            
+            .venture-card {
+              padding: 1rem !important;
+            }
+          }
+
+          /* Accessibility focus states */
+          .venture-button:focus {
+            outline: 2px solid rgba(59, 130, 246, 0.5);
+            outline-offset: 2px;
+          }
+        `}</style>
       </div>
     </section>
   );
