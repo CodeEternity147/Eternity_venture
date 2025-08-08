@@ -197,39 +197,75 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <button
+                    <motion.button
                       onClick={() => setIsOpen(!isOpen)}
-                      className="lg:hidden relative z-10 p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white/80 backdrop-blur-xl border border-gray-200 text-gray-700 hover:text-blue-600 transition-all duration-300"
+                      className="lg:hidden relative z-10 p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white/80 backdrop-blur-xl border border-gray-200 text-gray-700 hover:text-blue-600 transition-all duration-200"
+                      whileTap={{ scale: 0.95 }}
+                      whileHover={{ scale: 1.05 }}
                     >
-                      {isOpen ? (
-                        <X className="w-5 h-5 sm:w-6 sm:h-6" />
-                      ) : (
-                        <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
-                      )}
-                    </button>
+                      <AnimatePresence mode="wait">
+                        {isOpen ? (
+                          <motion.div
+                            key="close"
+                            initial={{ rotate: -90, opacity: 0 }}
+                            animate={{ rotate: 0, opacity: 1 }}
+                            exit={{ rotate: 90, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                          >
+                            <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                          </motion.div>
+                        ) : (
+                          <motion.div
+                            key="menu"
+                            initial={{ rotate: 90, opacity: 0 }}
+                            animate={{ rotate: 0, opacity: 1 }}
+                            exit={{ rotate: -90, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                          >
+                            <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.button>
                   </div>
 
                   {/* Mobile Menu */}
-                  <AnimatePresence>
+                  <AnimatePresence mode="wait">
                     {isOpen && (
                       <motion.div
-                        initial={{ opacity: 0, height: 0, y: -20 }}
-                        animate={{ opacity: 1, height: 'auto', y: 0 }}
-                        exit={{ opacity: 0, height: 0, y: -20 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="lg:hidden mt-4 overflow-hidden"
+                        initial={{ opacity: 0, height: 0, scaleY: 0 }}
+                        animate={{ opacity: 1, height: 'auto', scaleY: 1 }}
+                        exit={{ opacity: 0, height: 0, scaleY: 0 }}
+                        transition={{ 
+                          duration: 0.3, 
+                          ease: [0.4, 0, 0.2, 1],
+                          height: { duration: 0.3 },
+                          scaleY: { duration: 0.2 }
+                        }}
+                        className="lg:hidden mt-4 overflow-hidden origin-top"
                       >
-                        <div className="bg-white/95 backdrop-blur-xl border border-gray-200 rounded-xl sm:rounded-2xl p-3 sm:p-4 space-y-1">
+                        <motion.div 
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2, delay: 0.1 }}
+                          className="bg-white/95 backdrop-blur-xl border border-gray-200 rounded-xl sm:rounded-2xl p-3 sm:p-4 space-y-1"
+                        >
                           {navLinks.map((link, index) => (
                             <motion.div
                               key={link.name}
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: index * 0.1, duration: 0.3 }}
+                              exit={{ opacity: 0, x: -20 }}
+                              transition={{ 
+                                delay: index * 0.05, 
+                                duration: 0.2,
+                                ease: "easeOut"
+                              }}
                             >
                               <Link
                                 to={link.path}
-                                className={`relative group block px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 ${
+                                className={`relative group block px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base transition-all duration-200 ${
                                   location.pathname === link.path
                                     ? 'text-slate-800'
                                     : 'text-slate-700 hover:text-slate-900'
@@ -247,7 +283,7 @@ const Navbar = () => {
                                 )}
                                 
                                 {/* Hover Background */}
-                                <div className={`absolute inset-0 rounded-xl transition-all duration-300 ${
+                                <div className={`absolute inset-0 rounded-xl transition-all duration-200 ${
                                   location.pathname === link.path
                                     ? 'bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10'
                                     : 'bg-gradient-to-r from-slate-100/50 to-slate-200/50 opacity-0 group-hover:opacity-100'
@@ -256,14 +292,15 @@ const Navbar = () => {
                                 {/* Content */}
                                 <span className="relative z-10 flex items-center justify-between">
                                   <span>{link.name}</span>
-                                                                     {location.pathname === link.path && (
-                                     <motion.div
-                                       initial={{ scale: 0 }}
-                                       animate={{ scale: 1 }}
-                                       transition={{ delay: 0.2, type: "spring", stiffness: 500 }}
-                                       className="w-2 h-2 bg-blue-500 rounded-full"
-                                     />
-                                   )}
+                                  {location.pathname === link.path && (
+                                    <motion.div
+                                      initial={{ scale: 0 }}
+                                      animate={{ scale: 1 }}
+                                      exit={{ scale: 0 }}
+                                      transition={{ delay: 0.1, type: "spring", stiffness: 500 }}
+                                      className="w-2 h-2 bg-blue-500 rounded-full"
+                                    />
+                                  )}
                                 </span>
                               </Link>
                             </motion.div>
@@ -271,21 +308,22 @@ const Navbar = () => {
                           
                           {/* Mobile CTA */}
                           <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.4, duration: 0.3 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ delay: 0.3, duration: 0.2 }}
                             className="pt-3"
                           >
                             <Link
                               to="/contact"
-                              className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 shadow-lg hover:shadow-xl"
+                              className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-200 shadow-lg hover:shadow-xl"
                               onClick={() => setIsOpen(false)}
                             >
                               <Sparkles className="w-4 h-4" />
                               <span>Get Started</span>
                             </Link>
                           </motion.div>
-                        </div>
+                        </motion.div>
                       </motion.div>
                     )}
                   </AnimatePresence>

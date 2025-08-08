@@ -292,7 +292,6 @@ const About = () => {
                         alt="Founder"
                         className="h-16 w-16 rounded-xl object-cover"
                       />
-                      <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-xl blur opacity-30"></div>
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-slate-800">{FOUNDER_INFO.name}</h3>

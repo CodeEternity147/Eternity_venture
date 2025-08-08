@@ -89,35 +89,35 @@ const Footer = () => {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-block mb-4 sm:mb-6">
             <div className="relative group">
               <div className="absolute -inset-2 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
-              <div className="relative flex items-center gap-4 bg-white/90 backdrop-blur-xl border border-orange-200 px-8 py-4 rounded-full shadow-xl">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                  <Sparkles className="w-6 h-6 text-white" />
+              <div className="relative flex items-center gap-2 sm:gap-3 lg:gap-4 bg-white/90 backdrop-blur-xl border border-orange-200 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full shadow-xl">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                 </div>
                 <div className="text-left">
-                  <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
+                  <div className="text-lg sm:text-xl lg:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
                     ETERNITY
                   </div>
-                  <div className="text-slate-800 font-medium">
+                  <div className="text-slate-800 font-medium text-sm sm:text-base">
                     Ventures
                   </div>
                 </div>
                 <div className="flex gap-1">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-                  <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                  <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-pink-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-violet-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <p className="text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed px-4">
             Your trusted partner for{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-semibold">strategic investments</span> and{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600 font-semibold">business growth</span>. We turn visions into successful ventures with innovative solutions.
@@ -125,48 +125,48 @@ const Footer = () => {
         </div>
 
         {/* Main Footer Content - Equal Size Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
           
           {/* Company Info Section */}
           <div className="group relative h-full">
             <div className="absolute -inset-2 bg-gradient-to-r from-orange-400/20 to-pink-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
-              <div className="mb-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <span className="text-white font-black text-lg">EV</span>
+            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-4 sm:p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="mb-4 sm:mb-6">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white font-black text-sm sm:text-base lg:text-lg">EV</span>
                   </div>
                   <div>
-                    <div className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
+                    <div className="text-lg sm:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
                       Eternity
                     </div>
-                    <div className="text-slate-700 font-medium">Ventures</div>
+                    <div className="text-slate-700 font-medium text-sm sm:text-base">Ventures</div>
                   </div>
                 </div>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
                   Empowering the next generation of innovative startups with cutting-edge technology and strategic investment solutions.
                 </p>
               </div>
 
               {/* Contact Info */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-slate-700 group/item">
-                  <div className="w-8 h-8 bg-gradient-to-r from-orange-100 to-pink-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
-                    <Mail className="w-4 h-4 text-orange-500" />
+              <div className="space-y-2 sm:space-y-3">
+                <div className="flex items-center gap-2 sm:gap-3 text-slate-700 group/item">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-orange-100 to-pink-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
+                    <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-orange-500" />
                   </div>
-                  <span className="text-sm">hello@eternityventures.com</span>
+                  <span className="text-xs sm:text-sm">hello@eternityventures.com</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700 group/item">
-                  <div className="w-8 h-8 bg-gradient-to-r from-violet-100 to-purple-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
-                    <Phone className="w-4 h-4 text-violet-500" />
+                <div className="flex items-center gap-2 sm:gap-3 text-slate-700 group/item">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-violet-100 to-purple-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
+                    <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-violet-500" />
                   </div>
-                  <span className="text-sm">+91 98765 43210</span>
+                  <span className="text-xs sm:text-sm">+91 98765 43210</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700 group/item">
-                  <div className="w-8 h-8 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
-                    <MapPin className="w-4 h-4 text-emerald-500" />
+                <div className="flex items-center gap-2 sm:gap-3 text-slate-700 group/item">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
+                    <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-500" />
                   </div>
-                  <span className="text-sm">Mumbai, Maharashtra, India</span>
+                  <span className="text-xs sm:text-sm">Mumbai, Maharashtra, India</span>
                 </div>
               </div>
             </div>
@@ -175,24 +175,24 @@ const Footer = () => {
           {/* Quick Links Section */}
           <div className="group relative h-full">
             <div className="absolute -inset-2 bg-gradient-to-r from-violet-400/20 to-purple-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
-              <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <div className="w-6 h-6 bg-gradient-to-r from-violet-400 to-purple-500 rounded-lg flex items-center justify-center">
-                  <Star className="w-4 h-4 text-white" />
+            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-4 sm:p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-violet-400 to-purple-500 rounded-lg flex items-center justify-center">
+                  <Star className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </div>
                 Quick Links
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link, index) => (
                   <a
                     key={index}
                     href={link.href}
-                    className="flex items-center gap-3 text-slate-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-orange-600 hover:to-pink-600 transition-all duration-300 group/link"
+                    className="flex items-center gap-2 sm:gap-3 text-slate-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-orange-600 hover:to-pink-600 transition-all duration-300 group/link"
                   >
-                    <div className="w-8 h-8 bg-gradient-to-r from-orange-100/60 to-pink-100/60 rounded-lg flex items-center justify-center group-hover/link:scale-110 transition-transform duration-300">
-                      <link.icon className="w-4 h-4 text-orange-500 group-hover/link:text-pink-500 transition-colors duration-300" />
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-orange-100/60 to-pink-100/60 rounded-lg flex items-center justify-center group-hover/link:scale-110 transition-transform duration-300">
+                      <link.icon className="w-3 h-3 sm:w-4 sm:h-4 text-orange-500 group-hover/link:text-pink-500 transition-colors duration-300" />
                     </div>
-                    <span className="text-sm font-medium">{link.name}</span>
+                    <span className="text-xs sm:text-sm font-medium">{link.name}</span>
                   </a>
                 ))}
               </div>
@@ -202,23 +202,23 @@ const Footer = () => {
           {/* Ventures Section */}
           <div className="group relative h-full">
             <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/20 to-cyan-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
-              <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <div className="w-6 h-6 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-lg flex items-center justify-center">
-                  <Rocket className="w-4 h-4 text-white" />
+            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-4 sm:p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-lg flex items-center justify-center">
+                  <Rocket className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </div>
                 Our Ventures
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {ventures.map((venture, index) => (
                   <div key={index} className="flex items-center justify-between group/venture">
                     <a
                       href={venture.href}
-                      className="text-slate-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300 text-sm font-medium"
+                      className="text-slate-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300 text-xs sm:text-sm font-medium"
                     >
                       {venture.name}
                     </a>
-                    <span className={`text-xs px-3 py-1 rounded-full font-medium shadow-sm group-hover/venture:scale-105 transition-transform duration-300 ${
+                    <span className={`text-xs px-2 sm:px-3 py-1 rounded-full font-medium shadow-sm group-hover/venture:scale-105 transition-transform duration-300 ${
                       venture.status === 'Live' ? 'bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-700 border border-emerald-200' :
                       venture.status === 'Growing' ? 'bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 border border-blue-200' :
                       venture.status === 'Active' ? 'bg-gradient-to-r from-violet-100 to-purple-100 text-violet-700 border border-violet-200' :
@@ -235,42 +235,42 @@ const Footer = () => {
           {/* Social & Newsletter Section */}
           <div className="group relative h-full">
             <div className="absolute -inset-2 bg-gradient-to-r from-pink-400/20 to-rose-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
-              <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <div className="w-6 h-6 bg-gradient-to-r from-pink-400 to-rose-500 rounded-lg flex items-center justify-center">
-                  <Heart className="w-4 h-4 text-white" />
+            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-4 sm:p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-pink-400 to-rose-500 rounded-lg flex items-center justify-center">
+                  <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </div>
                 Connect With Us
               </h3>
               
               {/* Social Links */}
-              <div className="flex gap-3 mb-6">
+              <div className="flex gap-2 sm:gap-3 mb-4 sm:mb-6">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
-                    className={`w-10 h-10 bg-gradient-to-r ${social.color} rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-xl`}
+                    className={`w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r ${social.color} rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-xl`}
                     aria-label={social.label}
                   >
-                    <social.icon className="w-5 h-5" />
+                    <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
                 ))}
               </div>
 
               {/* Newsletter */}
               <div>
-                <h4 className="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                  <Send className="w-4 h-4 text-orange-500" />
+                <h4 className="text-xs sm:text-sm font-semibold text-slate-900 mb-2 sm:mb-3 flex items-center gap-2">
+                  <Send className="w-3 h-3 sm:w-4 sm:h-4 text-orange-500" />
                   Stay Updated
                 </h4>
                 <div className="flex gap-2">
                   <input
                     type="email"
                     placeholder="Your email"
-                    className="flex-1 px-3 py-2 text-sm bg-gradient-to-r from-orange-50/50 to-pink-50/50 border border-orange-200/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400/50 focus:border-orange-400/50 backdrop-blur-xl transition-all duration-300 text-slate-800 placeholder-slate-500"
+                    className="flex-1 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm bg-gradient-to-r from-orange-50/50 to-pink-50/50 border border-orange-200/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400/50 focus:border-orange-400/50 backdrop-blur-xl transition-all duration-300 text-slate-800 placeholder-slate-500"
                   />
-                  <button className="px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-md">
-                    <Send className="w-4 h-4" />
+                  <button className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-md">
+                    <Send className="w-3 h-3 sm:w-4 sm:h-4" />
                   </button>
                 </div>
               </div>
@@ -279,14 +279,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-orange-200/50 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-slate-600 text-sm flex items-center gap-2">
-              <Heart className="w-4 h-4 text-pink-500" />
+        <div className="border-t border-orange-200/50 pt-6 sm:pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="text-slate-600 text-xs sm:text-sm flex items-center gap-2">
+              <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-pink-500" />
               © {year} Eternity Ventures. All rights reserved.
             </div>
             
-            <div className="flex items-center gap-6 text-sm">
+            <div className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm">
               <a href="/privacy" className="text-slate-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-orange-600 hover:to-pink-600 transition-all duration-300 font-medium">
                 Privacy Policy
               </a>
@@ -304,12 +304,12 @@ const Footer = () => {
       {/* Enhanced Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 group relative z-50"
+        className="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 group relative z-50"
         aria-label="Scroll to top"
       >
         <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full opacity-40 blur-sm group-hover:opacity-60 transition-opacity duration-300"></div>
-        <div className="relative w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-          <ArrowUp className="w-6 h-6" />
+        <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+          <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6" />
         </div>
       </button>
 
