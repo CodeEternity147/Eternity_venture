@@ -21,7 +21,7 @@ const contactInfo = [
     value: '+91 9876 543 210',
     href: 'tel:+919876543210',
     color: 'from-blue-500 to-cyan-500',
-    bgColor: 'from-blue-500/20 to-cyan-500/20',
+    bgColor: 'from-blue-100/60 to-cyan-100/60',
     description: 'Available Mon-Fri, 9AM-6PM IST'
   },
   {
@@ -30,7 +30,7 @@ const contactInfo = [
     value: 'team@eternityventures.co.in',
     href: 'mailto:team@eternityventures.co.in',
     color: 'from-purple-500 to-pink-500',
-    bgColor: 'from-purple-500/20 to-pink-500/20',
+    bgColor: 'from-purple-100/60 to-pink-100/60',
     description: 'We reply within 24 hours'
   },
   {
@@ -38,8 +38,8 @@ const contactInfo = [
     title: 'Visit Us',
     value: 'Sector 62, Noida, UP, India',
     href: '#',
-    color: 'from-green-500 to-emerald-500',
-    bgColor: 'from-green-500/20 to-emerald-500/20',
+    color: 'from-emerald-500 to-teal-500',
+    bgColor: 'from-emerald-100/60 to-teal-100/60',
     description: 'Schedule an appointment first'
   },
 ];
@@ -78,48 +78,48 @@ const ContactCTA = () => {
 
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Static Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950">
+      {/* Enhanced Light Theme Background with Warm Colors */}
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-violet-50">
         <div className="absolute inset-0">
-          {/* Static Background Blobs */}
+          {/* Colorful Background Blobs */}
           <div
-            className="absolute -top-40 -right-40 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-15 blur-3xl"
+            className="absolute -top-40 -right-40 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-20 blur-3xl"
             style={{
-              background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(147, 51, 234, 0.15) 50%, transparent 100%)'
+              background: 'radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 100%)'
             }}
           />
           
           <div
-            className="absolute -bottom-32 -left-32 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-20 blur-3xl"
+            className="absolute -bottom-32 -left-32 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-25 blur-3xl"
             style={{
-              background: 'radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 100%)'
+              background: 'radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 100%)'
             }}
           />
 
           <div
-            className="absolute top-1/3 right-1/3 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-12 blur-3xl"
+            className="absolute top-1/3 right-1/3 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-18 blur-3xl"
             style={{
-              background: 'radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 100%)'
+              background: 'radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 100%)'
             }}
           />
         </div>
 
-        {/* Static Grid Pattern */}
+        {/* Enhanced Grid Pattern */}
         <div 
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-8"
           style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-            backgroundSize: '50px 50px'
+            backgroundImage: 'linear-gradient(rgba(251, 146, 60, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.15) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
           }}
         />
       </div>
 
-      {/* Static Particles */}
+      {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(6)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-blue-400/30 rounded-full blur-sm"
+            className="absolute w-1 h-1 bg-orange-400/30 rounded-full blur-sm"
             style={{
               left: `${(i * 200) % 1200}px`,
               top: `${(i * 100) % 800}px`
@@ -133,27 +133,27 @@ const ContactCTA = () => {
         <div className="text-center mb-16 lg:mb-20">
           <div className="inline-block mb-6">
             <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full opacity-50 blur-lg group-hover:opacity-75 transition-all duration-300"></div>
-              <div className="relative flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-full">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
+              <div className="absolute -inset-2 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
+              <div className="relative flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-orange-200 px-6 py-3 rounded-full shadow-xl">
+                <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center">
                   <Sparkles className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-white font-medium">Let's Connect</span>
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span className="text-slate-700 font-bold">Let's Connect</span>
+                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
               </div>
             </div>
           </div>
 
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-            <span className="text-white">Ready to </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400">
+            <span className="text-slate-800">Ready to </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
               Transform
             </span>
             <br />
-            <span className="text-white">Your Vision?</span>
+            <span className="text-slate-800">Your Vision?</span>
           </h2>
 
-          <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl lg:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Connect with our team of experts to discuss your business idea, 
             explore investment opportunities, and accelerate your growth.
           </p>
@@ -168,10 +168,10 @@ const ContactCTA = () => {
               {contactInfo.map((contact, index) => (
                 <div key={index} className="group relative">
                   {/* Card Glow */}
-                  <div className={`absolute -inset-4 bg-gradient-to-r ${contact.bgColor} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
+                  <div className={`absolute -inset-4 bg-gradient-to-r ${contact.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500`}></div>
                   
                   {/* Card Content */}
-                  <div className="relative bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-6 lg:p-8 hover:bg-white/15 transition-all duration-300">
+                  <div className={`relative bg-gradient-to-r ${contact.bgColor} backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 lg:p-8 hover:border-orange-300/70 hover:shadow-xl transition-all duration-300 shadow-lg`}>
                     <div className="flex items-start gap-4">
                       <div
                         className={`w-14 h-14 bg-gradient-to-br ${contact.color} rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300`}
@@ -180,14 +180,14 @@ const ContactCTA = () => {
                       </div>
                       
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-2">{contact.title}</h3>
+                        <h3 className="text-xl font-bold text-slate-800 mb-2">{contact.title}</h3>
                         <a 
                           href={contact.href}
                           className={`text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r ${contact.color} hover:scale-105 transition-transform duration-300 block mb-2`}
                         >
                           {contact.value}
                         </a>
-                        <p className="text-gray-400 text-sm">{contact.description}</p>
+                        <p className="text-slate-600 text-sm">{contact.description}</p>
                       </div>
                     </div>
                   </div>
@@ -198,10 +198,10 @@ const ContactCTA = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="group relative flex-1 hover:scale-105 transition-transform duration-300">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl opacity-75 blur-sm group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-2xl opacity-40 blur-sm group-hover:opacity-60 transition-all duration-300"></div>
                 <a
                   href="/contact"
-                  className="relative flex items-center justify-center gap-3 px-8 py-4 bg-white text-black rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden"
+                  className="relative flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden shadow-xl hover:shadow-2xl"
                 >
                   <Zap className="w-5 h-5" />
                   <span>Schedule a Call</span>
@@ -212,11 +212,11 @@ const ContactCTA = () => {
               <div className="group flex-1 hover:scale-105 transition-transform duration-300">
                 <a
                   href="/services"
-                  className="flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
+                  className="flex items-center justify-center gap-3 px-8 py-4 bg-white/90 backdrop-blur-xl border border-violet-200 text-slate-700 rounded-2xl font-bold text-lg hover:bg-white hover:border-violet-300 transition-all duration-300 shadow-lg"
                 >
-                  <Globe className="w-5 h-5" />
+                  <Globe className="w-5 h-5 text-violet-500" />
                   <span>Explore Services</span>
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 text-violet-500" />
                 </a>
               </div>
             </div>
@@ -226,18 +226,18 @@ const ContactCTA = () => {
           <div className="lg:col-span-7">
             <div className="relative">
               {/* Form Glow Effect */}
-              <div className="absolute -inset-8 bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-cyan-500/30 rounded-3xl blur-2xl" />
+              <div className="absolute -inset-8 bg-gradient-to-r from-violet-400/20 via-pink-400/20 to-orange-400/20 rounded-3xl blur-2xl" />
 
               {/* Form Container */}
-              <div className="relative bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 lg:p-10">
+              <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-3xl p-8 lg:p-10 shadow-2xl">
                 {/* Form Header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-violet-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg">
                     <MessageCircle className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white">Let's Build Together</h3>
-                    <p className="text-gray-400">We'll get back to you within 24 hours</p>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Let's Build Together</h3>
+                    <p className="text-slate-600">We'll get back to you within 24 hours</p>
                   </div>
                 </div>
 
@@ -245,12 +245,12 @@ const ContactCTA = () => {
                 <div className="space-y-6">
                   {/* Name Field */}
                   <div className="group">
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-3">
+                    <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-3">
                       Full Name
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <User className="w-5 h-5 text-gray-400 group-focus-within:text-blue-400 transition-colors" />
+                        <User className="w-5 h-5 text-slate-500 group-focus-within:text-orange-500 transition-colors" />
                       </div>
                       <input
                         type="text"
@@ -258,24 +258,24 @@ const ContactCTA = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 backdrop-blur-xl transition-all duration-300"
+                        className="w-full pl-12 pr-4 py-4 bg-gradient-to-r from-orange-50/50 to-pink-50/50 border border-orange-200/50 rounded-2xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-400/50 focus:border-orange-400/50 backdrop-blur-xl transition-all duration-300 shadow-sm hover:shadow-md"
                         placeholder="Enter your full name"
                         required
                       />
                       <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
-                        <CheckCircle className="w-5 h-5 text-green-400" />
+                        <CheckCircle className="w-5 h-5 text-emerald-500" />
                       </div>
                     </div>
                   </div>
 
                   {/* Email Field */}
                   <div className="group">
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-3">
+                    <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-3">
                       Email Address
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <AtSign className="w-5 h-5 text-gray-400 group-focus-within:text-purple-400 transition-colors" />
+                        <AtSign className="w-5 h-5 text-slate-500 group-focus-within:text-violet-500 transition-colors" />
                       </div>
                       <input
                         type="email"
@@ -283,19 +283,19 @@ const ContactCTA = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 backdrop-blur-xl transition-all duration-300"
+                        className="w-full pl-12 pr-4 py-4 bg-gradient-to-r from-violet-50/50 to-purple-50/50 border border-violet-200/50 rounded-2xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-violet-400/50 focus:border-violet-400/50 backdrop-blur-xl transition-all duration-300 shadow-sm hover:shadow-md"
                         placeholder="Enter your email address"
                         required
                       />
                       <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
-                        <CheckCircle className="w-5 h-5 text-green-400" />
+                        <CheckCircle className="w-5 h-5 text-emerald-500" />
                       </div>
                     </div>
                   </div>
 
                   {/* Message Field */}
                   <div className="group">
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-3">
+                    <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-3">
                       Your Message
                     </label>
                     <div className="relative">
@@ -305,12 +305,12 @@ const ContactCTA = () => {
                         value={formData.message}
                         onChange={handleInputChange}
                         rows={5}
-                        className="w-full p-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500/50 focus:border-pink-500/50 backdrop-blur-xl transition-all duration-300 resize-none"
+                        className="w-full p-4 bg-gradient-to-r from-pink-50/50 to-rose-50/50 border border-pink-200/50 rounded-2xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-400/50 focus:border-pink-400/50 backdrop-blur-xl transition-all duration-300 resize-none shadow-sm hover:shadow-md"
                         placeholder="Tell us about your project, ideas, or how we can help you..."
                         required
                       ></textarea>
                       <div className="absolute top-4 right-4">
-                        <CheckCircle className="w-5 h-5 text-green-400" />
+                        <CheckCircle className="w-5 h-5 text-emerald-500" />
                       </div>
                     </div>
                   </div>
@@ -322,11 +322,11 @@ const ContactCTA = () => {
                       disabled={isSubmitting}
                       className="group relative w-full overflow-hidden hover:scale-102 transition-transform duration-300"
                     >
-                      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl opacity-75 blur-sm group-hover:opacity-100 transition-all duration-300"></div>
-                      <div className="relative flex items-center justify-center gap-3 px-8 py-4 bg-white text-black rounded-2xl font-bold text-lg transition-all duration-300">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-2xl opacity-40 blur-sm group-hover:opacity-60 transition-all duration-300"></div>
+                      <div className="relative flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-2xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl">
                         {isSubmitting ? (
                           <>
-                            <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                             <span>Sending...</span>
                           </>
                         ) : (
@@ -341,14 +341,14 @@ const ContactCTA = () => {
                 </div>
 
                 {/* Form Footer */}
-                <div className="mt-6 pt-6 border-t border-white/10">
-                  <p className="text-center text-sm text-gray-400">
+                <div className="mt-6 pt-6 border-t border-orange-200/50">
+                  <p className="text-center text-sm text-slate-600">
                     By submitting this form, you agree to our{' '}
-                    <a href="/privacy" className="text-blue-400 hover:text-blue-300 underline">
+                    <a href="/privacy" className="text-orange-600 hover:text-orange-500 underline font-medium">
                       Privacy Policy
                     </a>
                     {' '}and{' '}
-                    <a href="/terms" className="text-blue-400 hover:text-blue-300 underline">
+                    <a href="/terms" className="text-orange-600 hover:text-orange-500 underline font-medium">
                       Terms of Service
                     </a>
                   </p>
@@ -365,38 +365,41 @@ const ContactCTA = () => {
               icon: '⚡',
               title: 'Quick Response',
               description: 'Get replies within 24 hours',
-              color: 'from-yellow-500 to-orange-500'
+              color: 'from-amber-400 to-orange-500',
+              bgColor: 'from-amber-100/60 to-orange-100/60'
             },
             {
               icon: '🔒',
               title: 'Secure & Private',
               description: 'Your data is fully protected',
-              color: 'from-green-500 to-emerald-500'
+              color: 'from-emerald-400 to-teal-500',
+              bgColor: 'from-emerald-100/60 to-teal-100/60'
             },
             {
               icon: '🚀',
               title: 'Expert Guidance',
               description: 'Connect with industry leaders',
-              color: 'from-blue-500 to-purple-500'
+              color: 'from-violet-400 to-purple-500',
+              bgColor: 'from-violet-100/60 to-purple-100/60'
             }
           ].map((feature, index) => (
             <div key={index} className="group relative">
-              <div className={`absolute -inset-2 bg-gradient-to-r ${feature.color} rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-300`}></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-all duration-300">
+              <div className={`absolute -inset-2 bg-gradient-to-r ${feature.color} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-300`}></div>
+              <div className={`relative bg-gradient-to-r ${feature.bgColor} backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 text-center hover:border-orange-300/70 hover:shadow-xl transition-all duration-300 shadow-lg`}>
                 <div className="text-3xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-400">{feature.description}</p>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">{feature.title}</h3>
+                <p className="text-slate-600">{feature.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Static Floating Action Elements */}
+        {/* Floating Action Elements */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Static Geometric Shapes */}
-          <div className="hidden lg:block absolute top-1/4 left-8 w-16 h-16 border-2 border-blue-400/30 rounded-lg backdrop-blur-sm opacity-50" />
-          <div className="hidden lg:block absolute bottom-1/3 right-12 w-12 h-12 bg-purple-500/20 rounded-full backdrop-blur-sm border border-purple-400/30 opacity-40" />
-          <div className="hidden lg:block absolute top-2/3 left-1/4 w-8 h-8 bg-gradient-to-br from-pink-400/30 to-orange-400/30 transform rotate-45 backdrop-blur-sm opacity-30" />
+          {/* Colorful Geometric Shapes */}
+          <div className="hidden lg:block absolute top-1/4 left-8 w-16 h-16 border-2 border-orange-300/40 rounded-lg backdrop-blur-sm bg-orange-100/20 opacity-60" />
+          <div className="hidden lg:block absolute bottom-1/3 right-12 w-12 h-12 bg-gradient-to-br from-violet-400/20 to-purple-400/20 rounded-full backdrop-blur-sm border border-violet-300/40 opacity-50" />
+          <div className="hidden lg:block absolute top-2/3 left-1/4 w-8 h-8 bg-gradient-to-br from-pink-400/30 to-rose-400/30 transform rotate-45 backdrop-blur-sm opacity-40" />
         </div>
       </div>
 

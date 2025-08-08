@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { 
   Facebook, 
   Twitter, 
@@ -29,10 +28,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Facebook, label: 'Facebook', href: '#' },
-    { icon: Twitter, label: 'Twitter', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#' },
-    { icon: Instagram, label: 'Instagram', href: '#' },
+    { icon: Facebook, label: 'Facebook', href: '#', color: 'from-blue-500 to-blue-600' },
+    { icon: Twitter, label: 'Twitter', href: '#', color: 'from-sky-500 to-sky-600' },
+    { icon: Linkedin, label: 'LinkedIn', href: '#', color: 'from-blue-600 to-indigo-600' },
+    { icon: Instagram, label: 'Instagram', href: '#', color: 'from-pink-500 to-rose-600' },
   ];
 
   const quickLinks = [
@@ -53,36 +52,75 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative py-16 overflow-hidden">
+      {/* Enhanced Light Theme Background with Warm Colors */}
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-violet-50">
+        <div className="absolute inset-0">
+          {/* Colorful Background Blobs */}
+          <div
+            className="absolute -top-32 -right-32 w-96 h-96 lg:w-[500px] lg:h-[500px] rounded-full opacity-15 blur-3xl"
+            style={{
+              background: 'radial-gradient(circle, rgba(251, 146, 60, 0.2) 0%, rgba(236, 72, 153, 0.12) 50%, transparent 100%)'
+            }}
+          />
+          
+          <div
+            className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[400px] lg:h-[400px] rounded-full opacity-20 blur-3xl"
+            style={{
+              background: 'radial-gradient(circle, rgba(34, 197, 94, 0.18) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)'
+            }}
+          />
+
+          <div
+            className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[350px] lg:h-[350px] rounded-full opacity-12 blur-3xl"
+            style={{
+              background: 'radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(14, 165, 233, 0.08) 50%, transparent 100%)'
+            }}
+          />
+        </div>
+
+        {/* Enhanced Grid Pattern */}
+        <div 
+          className="absolute inset-0 opacity-6"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(251, 146, 60, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.12) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="inline-block mb-6">
-            <div className="flex items-center gap-4 bg-gray-900/50 border border-gray-700 px-8 py-4 rounded-full">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-left">
-                <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400">
-                  ETERNITY
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
+              <div className="relative flex items-center gap-4 bg-white/90 backdrop-blur-xl border border-orange-200 px-8 py-4 rounded-full shadow-xl">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-white font-medium">
-                  Ventures
+                <div className="text-left">
+                  <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
+                    ETERNITY
+                  </div>
+                  <div className="text-slate-800 font-medium">
+                    Ventures
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-1">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+                <div className="flex gap-1">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                </div>
               </div>
             </div>
           </div>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
             Your trusted partner for{' '}
-            <span className="text-blue-400 font-semibold">strategic investments</span> and{' '}
-            <span className="text-purple-400 font-semibold">business growth</span>. We turn visions into successful ventures with innovative solutions.
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-semibold">strategic investments</span> and{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600 font-semibold">business growth</span>. We turn visions into successful ventures with innovative solutions.
           </p>
         </div>
 
@@ -90,263 +128,196 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           
           {/* Company Info Section */}
-          <div className="bg-gray-900/30 border border-gray-700 rounded-2xl p-6 h-full">
-            <div className="mb-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-black text-lg">EV</span>
+          <div className="group relative h-full">
+            <div className="absolute -inset-2 bg-gradient-to-r from-orange-400/20 to-pink-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white font-black text-lg">EV</span>
+                  </div>
+                  <div>
+                    <div className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
+                      Eternity
+                    </div>
+                    <div className="text-slate-700 font-medium">Ventures</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                    Eternity
+                <p className="text-slate-700 leading-relaxed">
+                  Empowering the next generation of innovative startups with cutting-edge technology and strategic investment solutions.
+                </p>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-slate-700 group/item">
+                  <div className="w-8 h-8 bg-gradient-to-r from-orange-100 to-pink-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
+                    <Mail className="w-4 h-4 text-orange-500" />
                   </div>
-                  <div className="text-gray-400 font-medium">
-                    Ventures
+                  <span className="text-sm">hello@eternityventures.com</span>
+                </div>
+                <div className="flex items-center gap-3 text-slate-700 group/item">
+                  <div className="w-8 h-8 bg-gradient-to-r from-violet-100 to-purple-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
+                    <Phone className="w-4 h-4 text-violet-500" />
                   </div>
+                  <span className="text-sm">+91 98765 43210</span>
+                </div>
+                <div className="flex items-center gap-3 text-slate-700 group/item">
+                  <div className="w-8 h-8 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
+                    <MapPin className="w-4 h-4 text-emerald-500" />
+                  </div>
+                  <span className="text-sm">Mumbai, Maharashtra, India</span>
                 </div>
               </div>
             </div>
+          </div>
 
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Building tomorrow's success stories through{' '}
-              <span className="text-blue-400 font-semibold">strategic partnerships</span> and{' '}
-              <span className="text-purple-400 font-semibold">innovative solutions</span>.
-            </p>
-
-            <div className="flex gap-3">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 bg-gray-800 border border-gray-600 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:border-gray-500 transition-all duration-300"
-                  aria-label={social.label}
-                >
-                  <social.icon size={16} />
-                </a>
-              ))}
+          {/* Quick Links Section */}
+          <div className="group relative h-full">
+            <div className="absolute -inset-2 bg-gradient-to-r from-violet-400/20 to-purple-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+              <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <div className="w-6 h-6 bg-gradient-to-r from-violet-400 to-purple-500 rounded-lg flex items-center justify-center">
+                  <Star className="w-4 h-4 text-white" />
+                </div>
+                Quick Links
+              </h3>
+              <div className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className="flex items-center gap-3 text-slate-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-orange-600 hover:to-pink-600 transition-all duration-300 group/link"
+                  >
+                    <div className="w-8 h-8 bg-gradient-to-r from-orange-100/60 to-pink-100/60 rounded-lg flex items-center justify-center group-hover/link:scale-110 transition-transform duration-300">
+                      <link.icon className="w-4 h-4 text-orange-500 group-hover/link:text-pink-500 transition-colors duration-300" />
+                    </div>
+                    <span className="text-sm font-medium">{link.name}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="bg-gray-900/30 border border-gray-700 rounded-2xl p-6 h-full">
-            <h4 className="text-xl font-bold mb-6 text-white flex items-center gap-3">
-              <div className="w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                <Zap className="w-3 h-3 text-white" />
-              </div>
-              Quick Links
-            </h4>
-
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <Link 
-                    to={link.href} 
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300"
-                  >
-                    <div className="w-5 h-5 bg-gray-800 rounded-lg flex items-center justify-center">
-                      <link.icon className="w-3 h-3 text-cyan-400" />
-                    </div>
-                    <span className="font-medium">
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Our Ventures */}
-          <div className="bg-gray-900/30 border border-gray-700 rounded-2xl p-6 h-full">
-            <h4 className="text-xl font-bold mb-6 text-white flex items-center gap-3">
-              <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-lg flex items-center justify-center">
-                <Rocket className="w-3 h-3 text-white" />
-              </div>
-              Our Ventures
-            </h4>
-
-            <ul className="space-y-3">
-              {ventures.map((venture, index) => (
-                <li key={index}>
-                  <Link 
-                    to={venture.href} 
-                    className="flex items-center justify-between text-gray-300 hover:text-white transition-colors duration-300"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-gray-800 rounded-lg flex items-center justify-center">
-                        <Star className="w-3 h-3 text-purple-400" />
-                      </div>
-                      <span className="font-medium">
-                        {venture.name}
-                      </span>
-                    </div>
-                    <div className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                      venture.status === 'Live' ? 'bg-green-500/20 text-green-400' :
-                      venture.status === 'Growing' ? 'bg-blue-500/20 text-blue-400' :
-                      venture.status === 'Active' ? 'bg-purple-500/20 text-purple-400' :
-                      'bg-orange-500/20 text-orange-400'
+          {/* Ventures Section */}
+          <div className="group relative h-full">
+            <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/20 to-cyan-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+              <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <div className="w-6 h-6 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-lg flex items-center justify-center">
+                  <Rocket className="w-4 h-4 text-white" />
+                </div>
+                Our Ventures
+              </h3>
+              <div className="space-y-3">
+                {ventures.map((venture, index) => (
+                  <div key={index} className="flex items-center justify-between group/venture">
+                    <a
+                      href={venture.href}
+                      className="text-slate-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300 text-sm font-medium"
+                    >
+                      {venture.name}
+                    </a>
+                    <span className={`text-xs px-3 py-1 rounded-full font-medium shadow-sm group-hover/venture:scale-105 transition-transform duration-300 ${
+                      venture.status === 'Live' ? 'bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-700 border border-emerald-200' :
+                      venture.status === 'Growing' ? 'bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 border border-blue-200' :
+                      venture.status === 'Active' ? 'bg-gradient-to-r from-violet-100 to-purple-100 text-violet-700 border border-violet-200' :
+                      'bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-700 border border-amber-200'
                     }`}>
                       {venture.status}
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="bg-gray-900/30 border border-gray-700 rounded-2xl p-6 h-full">
-            <h4 className="text-xl font-bold mb-6 text-white flex items-center gap-3">
-              <div className="w-6 h-6 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center">
-                <Send className="w-3 h-3 text-white" />
+                    </span>
+                  </div>
+                ))}
               </div>
-              Contact
-            </h4>
-
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-gray-800 border border-gray-600 rounded-lg flex items-center justify-center mt-1">
-                  <MapPin className="w-4 h-4 text-emerald-400" />
-                </div>
-                <div>
-                  <div className="text-white font-semibold mb-1">Location</div>
-                  <span className="text-gray-300 text-sm leading-relaxed">
-                    Sector 62, Noida,<br />
-                    Uttar Pradesh, India
-                  </span>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-gray-800 border border-gray-600 rounded-lg flex items-center justify-center mt-1">
-                  <Phone className="w-4 h-4 text-blue-400" />
-                </div>
-                <div>
-                  <div className="text-white font-semibold mb-1">Phone</div>
-                  <a 
-                    href="tel:+919876543210" 
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium text-sm"
-                  >
-                    +91 9876 543 210
-                  </a>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-gray-800 border border-gray-600 rounded-lg flex items-center justify-center mt-1">
-                  <Mail className="w-4 h-4 text-purple-400" />
-                </div>
-                <div>
-                  <div className="text-white font-semibold mb-1">Email</div>
-                  <a
-                    href="mailto:team@eternityventures.co.in"
-                    className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium text-sm"
-                  >
-                    team@eternityventures.co.in
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="mb-16">
-          <div className="max-w-4xl mx-auto bg-gray-900/30 border border-gray-700 rounded-2xl p-8 text-center">
-            <div className="mb-6">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-white">
-                  Stay Connected
-                </h3>
-              </div>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Get the latest updates on our ventures, insights, and{' '}
-                <span className="text-blue-400 font-semibold">exclusive opportunities</span> delivered to your inbox.
-              </p>
             </div>
+          </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <div className="flex-1">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full bg-gray-800 border border-gray-600 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-all duration-300"
-                />
+          {/* Social & Newsletter Section */}
+          <div className="group relative h-full">
+            <div className="absolute -inset-2 bg-gradient-to-r from-pink-400/20 to-rose-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+            <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+              <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <div className="w-6 h-6 bg-gradient-to-r from-pink-400 to-rose-500 rounded-lg flex items-center justify-center">
+                  <Heart className="w-4 h-4 text-white" />
+                </div>
+                Connect With Us
+              </h3>
+              
+              {/* Social Links */}
+              <div className="flex gap-3 mb-6">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className={`w-10 h-10 bg-gradient-to-r ${social.color} rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-xl`}
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </a>
+                ))}
               </div>
-              <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition-all duration-300 flex items-center gap-2">
-                <Send className="w-4 h-4" />
-                <span>Subscribe</span>
-              </button>
+
+              {/* Newsletter */}
+              <div>
+                <h4 className="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                  <Send className="w-4 h-4 text-orange-500" />
+                  Stay Updated
+                </h4>
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    className="flex-1 px-3 py-2 text-sm bg-gradient-to-r from-orange-50/50 to-pink-50/50 border border-orange-200/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400/50 focus:border-orange-400/50 backdrop-blur-xl transition-all duration-300 text-slate-800 placeholder-slate-500"
+                  />
+                  <button className="px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-md">
+                    <Send className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="bg-gray-900/30 border border-gray-700 rounded-2xl p-6">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+        <div className="border-t border-orange-200/50 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-slate-600 text-sm flex items-center gap-2">
+              <Heart className="w-4 h-4 text-pink-500" />
+              © {year} Eternity Ventures. All rights reserved.
+            </div>
             
-            {/* Copyright */}
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 text-gray-400">
-                <Heart className="w-4 h-4 text-red-400" />
-                <span>&copy; {year} Eternity Ventures.</span>
-              </div>
-              <div className="text-gray-400">All rights reserved.</div>
+            <div className="flex items-center gap-6 text-sm">
+              <a href="/privacy" className="text-slate-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-orange-600 hover:to-pink-600 transition-all duration-300 font-medium">
+                Privacy Policy
+              </a>
+              <a href="/terms" className="text-slate-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-600 hover:to-purple-600 transition-all duration-300 font-medium">
+                Terms of Service
+              </a>
+              <a href="/cookies" className="text-slate-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300 font-medium">
+                Cookie Policy
+              </a>
             </div>
-
-            {/* Legal Links & Scroll to Top */}
-            <div className="flex items-center gap-6">
-              <div className="flex gap-6">
-                <Link 
-                  to="/privacy-policy" 
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm font-medium flex items-center gap-2"
-                >
-                  <Shield className="w-4 h-4" />
-                  Privacy Policy
-                </Link>
-                <Link 
-                  to="/terms-of-service" 
-                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm font-medium flex items-center gap-2"
-                >
-                  <Award className="w-4 h-4" />
-                  Terms of Service
-                </Link>
-              </div>
-
-              <button
-                onClick={scrollToTop}
-                className="w-10 h-10 bg-gray-800 border border-gray-600 rounded-lg flex items-center justify-center text-blue-400 hover:text-white hover:border-gray-500 transition-all duration-300"
-                aria-label="Scroll to top"
-              >
-                <ArrowUp size={16} />
-              </button>
-            </div>
-          </div>
-
-          {/* Achievement Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-8 pt-8 border-t border-gray-700">
-            {[
-              { icon: Star, value: '127', label: 'Happy Clients', color: 'text-yellow-400' },
-              { icon: Rocket, value: '55+', label: 'Active Ventures', color: 'text-blue-400' },
-              { icon: Globe, value: '15+', label: 'Countries', color: 'text-green-400' },
-              { icon: Award, value: '98%', label: 'Success Rate', color: 'text-purple-400' }
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <stat.icon className={`w-4 h-4 ${stat.color}`} />
-                  <div className={`text-xl font-bold ${stat.color}`}>
-                    {stat.value}
-                  </div>
-                </div>
-                <div className="text-gray-400 text-sm font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
+      </div>
+
+      {/* Enhanced Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 group relative z-50"
+        aria-label="Scroll to top"
+      >
+        <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full opacity-40 blur-sm group-hover:opacity-60 transition-opacity duration-300"></div>
+        <div className="relative w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+          <ArrowUp className="w-6 h-6" />
+        </div>
+      </button>
+
+      {/* Floating Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="hidden lg:block absolute top-1/4 left-8 w-12 h-12 border-2 border-orange-300/30 rounded-lg backdrop-blur-sm bg-orange-100/10 opacity-50" />
+        <div className="hidden lg:block absolute bottom-1/3 right-12 w-8 h-8 bg-gradient-to-br from-violet-400/20 to-purple-400/20 rounded-full backdrop-blur-sm border border-violet-300/30 opacity-40" />
+        <div className="hidden lg:block absolute top-2/3 left-1/4 w-6 h-6 bg-gradient-to-br from-pink-400/25 to-rose-400/25 transform rotate-45 backdrop-blur-sm opacity-35" />
       </div>
     </footer>
   );

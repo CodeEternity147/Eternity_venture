@@ -84,51 +84,51 @@ const FeaturedVenture = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Static Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950">
+      {/* Light Theme Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
         <div className="absolute inset-0">
-          {/* Static Background Blobs */}
+          {/* Simplified Background Blobs */}
           <div
-            className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-12 blur-3xl"
+            className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-8 blur-3xl"
             style={{
-              background: 'radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(147, 51, 234, 0.12) 50%, transparent 100%)'
+              background: 'radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.08) 50%, transparent 100%)'
             }}
           />
           
           <div
-            className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-15 blur-3xl"
+            className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-10 blur-3xl"
             style={{
-              background: 'radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 100%)'
+              background: 'radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(59, 130, 246, 0.06) 50%, transparent 100%)'
             }}
           />
 
           <div
-            className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-8 blur-3xl"
+            className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-6 blur-3xl"
             style={{
-              background: 'radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 100%)'
+              background: 'radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, rgba(59, 130, 246, 0.06) 50%, transparent 100%)'
             }}
           />
         </div>
 
-        {/* Static Grid Pattern */}
+        {/* Simplified Grid Pattern */}
         <div 
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)',
             backgroundSize: '60px 60px'
           }}
         />
       </div>
 
-      {/* Static Particles */}
+      {/* Simplified Particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(10)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
+            className="absolute w-1 h-1 bg-blue-400/20 rounded-full"
             style={{
-              left: `${(i * 120) % 1200}px`,
-              top: `${(i * 80) % 800}px`
+              left: `${(i * 150) % 1200}px`,
+              top: `${(i * 100) % 800}px`
             }}
           />
         ))}
@@ -141,24 +141,17 @@ const FeaturedVenture = () => {
           {/* Featured Badge */}
           <div className="inline-block mb-8">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-40 blur-sm group-hover:opacity-60 transition-all duration-300"></div>
-              <div className="relative flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-full">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
+              <div className="relative flex items-center gap-3 bg-white/80 backdrop-blur-xl border border-gray-200 px-6 py-3 rounded-full shadow-lg">
                 <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full flex items-center justify-center">
                   <Sparkles className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-white font-medium">Featured Innovation</span>
+                <span className="text-gray-800 font-medium">Featured Innovation</span>
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
               </div>
             </div>
           </div>
 
-          {/* Section Title */}
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6">
-            <span className="text-white">SPOTLIGHT</span>{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-400">
-              VENTURE
-            </span>
-          </h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -171,19 +164,19 @@ const FeaturedVenture = () => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 drop-shadow-lg">
                   Code
                 </span>
-                <span className="text-white">Eternity</span>
+                <span className="text-gray-900">Eternity</span>
               </h1>
               
               <div className="relative">
-                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-2xl blur-lg"></div>
-                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl blur-lg"></div>
+                <div className="relative bg-white/80 backdrop-blur-xl border border-gray-200 rounded-2xl p-6 shadow-lg">
                   <div className="flex items-center gap-3 mb-3">
-                    <Zap className="w-6 h-6 text-yellow-400" />
-                    <span className="text-yellow-400 font-semibold">The Future of Learning</span>
+                    <Zap className="w-6 h-6 text-yellow-500" />
+                    <span className="text-yellow-600 font-semibold">The Future of Learning</span>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     Revolutionary coding education platform powered by{' '}
-                    <span className="text-cyan-400 font-semibold">AI-driven curriculum</span>, making programming accessible through immersive, project-based learning experiences.
+                    <span className="text-cyan-600 font-semibold">AI-driven curriculum</span>, making programming accessible through immersive, project-based learning experiences.
                   </p>
                 </div>
               </div>
@@ -197,15 +190,15 @@ const FeaturedVenture = () => {
                   className="group relative cursor-pointer hover:scale-105 transition-transform duration-200"
                 >
                   {/* Glow Effect */}
-                  <div className={`absolute -inset-1 bg-gradient-to-r ${metric.gradient} rounded-2xl blur opacity-0 group-hover:opacity-50 transition-opacity duration-300`}></div>
+                  <div className={`absolute -inset-1 bg-gradient-to-r ${metric.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300`}></div>
                   
                   {/* Main Card */}
-                  <div className="relative bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl p-6 hover:border-white/30 transition-all duration-300">
+                  <div className="relative bg-white/80 backdrop-blur-2xl border border-gray-200 rounded-2xl p-6 hover:border-gray-300 transition-all duration-300 shadow-lg">
                     {/* Icon Container */}
                     <div className="relative mb-4">
-                      <div className={`w-14 h-14 bg-gradient-to-br ${metric.gradient} rounded-xl p-0.5 ${metric.glow} shadow-2xl`}>
-                        <div className="w-full h-full bg-slate-900 rounded-xl flex items-center justify-center">
-                          <metric.icon className="w-7 h-7 text-white" />
+                      <div className={`w-14 h-14 bg-gradient-to-br ${metric.gradient} rounded-xl p-0.5 ${metric.glow} shadow-lg`}>
+                        <div className="w-full h-full bg-white rounded-xl flex items-center justify-center">
+                          <metric.icon className="w-7 h-7 text-gray-800" />
                         </div>
                       </div>
                       <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 rounded-full opacity-90 flex items-center justify-center">
@@ -218,10 +211,10 @@ const FeaturedVenture = () => {
                       <div className={`text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${metric.gradient}`}>
                         {metric.value}
                       </div>
-                      <div className="text-white font-semibold text-lg">
+                      <div className="text-gray-800 font-semibold text-lg">
                         {metric.label}
                       </div>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-gray-600 text-sm">
                         {metric.description}
                       </p>
                       
@@ -229,9 +222,9 @@ const FeaturedVenture = () => {
                       <div className="pt-2">
                         <div className="flex justify-between text-xs mb-1">
                           <span className="text-gray-500">Progress</span>
-                          <span className="text-gray-400">{metric.progress}%</span>
+                          <span className="text-gray-600">{metric.progress}%</span>
                         </div>
-                        <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
                           <div
                             className={`h-full bg-gradient-to-r ${metric.gradient} rounded-full transition-all duration-1000`}
                             style={{ width: `${metric.progress}%` }}
@@ -247,12 +240,12 @@ const FeaturedVenture = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 pt-4">
               <div className="group relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-2xl opacity-60 blur-sm group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-2xl opacity-40 blur-sm group-hover:opacity-60 transition-opacity duration-300"></div>
                 <a
                   href="https://codeeternity.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative flex items-center justify-center gap-3 bg-white text-black px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105"
+                  className="relative flex items-center justify-center gap-3 bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   <Play className="w-5 h-5" />
                   <span>Explore Platform</span>
@@ -263,7 +256,7 @@ const FeaturedVenture = () => {
               <div className="group">
                 <a
                   href="/ventures"
-                  className="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 hover:scale-105 transition-all duration-300"
+                  className="flex items-center justify-center gap-3 bg-white/80 backdrop-blur-xl border border-gray-200 text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg"
                 >
                   <Trophy className="w-5 h-5" />
                   <span>All Ventures</span>
@@ -279,38 +272,38 @@ const FeaturedVenture = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {/* Static Floating Elements */}
-            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-cyan-500/15 to-purple-500/15 rounded-3xl backdrop-blur-xl border border-white/10 z-10 opacity-80"></div>
+            {/* Simplified Floating Elements */}
+            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-3xl backdrop-blur-xl border border-gray-200 z-10 opacity-60"></div>
             
-            <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-pink-500/15 to-orange-500/15 rounded-3xl backdrop-blur-xl border border-white/10 z-10 opacity-60"></div>
+            <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-pink-500/10 to-orange-500/10 rounded-3xl backdrop-blur-xl border border-gray-200 z-10 opacity-40"></div>
             
-            <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-emerald-500/15 to-teal-500/15 rounded-2xl backdrop-blur-xl border border-white/10 z-10 opacity-70"></div>
+            <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl backdrop-blur-xl border border-gray-200 z-10 opacity-50"></div>
 
             {/* Main Featured Card */}
             <div
               className={`relative z-20 transition-all duration-400 ${isHovered ? 'hover:scale-105 hover:-translate-y-2' : ''}`}
             >
               {/* Glow Effect */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl opacity-40 transition-opacity duration-500"></div>
+              <div className="absolute -inset-6 bg-gradient-to-r from-cyan-500/15 via-purple-500/15 to-pink-500/15 rounded-3xl blur-2xl opacity-30 transition-opacity duration-500"></div>
               
               {/* Main Container */}
-              <div className="relative bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl overflow-hidden shadow-2xl hover:border-white/30 transition-all duration-500">
+              <div className="relative bg-white/90 backdrop-blur-2xl border border-gray-200 rounded-3xl overflow-hidden shadow-2xl hover:border-gray-300 transition-all duration-500">
                 
                 {/* Top Status Bar */}
-                <div className="relative p-4 bg-gradient-to-r from-slate-800/60 to-slate-700/60 backdrop-blur-xl border-b border-white/10">
+                <div className="relative p-4 bg-gradient-to-r from-gray-100/80 to-gray-50/80 backdrop-blur-xl border-b border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center">
                         <Globe className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <div className="text-white font-semibold">CodeEternity Platform</div>
-                        <div className="text-gray-400 text-sm">Learning Management System</div>
+                        <div className="text-gray-800 font-semibold">CodeEternity Platform</div>
+                        <div className="text-gray-600 text-sm">Learning Management System</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                      <span className="text-green-400 font-medium text-sm">Live & Growing</span>
+                      <span className="text-green-600 font-medium text-sm">Live & Growing</span>
                     </div>
                   </div>
                 </div>
@@ -324,14 +317,14 @@ const FeaturedVenture = () => {
                   />
                   
                   {/* Interactive Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
                   
                   {/* Static Interactive Elements */}
                   <div className="absolute top-6 left-6">
                     <div className="bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 px-4 py-2 rounded-xl">
                       <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-blue-400" />
-                        <span className="text-blue-400 font-medium text-sm">2,847 online</span>
+                        <Users className="w-4 h-4 text-blue-600" />
+                        <span className="text-blue-700 font-medium text-sm">2,847 online</span>
                       </div>
                     </div>
                   </div>
@@ -339,8 +332,8 @@ const FeaturedVenture = () => {
                   <div className="absolute top-20 right-6">
                     <div className="bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 px-4 py-2 rounded-xl">
                       <div className="flex items-center gap-2">
-                        <TrendingUp className="w-4 h-4 text-emerald-400" />
-                        <span className="text-emerald-400 font-medium text-sm">+12% growth</span>
+                        <TrendingUp className="w-4 h-4 text-emerald-600" />
+                        <span className="text-emerald-700 font-medium text-sm">+12% growth</span>
                       </div>
                     </div>
                   </div>
@@ -354,7 +347,7 @@ const FeaturedVenture = () => {
                         </div>
                         <div>
                           <span className="text-cyan-400 font-bold text-lg">Success Story</span>
-                          <div className="text-gray-400 text-sm">Transforming Education</div>
+                          <div className="text-gray-300 text-sm">Transforming Education</div>
                         </div>
                       </div>
                       <p className="text-white text-xl font-medium leading-relaxed">
@@ -385,13 +378,13 @@ const FeaturedVenture = () => {
                 </div>
 
                 {/* Bottom Stats Bar */}
-                <div className="relative p-8 bg-gradient-to-r from-slate-900/80 to-slate-800/80 backdrop-blur-xl border-t border-white/10">
+                <div className="relative p-8 bg-gradient-to-r from-gray-100/90 to-gray-50/90 backdrop-blur-xl border-t border-gray-200">
                   {/* Performance Metrics */}
                   <div className="grid grid-cols-3 gap-6 mb-6">
                     {[
-                      { label: 'Student Rating', value: '4.9', icon: Star, color: 'text-yellow-400' },
-                      { label: 'Course Completion', value: '92%', icon: Trophy, color: 'text-green-400' },
-                      { label: 'Job Placement', value: '87%', icon: Target, color: 'text-blue-400' }
+                      { label: 'Student Rating', value: '4.9', icon: Star, color: 'text-yellow-500' },
+                      { label: 'Course Completion', value: '92%', icon: Trophy, color: 'text-green-500' },
+                      { label: 'Job Placement', value: '87%', icon: Target, color: 'text-blue-500' }
                     ].map((stat, i) => (
                       <div
                         key={i}
@@ -403,13 +396,13 @@ const FeaturedVenture = () => {
                             {stat.value}
                           </div>
                         </div>
-                        <div className="text-gray-400 text-sm">{stat.label}</div>
+                        <div className="text-gray-600 text-sm">{stat.label}</div>
                       </div>
                     ))}
                   </div>
 
                   {/* Bottom Action Bar */}
-                  <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                     <div className="flex items-center gap-3">
                       <div className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
                         10k+ Reviews
@@ -421,10 +414,10 @@ const FeaturedVenture = () => {
                       </div>
                     </div>
                     <div className="group/btn hover:scale-105 transition-transform duration-200">
-                      <div className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-white/20 hover:border-white/30 px-4 py-2 rounded-xl transition-all duration-300 cursor-pointer">
-                        <Eye className="w-4 h-4 text-white" />
-                        <span className="text-white font-medium">View Details</span>
-                        <ArrowRight className="w-4 h-4 text-white group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      <div className="flex items-center gap-2 bg-white/80 hover:bg-white backdrop-blur-xl border border-gray-200 hover:border-gray-300 px-4 py-2 rounded-xl transition-all duration-300 cursor-pointer shadow-sm">
+                        <Eye className="w-4 h-4 text-gray-700" />
+                        <span className="text-gray-800 font-medium">View Details</span>
+                        <ArrowRight className="w-4 h-4 text-gray-700 group-hover/btn:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
                   </div>
@@ -437,21 +430,21 @@ const FeaturedVenture = () => {
            <section className="mt-24 text-center col-span-full">
              <div className="relative max-w-4xl mx-auto">
                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl blur-2xl"></div>
-               <div className="relative bg-white/5 backdrop-blur-2xl border border-white/15 rounded-3xl p-8 lg:p-12">
+               <div className="relative bg-white/90 backdrop-blur-2xl border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-xl">
                 
                 <div className="mb-8">
                   <div className="flex items-center justify-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
                       <Rocket className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-white">
+                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900">
                       Ready to Launch Your Vision?
                     </h3>
                   </div>
-                  <p className="text-xl text-gray-300 leading-relaxed">
+                  <p className="text-xl text-gray-700 leading-relaxed">
                     Join CodeEternity's success story. Partner with us to{' '}
-                    <span className="text-cyan-400 font-semibold">transform your ideas</span> into{' '}
-                    <span className="text-purple-400 font-semibold">market-leading platforms</span>.
+                    <span className="text-cyan-600 font-semibold">transform your ideas</span> into{' '}
+                    <span className="text-purple-600 font-semibold">market-leading platforms</span>.
                   </p>
                 </div>
 
@@ -467,7 +460,7 @@ const FeaturedVenture = () => {
                       <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 mb-1">
                         {stat.value}
                       </div>
-                      <div className="text-gray-400 text-sm">{stat.label}</div>
+                      <div className="text-gray-600 text-sm">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -487,7 +480,7 @@ const FeaturedVenture = () => {
                   <div className="hover:scale-105 transition-transform duration-200">
                     <a
                       href="/portfolio"
-                      className="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
+                      className="flex items-center justify-center gap-3 bg-white/80 backdrop-blur-xl border border-gray-200 text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white transition-all duration-300 shadow-lg"
                     >
                       <Globe className="w-5 h-5" />
                       <span>View Portfolio</span>
@@ -499,10 +492,10 @@ const FeaturedVenture = () => {
             </div>
           </section>
 
-          {/* Static Floating Geometric Elements */}
+          {/* Simplified Floating Geometric Elements */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="hidden lg:block absolute top-1/4 right-16 w-16 h-16 border-2 border-cyan-400/20 rounded-lg backdrop-blur-sm opacity-30" />
-            <div className="hidden lg:block absolute bottom-1/4 left-16 w-12 h-12 bg-purple-500/15 rounded-full backdrop-blur-sm border border-purple-400/20 opacity-20" />
+            <div className="hidden lg:block absolute top-1/4 right-16 w-16 h-16 border-2 border-cyan-400/20 rounded-lg backdrop-blur-sm opacity-20" />
+            <div className="hidden lg:block absolute bottom-1/4 left-16 w-12 h-12 bg-purple-500/10 rounded-full backdrop-blur-sm border border-purple-400/20 opacity-15" />
           </div>
 
         </div>
