@@ -49,19 +49,7 @@ const Contact = () => {
 
         <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 mt-2 sm:mt-4 max-w-7xl pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-24">
           <div className="text-center">
-            {/* Enhanced Badge */}
-            <div className="inline-block mb-6 sm:mb-8">
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
-                <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-orange-200 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center">
-                    <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                  </div>
-                  <span className="text-slate-700 font-bold text-sm sm:text-base">Contact Us</span>
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                </div>
-              </div>
-            </div>
+          
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-none">
               <div className="text-slate-800 mb-2 sm:mb-4">

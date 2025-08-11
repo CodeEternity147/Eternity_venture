@@ -149,18 +149,7 @@ const About = () => {
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 max-w-7xl pt-4 pb-24">
           <div className="text-center">
             {/* Enhanced Badge */}
-            <div className="inline-block mb-8">
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
-                <div className="relative flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-orange-200 px-6 py-3 rounded-full shadow-xl">
-                  <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center">
-                    <Sparkles className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-slate-700 font-bold">About Eternity Ventures</span>
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                </div>
-              </div>
-            </div>
+           
             
             <h1 className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-black leading-none">
               <div className="text-slate-800 mb-4">
