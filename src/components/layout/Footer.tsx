@@ -46,7 +46,6 @@ const Footer = () => {
     { name: 'About Us', href: '/about', icon: Target },
     { name: 'Our Services', href: '/services', icon: Zap },
     { name: 'Our Ventures', href: '/ventures', icon: Rocket },
-    { name: 'Blog', href: '/blog', icon: Globe },
     { name: 'Contact Us', href: '/contact', icon: Send },
   ];
 
@@ -167,13 +166,13 @@ const Footer = () => {
                   <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-violet-100 to-purple-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
                     <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-violet-500" />
                   </div>
-                  <span className="text-xs sm:text-sm">+91 98765 43210</span>
+                  <span className="text-xs sm:text-sm">+91 8874 700 800</span>
                 </div>
                 <div className="flex items-center gap-2 sm:gap-3 text-slate-700 group/item">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-lg flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
                     <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-500" />
                   </div>
-                  <span className="text-xs sm:text-sm">Mumbai, Maharashtra, India</span>
+                  <span className="text-xs sm:text-sm">Noida, UP, India</span>
                 </div>
               </div>
             </div>

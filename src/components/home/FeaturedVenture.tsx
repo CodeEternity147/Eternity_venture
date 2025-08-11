@@ -22,7 +22,7 @@ import codeeternity from '../../assets/codeeternity.png';
 const ventureMetrics = [
   {
     icon: Users,
-    value: '50,000+',
+    value: '5,000+',
     label: 'Active Students',
     description: 'Growing community of learners',
     gradient: 'from-cyan-400 via-blue-500 to-purple-600',

@@ -18,8 +18,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Call Us',
-    value: '+91 9876 543 210',
-    href: 'tel:+919876543210',
+    value: '+91 8874 700 800',
+    href: 'tel:+918874700800',
     color: 'from-blue-500 to-cyan-500',
     bgColor: 'from-blue-100/60 to-cyan-100/60',
     description: 'Available Mon-Fri, 9AM-6PM IST'
@@ -36,7 +36,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    value: 'Sector 62, Noida, UP, India',
+    value: 'Sector 63, Noida, UP, India',
     href: '#',
     color: 'from-emerald-500 to-teal-500',
     bgColor: 'from-emerald-100/60 to-teal-100/60',

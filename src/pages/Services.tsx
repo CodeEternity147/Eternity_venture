@@ -140,71 +140,153 @@ const Services = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative min-h-screen mt-6 overflow-hidden">
-        {/* Enhanced Light Theme Background with Warm Colors */}
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-violet-50">
-          <div className="absolute inset-0">
-            {/* Colorful Background Blobs */}
-            <div
-              className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-20 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 100%)'
-              }}
-            />
-            
-            <div
-              className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-25 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 100%)'
-              }}
-            />
-
-            <div
-              className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-18 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 100%)'
-              }}
-            />
+     {/* Hero Section */}
+<section className="relative min-h-screen mt-6 overflow-hidden">
+  {/* Enhanced Light Theme Background with Warm Colors */}
+  <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-violet-50">
+    <div className="absolute inset-0">
+      {/* Colorful Background Blobs */}
+      <div
+        className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-20 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 100%)'
+        }}
+      />
+                     
+      <div
+        className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-25 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 100%)'
+        }}
+      />
+       
+      <div
+        className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-18 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 100%)'
+        }}
+      />
+    </div>
+     
+    {/* Enhanced Grid Pattern */}
+    <div 
+      className="absolute inset-0 opacity-8"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(251, 146, 60, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.15) 1px, transparent 1px)',
+        backgroundSize: '60px 60px'
+      }}
+    />
+  </div>
+   
+  <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 max-w-7xl pt-4 pb-24">
+    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+      {/* Left Side - Heading */}
+      <div className="space-y-8">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
+          <div className="text-slate-800 mb-2">
+            STRATEGIC
           </div>
-
-          {/* Enhanced Grid Pattern */}
-          <div 
-            className="absolute inset-0 opacity-8"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(251, 146, 60, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.15) 1px, transparent 1px)',
-              backgroundSize: '60px 60px'
-            }}
-          />
+          <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
+            SERVICES
+          </div>
+        </h1>
+        
+        <div className="relative">
+          <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-2xl blur-lg"></div>
+          <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-xl">
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+              Comprehensive solutions designed to{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">accelerate growth</span> and{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 font-bold">maximize returns</span> through innovative strategies and cutting-edge technology.
+            </p>
+          </div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 max-w-7xl pt-4 pb-24">
-          <div className="text-center">
-            {/* Enhanced Badge */}
-            
-            
-            <h1 className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-black leading-none">
-              <div className="text-slate-800 mb-4">
-                STRATEGIC
+        {/* Call to Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <button className="group relative px-8 py-4 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 transform hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 group-hover:from-orange-600 group-hover:to-pink-600 transition-all duration-300"></div>
+            <div className="relative flex items-center justify-center gap-2">
+              View All Services
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </div>
+          </button>
+          
+          <button className="px-8 py-4 rounded-full font-semibold text-slate-700 bg-white/80 backdrop-blur-xl border border-orange-200/50 hover:bg-white/95 hover:border-orange-300/50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Get Consultation
+          </button>
+        </div>
+      </div>
+
+      {/* Right Side - Service Cards */}
+      <div className="relative space-y-6">
+        {/* Service Cards Grid */}
+        <div className="grid gap-4">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-pink-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-white/90 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">Strategic Consulting</h3>
+                  <p className="text-sm text-slate-600">
+                    Expert guidance to optimize business strategies and drive sustainable growth.
+                  </p>
+                </div>
               </div>
-              <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
-                SERVICES
+            </div>
+          </div>
+          
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/20 to-violet-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-white/90 backdrop-blur-xl border border-pink-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-violet-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">Technology Solutions</h3>
+                  <p className="text-sm text-slate-600">
+                    Cutting-edge digital solutions and innovation frameworks for modern businesses.
+                  </p>
+                </div>
               </div>
-            </h1>
-            
-            <div className="relative max-w-4xl mx-auto mt-8">
-              <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-2xl blur-lg"></div>
-              <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 lg:p-8 shadow-xl">
-                <p className="text-xl md:text-2xl text-slate-600 leading-relaxed">
-                  Comprehensive solutions designed to{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">accelerate growth</span> and{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 font-bold">maximize returns</span> through innovative strategies and cutting-edge technology.
-                </p>
+            </div>
+          </div>
+          
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-violet-500/20 to-blue-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-white/90 backdrop-blur-xl border border-violet-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-violet-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">Growth Analytics</h3>
+                  <p className="text-sm text-slate-600">
+                    Data-driven insights and performance metrics to accelerate business growth.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+
+       
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Services Grid */}
       <section className="relative py-24 overflow-hidden">

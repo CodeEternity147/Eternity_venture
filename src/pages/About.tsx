@@ -108,75 +108,164 @@ const About = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative min-h-screen mt-6 overflow-hidden">
-        {/* Enhanced Light Theme Background with Warm Colors */}
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-violet-50">
-          <div className="absolute inset-0">
-            {/* Colorful Background Blobs */}
-            <div
-              className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-20 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 100%)'
-              }}
-            />
-            
-            <div
-              className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-25 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 100%)'
-              }}
-            />
-
-            <div
-              className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-18 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 100%)'
-              }}
-            />
+     {/* Hero Section */}
+<section className="relative min-h-screen mt-6 overflow-hidden">
+  {/* Enhanced Light Theme Background with Warm Colors */}
+  <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-violet-50">
+    <div className="absolute inset-0">
+      {/* Colorful Background Blobs */}
+      <div
+        className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-20 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 100%)'
+        }}
+      />
+                     
+      <div
+        className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-25 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 100%)'
+        }}
+      />
+       
+      <div
+        className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-18 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 100%)'
+        }}
+      />
+    </div>
+     
+    {/* Enhanced Grid Pattern */}
+    <div 
+      className="absolute inset-0 opacity-8"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(251, 146, 60, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.15) 1px, transparent 1px)',
+        backgroundSize: '60px 60px'
+      }}
+    />
+  </div>
+   
+  <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 max-w-7xl pt-4 pb-24">
+    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+      {/* Left Side - Heading */}
+      <div className="space-y-8">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
+          <div className="text-slate-800 mb-2">
+            CELEBRATING
           </div>
-
-          {/* Enhanced Grid Pattern */}
-          <div 
-            className="absolute inset-0 opacity-8"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(251, 146, 60, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.15) 1px, transparent 1px)',
-              backgroundSize: '60px 60px'
-            }}
-          />
+          <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500 mb-2">
+            DIVERSITY
+          </div>
+          <div className="text-slate-800">
+            SHAPING THE FUTURE
+          </div>
+        </h1>
+        
+        <div className="relative">
+          <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-2xl blur-lg"></div>
+          <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-xl">
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+              We're a diverse team committed to empowering visionary founders and transforming innovative ideas into{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">
+                successful ventures
+              </span>.
+            </p>
+          </div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 max-w-7xl pt-4 pb-24">
-          <div className="text-center">
-            {/* Enhanced Badge */}
-           
-            
-            <h1 className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-black leading-none">
-              <div className="text-slate-800 mb-4">
-                CELEBRATING
+        {/* Call to Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <button className="group relative px-8 py-4 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 transform hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 group-hover:from-orange-600 group-hover:to-pink-600 transition-all duration-300"></div>
+            <div className="relative flex items-center justify-center gap-2">
+              Our Story
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </div>
+          </button>
+          
+          <button className="px-8 py-4 rounded-full font-semibold text-slate-700 bg-white/80 backdrop-blur-xl border border-orange-200/50 hover:bg-white/95 hover:border-orange-300/50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Meet Our Team
+          </button>
+        </div>
+      </div>
+
+      {/* Right Side - Visual Content */}
+      <div className="relative">
+        {/* Stats Cards */}
+        <div className="grid grid-cols-2 gap-4 mb-8">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-pink-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-white/90 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500 mb-2">
+                50+
               </div>
-              <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
-                DIVERSITY
+              <div className="text-sm text-slate-600 font-medium">
+                Diverse Team Members
               </div>
-              <div className="text-slate-800 mt-4">
-                SHAPING THE FUTURE
+            </div>
+          </div>
+          
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/20 to-violet-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-white/90 backdrop-blur-xl border border-pink-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-2">
+                100+
               </div>
-            </h1>
-            
-            <div className="relative max-w-4xl mx-auto mt-8">
-              <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-2xl blur-lg"></div>
-              <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 lg:p-8 shadow-xl">
-                <p className="text-xl md:text-2xl text-slate-600 leading-relaxed">
-                  We're a diverse team committed to empowering visionary founders and transforming innovative ideas into{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">
-                    successful ventures
-                  </span>.
-                </p>
+              <div className="text-sm text-slate-600 font-medium">
+                Successful Ventures
+              </div>
+            </div>
+          </div>
+          
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-violet-500/20 to-blue-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-white/90 backdrop-blur-xl border border-violet-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-blue-500 mb-2">
+                25
+              </div>
+              <div className="text-sm text-slate-600 font-medium">
+                Countries Represented
+              </div>
+            </div>
+          </div>
+          
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-green-500/20 to-orange-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-white/90 backdrop-blur-xl border border-green-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-orange-500 mb-2">
+                5+
+              </div>
+              <div className="text-sm text-slate-600 font-medium">
+                Years of Excellence
               </div>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* Decorative Elements */}
+        <div className="relative">
+          <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/5 to-violet-500/5 rounded-3xl blur-2xl"></div>
+          <div className="relative bg-white/70 backdrop-blur-xl border border-orange-200/30 rounded-3xl p-8 shadow-2xl">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Innovation at Heart</h3>
+              <p className="text-slate-600">
+                Transforming bold ideas into reality through collaborative excellence and diverse perspectives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Vision & Mission */}
       <section className="relative py-24 overflow-hidden">
