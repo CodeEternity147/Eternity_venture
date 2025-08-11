@@ -28,7 +28,7 @@ const Footer = () => {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = '8874700800';
+    const phoneNumber = '+918874700800';
     const message = 'Hello! I would like to know more about Eternity Ventures.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
