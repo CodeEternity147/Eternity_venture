@@ -47,45 +47,6 @@ const servicesData = [
   },
   {
     id: 3,
-    title: 'Strategic Alliances',
-    subtitle: 'Power Through Partnership',
-    description: 'Build unstoppable network effects through strategic partnerships, collaborative ecosystems, and shared intelligence platforms.',
-    icon: Users,
-    gradient: 'from-indigo-400 via-blue-500 to-cyan-600',
-    glowColor: 'shadow-indigo-500/30',
-    bgPattern: 'bg-gradient-to-br from-indigo-500/5 to-blue-500/10',
-    features: ['Network Building', 'Ecosystem Design', 'Collaborative Growth'],
-    stats: { value: '500+', label: 'Partnerships' },
-    delay: 0.3,
-  },
-  {
-    id: 4,
-    title: 'Global Domination',
-    subtitle: 'Worldwide Market Conquest',
-    description: 'Advanced market penetration strategies with local intelligence, cultural adaptation, and global scaling frameworks.',
-    icon: Globe,
-    gradient: 'from-amber-400 via-orange-500 to-red-600',
-    glowColor: 'shadow-amber-500/30',
-    bgPattern: 'bg-gradient-to-br from-amber-500/5 to-orange-500/10',
-    features: ['Market Analysis', 'Cultural Intelligence', 'Global Scaling'],
-    stats: { value: '25+', label: 'Countries' },
-    delay: 0.4,
-  },
-  {
-    id: 5,
-    title: 'Capital Acceleration',
-    subtitle: 'Smart Money • Smart Growth',
-    description: 'Intelligent capital deployment with AI-driven investment strategies, risk optimization, and exponential growth models.',
-    icon: Coins,
-    gradient: 'from-lime-400 via-green-500 to-emerald-600',
-    glowColor: 'shadow-lime-500/30',
-    bgPattern: 'bg-gradient-to-br from-lime-500/5 to-green-500/10',
-    features: ['Smart Investment', 'Risk Management', 'Growth Capital'],
-    stats: { value: '45%', label: 'Avg Returns' },
-    delay: 0.5,
-  },
-  {
-    id: 6,
     title: 'Innovation Engine',
     subtitle: 'Future-Ready Technology',
     description: 'Bleeding-edge technology integration, AI/ML solutions, and innovation frameworks to dominate tomorrow\'s markets.',
@@ -120,7 +81,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-12 overflow-hidden">
       {/* Fresh Light Theme Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
         <div className="absolute inset-0">
@@ -262,55 +223,7 @@ const Services = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center">
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute -inset-6 bg-gradient-to-r from-cyan-400/20 via-teal-500/20 to-emerald-500/20 rounded-3xl blur-2xl opacity-40"></div>
-            <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-8 lg:p-12 shadow-2xl">
-              
-              <div className="mb-8">
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 via-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center">
-                    <Target className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold text-slate-800">
-                    Ready to Transform Your Business?
-                  </h3>
-                </div>
-                <p className="text-xl text-slate-600 leading-relaxed">
-                  Let's discuss how our strategic services can{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-600 font-bold">accelerate your growth</span> and{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 font-bold">maximize your success</span>.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <div className="group relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-2xl opacity-40 blur-sm group-hover:opacity-60 transition-opacity duration-300"></div>
-                  <a
-                    href="/contact"
-                    className="relative flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
-                  >
-                    <Zap className="w-5 h-5" />
-                    <span>Get Started</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </a>
-                </div>
-
-                <div className="group">
-                  <a
-                    href="/services"
-                    className="flex items-center justify-center gap-3 bg-white/90 backdrop-blur-xl border border-emerald-200 text-slate-700 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:scale-105 hover:border-emerald-300 transition-all duration-300 shadow-lg"
-                  >
-                    <Globe className="w-5 h-5 text-emerald-500" />
-                    <span>Learn More</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 text-emerald-500" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

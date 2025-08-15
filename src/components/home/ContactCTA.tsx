@@ -77,7 +77,7 @@ const ContactCTA = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative py-12 overflow-hidden">
       {/* Enhanced Light Theme Background with Warm Colors */}
       <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-violet-50">
         <div className="absolute inset-0">

@@ -3,7 +3,6 @@ import Hero from '../components/home/Hero';
 import Services from '../components/home/Services';
 import Vision from '../components/home/Vision';
 import FeaturedVenture from '../components/home/FeaturedVenture';
-import ContactCTA from '../components/home/ContactCTA';
 
 const Home = () => {
   useEffect(() => {
@@ -16,7 +15,7 @@ const Home = () => {
       <Services />
       <Vision />
       <FeaturedVenture />
-      <ContactCTA />
+    
     </div>
   );
 };

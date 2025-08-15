@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Building2, 
   TrendingUp, 
@@ -9,6 +9,7 @@ import {
   CheckCircle, 
   Sparkles,
   ArrowRight,
+  ArrowLeft,
   Zap,
   Target,
   Rocket,
@@ -21,6 +22,9 @@ import {
 } from 'lucide-react';
 
 const Services = () => {
+  const [currentService, setCurrentService] = useState(0);
+  const [direction, setDirection] = useState(0);
+
   useEffect(() => {
     document.title = 'Our Services | Eternity Ventures';
   }, []);
@@ -138,176 +142,160 @@ const Services = () => {
     },
   ];
 
+  const nextService = () => {
+    setDirection(1);
+    setCurrentService((prev) => (prev + 1) % services.length);
+  };
+
+  const prevService = () => {
+    setDirection(-1);
+    setCurrentService((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  const goToService = (index: number) => {
+    setDirection(index > currentService ? 1 : -1);
+    setCurrentService(index);
+  };
+
   return (
     <div>
-     {/* Hero Section */}
-<section className="relative min-h-screen mt-6 overflow-hidden">
-  {/* Enhanced Light Theme Background with Warm Colors */}
-  <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-violet-50">
-    <div className="absolute inset-0">
-      {/* Colorful Background Blobs */}
-      <div
-        className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-20 blur-3xl"
-        style={{
-          background: 'radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 100%)'
-        }}
-      />
-                     
-      <div
-        className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-25 blur-3xl"
-        style={{
-          background: 'radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 100%)'
-        }}
-      />
-       
-      <div
-        className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-18 blur-3xl"
-        style={{
-          background: 'radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 100%)'
-        }}
-      />
-    </div>
-     
-    {/* Enhanced Grid Pattern */}
-    <div 
-      className="absolute inset-0 opacity-8"
-      style={{
-        backgroundImage: 'linear-gradient(rgba(251, 146, 60, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.15) 1px, transparent 1px)',
-        backgroundSize: '60px 60px'
-      }}
-    />
-  </div>
-   
-  <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 max-w-7xl pt-4 pb-24">
-    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
-      {/* Left Side - Heading */}
-      <div className="space-y-8">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
-          <div className="text-slate-800 mb-2">
-            STRATEGIC
+      {/* Hero Section */}
+      <section className="relative min-h-screen mt-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-violet-50">
+          <div className="absolute inset-0">
+            <div
+              className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-20 blur-3xl"
+              style={{
+                background: 'radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 100%)'
+              }}
+            />
+            <div
+              className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-25 blur-3xl"
+              style={{
+                background: 'radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 100%)'
+              }}
+            />
+            <div
+              className="absolute top-1/3 right-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-18 blur-3xl"
+              style={{
+                background: 'radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 100%)'
+              }}
+            />
           </div>
-          <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
-            SERVICES
-          </div>
-        </h1>
+          <div 
+            className="absolute inset-0 opacity-8"
+            style={{
+              backgroundImage: 'linear-gradient(rgba(251, 146, 60, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.15) 1px, transparent 1px)',
+              backgroundSize: '60px 60px'
+            }}
+          />
+        </div>
         
-        <div className="relative">
-          <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-2xl blur-lg"></div>
-          <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-xl">
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
-              Comprehensive solutions designed to{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">accelerate growth</span> and{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 font-bold">maximize returns</span> through innovative strategies and cutting-edge technology.
-            </p>
-          </div>
-        </div>
-
-        {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <button className="group relative px-8 py-4 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 transform hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 group-hover:from-orange-600 group-hover:to-pink-600 transition-all duration-300"></div>
-            <div className="relative flex items-center justify-center gap-2">
-              View All Services
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </div>
-          </button>
-          
-          <button className="px-8 py-4 rounded-full font-semibold text-slate-700 bg-white/80 backdrop-blur-xl border border-orange-200/50 hover:bg-white/95 hover:border-orange-300/50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Get Consultation
-          </button>
-        </div>
-      </div>
-
-      {/* Right Side - Service Cards */}
-      <div className="relative space-y-6">
-        {/* Service Cards Grid */}
-        <div className="grid gap-4">
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-pink-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 max-w-7xl pt-4 pb-24">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+            {/* Left Side - Heading */}
+            <div className="space-y-8">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
+                <div className="text-slate-800 mb-2">
+                  STRATEGIC
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-800 mb-2">Strategic Consulting</h3>
-                  <p className="text-sm text-slate-600">
-                    Expert guidance to optimize business strategies and drive sustainable growth.
+                <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
+                  SERVICES
+                </div>
+              </h1>
+              
+              <div className="relative">
+                <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-2xl blur-lg"></div>
+                <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-xl">
+                  <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+                    Comprehensive solutions designed to{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">accelerate growth</span> and{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 font-bold">maximize returns</span> through innovative strategies and cutting-edge technology.
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/20 to-violet-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl border border-pink-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-violet-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-800 mb-2">Technology Solutions</h3>
-                  <p className="text-sm text-slate-600">
-                    Cutting-edge digital solutions and innovation frameworks for modern businesses.
-                  </p>
-                </div>
+
+              {/* Call to Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <button className="group relative px-8 py-4 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 transform hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 group-hover:from-orange-600 group-hover:to-pink-600 transition-all duration-300"></div>
+                  <div className="relative flex items-center justify-center gap-2">
+                    View All Services
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <button className="px-8 py-4 rounded-full font-semibold text-slate-700 bg-white/80 backdrop-blur-xl border border-orange-200/50 hover:bg-white/95 hover:border-orange-300/50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Get Consultation
+                </button>
               </div>
             </div>
-          </div>
-          
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-violet-500/20 to-blue-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl border border-violet-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-violet-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-800 mb-2">Growth Analytics</h3>
-                  <p className="text-sm text-slate-600">
-                    Data-driven insights and performance metrics to accelerate business growth.
-                  </p>
+
+            {/* Right Side - Hero Image */}
+            <div className="relative">
+              {/* Floating Elements */}
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-400/15 to-pink-500/15 rounded-3xl backdrop-blur-xl border border-orange-200/50 z-10 opacity-80"></div>
+              
+              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-emerald-400/15 to-cyan-500/15 rounded-3xl backdrop-blur-xl border border-emerald-200/50 z-10 opacity-60"></div>
+              
+              <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-violet-400/15 to-purple-500/15 rounded-2xl backdrop-blur-xl border border-violet-200/50 z-10 opacity-70"></div>
+
+              {/* Main Image Container */}
+              <div className="relative z-20">
+                {/* Enhanced Glow Effect */}
+                <div className="absolute -inset-6 bg-gradient-to-r from-orange-400/20 via-pink-500/20 to-violet-500/20 rounded-3xl blur-2xl opacity-40"></div>
+                
+                {/* Image Container */}
+                <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="https://plus.unsplash.com/premium_photo-1683133927528-8075b14131a0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3RyYXRlZ3l8ZW58MHx8MHx8fDA%3D"
+                    alt="Strategic Business Services"
+                    className="w-full h-[500px] object-cover"
+                  />
+                  
+                  {/* Overlay with Company Info */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl flex items-center justify-center">
+                          <TrendingUp className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-white font-semibold">Strategic Excellence</div>
+                          <div className="text-orange-200 text-sm">Business Services</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                        <span className="text-emerald-300 font-medium text-sm">Active</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-       
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* Services Grid */}
+      {/* Services Carousel */}
       <section className="relative py-24 overflow-hidden">
-        {/* Fresh Light Theme Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
           <div className="absolute inset-0">
-            {/* Colorful Background Blobs */}
             <div
               className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-15 blur-3xl"
               style={{
                 background: 'radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(168, 85, 247, 0.1) 50%, transparent 100%)'
               }}
             />
-            
             <div
               className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-18 blur-3xl"
               style={{
                 background: 'radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(16, 185, 129, 0.08) 50%, transparent 100%)'
               }}
             />
-
             <div
               className="absolute top-1/3 left-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-12 blur-3xl"
               style={{
@@ -315,8 +303,6 @@ const Services = () => {
               }}
             />
           </div>
-
-          {/* Enhanced Grid Pattern */}
           <div 
             className="absolute inset-0 opacity-6"
             style={{
@@ -327,111 +313,154 @@ const Services = () => {
         </div>
         
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24">
-            {services.map((service, index) => (
-              <div 
-                key={service.id} 
-                id={service.id}
-                className="scroll-mt-20"
-              >
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}>
-                  <motion.div
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6 }}
-                    className="group relative"
-                  >
-                    {/* Content Glow Effect */}
-                    <div className={`absolute -inset-2 bg-gradient-to-r ${service.gradient} rounded-2xl blur-lg opacity-0 group-hover:opacity-25 transition-all duration-500`}></div>
-                    
-                    {/* Content Glass Panel */}
-                    <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-2xl p-8 hover:border-cyan-300/50 transition-all duration-500 shadow-xl hover:shadow-2xl">
-                      <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 bg-gradient-to-r from-cyan-400 to-teal-500 text-white">
-                        {index === 0 ? 'Featured Service' : 'Key Offering'}
-                      </span>
-                      <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-slate-800">{service.title}</h2>
-                      <p className="text-slate-600 text-lg md:text-xl leading-relaxed mb-8">
-                        {service.description}
+          {/* Carousel Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-black mb-6">
+              <span className="text-slate-800">Our </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500">
+                Services
+              </span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Explore our comprehensive range of strategic services designed to accelerate your business growth
+            </p>
+          </div>
+
+          {/* Carousel Container */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevService}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-xl border border-cyan-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:scale-110"
+            >
+              <ArrowLeft className="w-6 h-6 text-slate-700 group-hover:text-cyan-600 transition-colors" />
+            </button>
+            
+            <button
+              onClick={nextService}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-xl border border-cyan-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:scale-110"
+            >
+              <ArrowRight className="w-6 h-6 text-slate-700 group-hover:text-cyan-600 transition-colors" />
+            </button>
+
+            {/* Carousel Content */}
+            <div className="relative overflow-hidden rounded-3xl">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={currentService}
+                  custom={direction}
+                  initial={{ 
+                    opacity: 0,
+                    x: direction > 0 ? 300 : -300,
+                    scale: 0.8
+                  }}
+                  animate={{ 
+                    opacity: 1,
+                    x: 0,
+                    scale: 1
+                  }}
+                  exit={{ 
+                    opacity: 0,
+                    x: direction > 0 ? -300 : 300,
+                    scale: 0.8
+                  }}
+                  transition={{ 
+                    duration: 0.5,
+                    ease: "easeInOut"
+                  }}
+                  className="bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-8 lg:p-12"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Content */}
+                    <div className="space-y-8">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className={`w-16 h-16 bg-gradient-to-r ${services[currentService].gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
+                          {React.createElement(services[currentService].icon, { className: "w-8 h-8 text-white" })}
+                        </div>
+                        <div>
+                          <div className="text-sm font-medium text-slate-600">{services[currentService].subtitle}</div>
+                          <div className="text-2xl lg:text-3xl font-bold text-slate-800">{services[currentService].title}</div>
+                        </div>
+                      </div>
+                      
+                      <p className="text-lg text-slate-600 leading-relaxed">
+                        {services[currentService].description}
                       </p>
                       
-                      <div className="mb-8">
-                        <h3 className="text-xl md:text-2xl font-bold mb-4 text-slate-800">Key Features</h3>
-                        <ul className="space-y-3">
-                          {service.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <CheckCircle className="h-5 w-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0" />
-                              <span className="text-slate-600 font-medium">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      <div className="grid grid-cols-2 gap-6">
+                        <div className="space-y-3">
+                          <h4 className="font-semibold text-slate-800">Key Features</h4>
+                          <ul className="space-y-2">
+                            {services[currentService].features.slice(0, 4).map((feature, idx) => (
+                              <li key={idx} className="flex items-start">
+                                <CheckCircle className="h-4 w-4 text-cyan-500 mr-2 mt-0.5 flex-shrink-0" />
+                                <span className="text-sm text-slate-600">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div className="space-y-3">
+                          <h4 className="font-semibold text-slate-800">Performance</h4>
+                          <div className={`text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${services[currentService].gradient}`}>
+                            {services[currentService].stats.value}
+                          </div>
+                          <div className="text-sm text-slate-600">{services[currentService].stats.label}</div>
+                        </div>
                       </div>
                       
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${service.gradient}`}>
-                            {service.stats.value}
-                          </div>
-                          <div className="text-slate-600 text-sm">{service.stats.label}</div>
-                        </div>
-                        <a 
-                          href="/contact" 
-                          className="inline-flex items-center bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white py-3 px-6 rounded-lg transition-all duration-300 font-medium group-hover:scale-105"
-                        >
-                          <span>Inquire About This Service</span>
-                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        </a>
-                      </div>
+                     
                     </div>
-                  </motion.div>
-                  
-                  <motion.div
-                    initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6 }}
-                    className={index % 2 === 1 ? 'lg:order-first' : ''}
-                  >
-                    <div className="relative group">
-                      <div className={`absolute -inset-2 bg-gradient-to-r ${service.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-25 transition-all duration-500`}></div>
-                      <div className="relative">
-                        <div className="absolute -top-4 -left-4 w-24 h-24 bg-cyan-500/10 rounded-lg opacity-70"></div>
-                        <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-teal-500/10 rounded-lg opacity-70"></div>
-                        <img 
-                          src={service.image} 
-                          alt={service.title} 
-                          className="rounded-xl shadow-2xl relative z-10 w-full h-auto object-cover border border-cyan-200/50"
-                          style={{ height: '400px' }}
-                        />
-                      </div>
+                    
+                    {/* Image */}
+                    <div className="relative">
+                      <div className={`absolute -inset-4 bg-gradient-to-r ${services[currentService].gradient} rounded-2xl blur-xl opacity-20`}></div>
+                      <img 
+                        src={services[currentService].image} 
+                        alt={services[currentService].title} 
+                        className="relative rounded-2xl shadow-2xl w-full h-80 lg:h-96 object-cover"
+                      />
                     </div>
-                  </motion.div>
-                </div>
-                
-                {index < services.length - 1 && (
-                  <div className="mt-20 border-b border-cyan-200/50"></div>
-                )}
-              </div>
-            ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center mt-8 space-x-3">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToService(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentService 
+                      ? 'bg-gradient-to-r from-cyan-500 to-teal-500 scale-125' 
+                      : 'bg-slate-300 hover:bg-slate-400'
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Service Counter */}
+            <div className="text-center mt-6">
+              <span className="text-sm text-slate-600">
+                {currentService + 1} of {services.length} services
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 overflow-hidden">
-        {/* Fresh Light Theme Background */}
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
           <div className="absolute inset-0">
-            {/* Colorful Background Blobs */}
             <div
               className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-15 blur-3xl"
               style={{
                 background: 'radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(168, 85, 247, 0.1) 50%, transparent 100%)'
               }}
             />
-            
             <div
               className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-18 blur-3xl"
               style={{
@@ -439,8 +468,6 @@ const Services = () => {
               }}
             />
           </div>
-
-          {/* Enhanced Grid Pattern */}
           <div 
             className="absolute inset-0 opacity-6"
             style={{
@@ -458,10 +485,8 @@ const Services = () => {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            {/* CTA Glow Effect */}
             <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 to-teal-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
             
-            {/* CTA Glass Panel */}
             <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-12 text-center hover:border-cyan-300/50 transition-all duration-500 shadow-2xl">
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-800 mb-6">
                 Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500">Transform</span> Your Business?
@@ -498,62 +523,6 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Enhanced Responsive Styles */}
-      <style>{`
-        @media (max-width: 1024px) {
-          .services-title {
-            font-size: 4rem !important;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .services-title {
-            font-size: 3rem !important;
-          }
-          
-          .services-grid {
-            grid-template-columns: 1fr !important;
-            gap: 1.5rem;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .services-title {
-            font-size: 2.5rem !important;
-          }
-          
-          .services-card {
-            padding: 1rem !important;
-          }
-        }
-
-        /* Focus states for accessibility */
-        .services-card:focus-within {
-          outline: 2px solid rgba(6, 182, 212, 0.5);
-          outline-offset: 4px;
-        }
-
-        /* Enhanced hover animations */
-        .group:hover .group-hover\\:scale-105 {
-          transform: scale(1.05);
-        }
-
-        .group:hover .group-hover\\:translate-x-1 {
-          transform: translateX(0.25rem);
-        }
-
-        .group:hover .group-hover\\:rotate-3 {
-          transform: rotate(3deg);
-        }
-
-        /* Smooth transitions */
-        * {
-          transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-duration: 300ms;
-        }
-      `}</style>
     </div>
   );
 };

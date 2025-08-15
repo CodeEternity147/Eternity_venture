@@ -92,72 +92,48 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Right Side - Why Connect */}
-      <div className="relative space-y-6">
-        {/* Why Connect Cards */}
-        <div className="grid gap-4">
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-pink-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+      {/* Right Side - Hero Image */}
+      <div className="relative">
+        {/* Floating Elements */}
+        <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-400/15 to-pink-500/15 rounded-3xl backdrop-blur-xl border border-orange-200/50 z-10 opacity-80"></div>
+        
+        <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-emerald-400/15 to-cyan-500/15 rounded-3xl backdrop-blur-xl border border-emerald-200/50 z-10 opacity-60"></div>
+        
+        <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-violet-400/15 to-purple-500/15 rounded-2xl backdrop-blur-xl border border-violet-200/50 z-10 opacity-70"></div>
+
+        {/* Main Image Container */}
+        <div className="relative z-20">
+          {/* Enhanced Glow Effect */}
+          <div className="absolute -inset-6 bg-gradient-to-r from-orange-400/20 via-pink-500/20 to-violet-500/20 rounded-3xl blur-2xl opacity-40"></div>
+          
+          {/* Image Container */}
+          <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1560264418-c4445382edbc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGNvbnRhY3QlMjB1c3xlbnwwfHwwfHx8MA%3D%3D"
+              alt="Contact Our Team"
+              className="w-full h-[500px] object-cover"
+            />
             
-          </div>
-          
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/20 to-violet-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl border border-pink-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-violet-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
+            {/* Overlay with Company Info */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl flex items-center justify-center">
+                    <MessageSquare className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold">Get In Touch</div>
+                    <div className="text-orange-200 text-sm">Contact Us</div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-800 mb-2">Collaborative Approach</h3>
-                  <p className="text-sm text-slate-600">
-                    Work directly with our diverse team for innovative solutions and fresh perspectives.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-violet-500/20 to-blue-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl border border-violet-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-violet-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-800 mb-2">Rapid Implementation</h3>
-                  <p className="text-sm text-slate-600">
-                    Fast-track your projects with our efficient processes and proven methodologies.
-                  </p>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                  <span className="text-emerald-300 font-medium text-sm">Active</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Response Time Card */}
-        <div className="relative">
-          <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/5 to-blue-500/5 rounded-3xl blur-2xl"></div>
-          <div className="relative bg-white/70 backdrop-blur-xl border border-emerald-200/30 rounded-3xl p-8 shadow-2xl">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full flex items-center justify-center">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Quick Response</h3>
-              <p className="text-slate-600">
-                We typically respond within 24 hours and are committed to addressing your inquiries promptly.
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -582,7 +558,7 @@ const Contact = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative overflow-hidden">
         {/* Fresh Light Theme Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
           <div className="absolute inset-0">
@@ -612,87 +588,7 @@ const Contact = () => {
           />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="group relative"
-            >
-              <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-teal-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
-              <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-2xl p-6 flex flex-col items-center text-center hover:border-cyan-300/50 transition-all duration-500 shadow-xl">
-                <div className="bg-gradient-to-r from-cyan-500 to-teal-500 p-3 rounded-full mb-4">
-                  <MessageSquare className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">Investment Inquiry</h3>
-                <p className="text-slate-600 mb-4">
-                  Looking for funding for your startup? Get in touch to discuss potential opportunities.
-                </p>
-                <a
-                  href="/contact?subject=investment"
-                  className="mt-auto inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium transition-colors"
-                >
-                  Start a Conversation
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </a>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="group relative"
-            >
-              <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/20 to-cyan-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
-              <div className="relative bg-white/95 backdrop-blur-2xl border border-emerald-200/50 rounded-2xl p-6 flex flex-col items-center text-center hover:border-emerald-300/50 transition-all duration-500 shadow-xl">
-                <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 p-3 rounded-full mb-4">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">Business Partnership</h3>
-                <p className="text-slate-600 mb-4">
-                  Explore strategic collaboration opportunities to accelerate your business growth.
-                </p>
-                <a
-                  href="/contact?subject=partnership"
-                  className="mt-auto inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
-                >
-                  Discuss Partnership
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </a>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="group relative"
-            >
-              <div className="absolute -inset-2 bg-gradient-to-r from-orange-400/20 to-pink-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
-              <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-2xl p-6 flex flex-col items-center text-center hover:border-orange-300/50 transition-all duration-500 shadow-xl">
-                <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-3 rounded-full mb-4">
-                  <MessageSquare className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">General Inquiry</h3>
-                <p className="text-slate-600 mb-4">
-                  Have questions about our services or want to learn more about what we do?
-                </p>
-                <a
-                  href="/contact?subject=general"
-                  className="mt-auto inline-flex items-center text-orange-600 hover:text-orange-700 font-medium transition-colors"
-                >
-                  Get in Touch
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+       
       </section>
 
       {/* Enhanced Responsive Styles */}

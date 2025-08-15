@@ -169,83 +169,43 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Side - Visual Elements */}
+          {/* Right Side - Hero Image */}
           <div className="lg:col-span-5 relative">
-            {/* Colorful Floating Elements */}
+            {/* Floating Elements */}
             <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-400/15 to-pink-500/15 rounded-3xl backdrop-blur-xl border border-orange-200/50 z-10 opacity-80"></div>
             
             <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-emerald-400/15 to-cyan-500/15 rounded-3xl backdrop-blur-xl border border-emerald-200/50 z-10 opacity-60"></div>
             
             <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-violet-400/15 to-purple-500/15 rounded-2xl backdrop-blur-xl border border-violet-200/50 z-10 opacity-70"></div>
 
-            {/* Main Visual Card */}
+            {/* Main Image Container */}
             <div className="relative z-20">
               {/* Enhanced Glow Effect */}
               <div className="absolute -inset-6 bg-gradient-to-r from-orange-400/20 via-pink-500/20 to-violet-500/20 rounded-3xl blur-2xl opacity-40"></div>
               
-              {/* Main Container */}
+              {/* Image Container */}
               <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://plus.unsplash.com/premium_photo-1736892868741-35bc1ae89091?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5ub3ZhdGl2ZSUyMHN0YXJ0dXBzfGVufDB8fDB8fHww"
+                  alt="Eternity Ventures Team"
+                  className="w-full h-[500px] object-cover"
+                />
                 
-                {/* Header */}
-                <div className="relative p-6 bg-gradient-to-r from-orange-100/80 to-pink-100/80 backdrop-blur-xl border-b border-orange-200/50">
+                {/* Overlay with Company Info */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl flex items-center justify-center">
                         <Zap className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <div className="text-slate-800 font-semibold">Eternity Ventures</div>
-                        <div className="text-slate-600 text-sm">Innovation Hub</div>
+                        <div className="text-white font-semibold">Eternity Ventures</div>
+                        <div className="text-orange-200 text-sm">Innovation Hub</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
-                      <span className="text-emerald-600 font-medium text-sm">Active</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content Area */}
-                <div className="p-8">
-                  <div className="space-y-6">
-                    {/* Feature Cards */}
-                    {[
-                      { icon: TrendingUp, title: 'Growth Analytics', desc: 'Real-time performance tracking', color: 'from-orange-400 to-pink-500', bg: 'from-orange-100/50 to-pink-100/50' },
-                      { icon: Layers, title: 'Tech Stack', desc: 'Cutting-edge infrastructure', color: 'from-violet-400 to-purple-500', bg: 'from-violet-100/50 to-purple-100/50' },
-                      { icon: Star, title: 'Success Metrics', desc: 'Proven track record', color: 'from-emerald-400 to-cyan-500', bg: 'from-emerald-100/50 to-cyan-100/50' }
-                    ].map((feature, index) => (
-                      <div key={index} className="group">
-                        <div className="relative">
-                          <div className={`absolute -inset-1 bg-gradient-to-r ${feature.color} rounded-xl blur-sm opacity-0 group-hover:opacity-40 transition-opacity duration-300`}></div>
-                          <div className={`relative bg-gradient-to-r ${feature.bg} backdrop-blur-xl border border-orange-200/30 rounded-xl p-4 hover:border-orange-300/50 transition-all duration-300 shadow-sm hover:shadow-lg group-hover:scale-102`}>
-                            <div className="flex items-center gap-4">
-                              <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                                <feature.icon className="w-6 h-6 text-white" />
-                              </div>
-                              <div>
-                                <div className="text-slate-800 font-semibold">{feature.title}</div>
-                                <div className="text-slate-600 text-sm">{feature.desc}</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-
-                    {/* Bottom Stats */}
-                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-orange-200/50">
-                      {[
-                        { value: '₹50Cr+', label: 'Portfolio', gradient: 'from-orange-500 to-pink-500' },
-                        { value: '25+', label: 'Startups', gradient: 'from-violet-500 to-purple-500' },
-                        { value: '92%', label: 'Success', gradient: 'from-emerald-500 to-cyan-500' }
-                      ].map((stat, i) => (
-                        <div key={i} className="text-center">
-                          <div className={`text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r ${stat.gradient}`}>
-                            {stat.value}
-                          </div>
-                          <div className="text-slate-600 text-sm">{stat.label}</div>
-                        </div>
-                      ))}
+                      <span className="text-emerald-300 font-medium text-sm">Active</span>
                     </div>
                   </div>
                 </div>

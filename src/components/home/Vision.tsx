@@ -53,38 +53,6 @@ const visionMetrics = [
   },
 ];
 
-const visionPillars = [
-  {
-    icon: Lightbulb,
-    title: 'INNOVATE',
-    subtitle: 'Breakthrough Solutions',
-    description: 'Supporting groundbreaking ideas that solve real-world problems with cutting-edge technology, AI integration, and creative solutions that reshape industries.',
-    gradient: 'from-indigo-400 via-blue-500 to-cyan-600',
-    glowColor: 'shadow-indigo-500/30',
-    features: ['AI Integration', 'Deep Tech', 'Future-Ready'],
-    delay: 0.2
-  },
-  {
-    icon: Star,
-    title: 'NURTURE',
-    subtitle: 'Strategic Growth',
-    description: 'Providing expert guidance, comprehensive resources, and world-class mentorship for sustainable growth and long-term market success.',
-    gradient: 'from-violet-400 via-purple-500 to-fuchsia-600',
-    glowColor: 'shadow-violet-500/30',
-    features: ['Expert Mentorship', 'Resource Access', 'Growth Strategy'],
-    delay: 0.4
-  },
-  {
-    icon: Rocket,
-    title: 'SCALE',
-    subtitle: 'Global Expansion',
-    description: 'Accelerating worldwide expansion through strategic investments, partnerships, and cutting-edge infrastructure for global market domination.',
-    gradient: 'from-lime-400 via-green-500 to-emerald-600',
-    glowColor: 'shadow-lime-500/30',
-    features: ['Global Reach', 'Strategic Partnerships', 'Market Leadership'],
-    delay: 0.6
-  },
-];
 
 const Vision = () => {
   const navigate = useNavigate();
@@ -98,7 +66,7 @@ const Vision = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Fresh Light Theme Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-sky-50 to-blue-50">
         <div className="absolute inset-0">
@@ -149,10 +117,10 @@ const Vision = () => {
         ))}
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         {/* Header Section */}
-        <div className="text-center mb-24">
+        <div className="text-center mb-12">
           {/* Vision Badge */}
           <div className="inline-block mb-8">
             <div className="relative group">
@@ -183,7 +151,7 @@ const Vision = () => {
           </div>
 
           {/* Enhanced Description */}
-          <div className="relative max-w-5xl mx-auto mb-12">
+          <div className="relative max-w-5xl mx-auto mb-8">
             <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/10 via-teal-500/10 to-emerald-500/10 rounded-3xl blur-lg"></div>
             <div className="relative bg-white/80 backdrop-blur-xl border border-cyan-200/50 rounded-3xl p-6 lg:p-10 shadow-xl">
               <p className="text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed font-light">
@@ -211,7 +179,7 @@ const Vision = () => {
         </div>
 
         {/* Vision Metrics - Enhanced Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-0">
           {visionMetrics.map((metric, index) => (
             <div
               key={index}
@@ -268,112 +236,10 @@ const Vision = () => {
           ))}
         </div>
 
-        {/* Vision Pillars - Enhanced Design */}
-        <div className="mb-24">
-          {/* Pillars Header */}
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-2xl flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-3xl lg:text-4xl font-bold text-slate-800">
-                Our Foundation Pillars
-              </h3>
-            </div>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Three core principles that drive our mission to{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-600 font-bold">reshape the future</span> of entrepreneurship and innovation.
-            </p>
-          </div>
-
-          {/* Pillars Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {visionPillars.map((pillar, index) => (
-              <div
-                key={index}
-                className="group relative transform transition-all duration-500 hover:scale-103"
-              >
-                {/* Card Glow */}
-                <div className={`absolute -inset-2 bg-gradient-to-r ${pillar.gradient} rounded-3xl opacity-0 blur group-hover:opacity-20 transition-all duration-500`}></div>
-                
-                {/* Main Card */}
-                <div className="relative bg-white/80 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-8 h-full hover:border-cyan-300/50 transition-all duration-500 overflow-hidden shadow-xl">
-                  
-                  {/* Floating Badge */}
-                  <div className="absolute top-4 right-4">
-                    <div className={`px-3 py-1 bg-gradient-to-r ${pillar.gradient} rounded-full text-white text-xs font-semibold`}>
-                      Core
-                    </div>
-                  </div>
-
-                  {/* Icon Section */}
-                  <div className="relative mb-8 transform transition-transform duration-300 group-hover:scale-115 group-hover:rotate-6">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${pillar.gradient} rounded-2xl p-0.5 ${pillar.glowColor} shadow-2xl`}>
-                      <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center">
-                        <pillar.icon className="w-10 h-10 text-slate-700" />
-                      </div>
-                    </div>
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-white/90 backdrop-blur-xl border border-cyan-200/50 rounded-xl flex items-center justify-center">
-                      <Star className="w-4 h-4 text-slate-700" />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className={`text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r ${pillar.gradient} mb-2`}>
-                        {pillar.title}
-                      </h4>
-                      <p className="text-slate-600 font-semibold">
-                        {pillar.subtitle}
-                      </p>
-                    </div>
-                    
-                    <p className="text-slate-700 leading-relaxed">
-                      {pillar.description}
-                    </p>
-
-                    {/* Features List */}
-                    <div className="space-y-3">
-                      {pillar.features.map((feature, i) => (
-                        <div key={i} className="flex items-center gap-3">
-                          <div className={`w-6 h-6 bg-gradient-to-r ${pillar.gradient} rounded-lg flex items-center justify-center`}>
-                            <Zap className="w-3 h-3 text-white" />
-                          </div>
-                          <span className="text-slate-700 font-medium">
-                            {feature}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Action Button */}
-                    <div className="pt-4 transform transition-transform duration-300 hover:scale-105">
-                      <div className="flex items-center justify-between w-full bg-cyan-50/50 hover:bg-cyan-50 backdrop-blur-xl border border-cyan-200/50 hover:border-cyan-300/50 px-4 py-3 rounded-xl transition-all duration-300 cursor-pointer group/btn">
-                        <span className="text-slate-700 font-medium">
-                          Explore More
-                        </span>
-                        <ArrowRight className="w-4 h-4 text-slate-700 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Decorative Elements */}
-                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-white/60 backdrop-blur-xl border border-cyan-200/50 rounded-lg opacity-60"></div>
-                  <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-white/60 backdrop-blur-xl border border-cyan-200/50 rounded-lg opacity-40"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        
 
 
-        {/* Light Geometric Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="hidden lg:block absolute top-1/4 right-20 w-24 h-24 border-2 border-cyan-400/15 rounded-2xl backdrop-blur-sm transform rotate-12 opacity-20" />
-          <div className="hidden lg:block absolute bottom-1/3 left-24 w-16 h-16 bg-emerald-400/10 rounded-full backdrop-blur-sm border border-emerald-400/20 opacity-25" />
-          <div className="hidden lg:block absolute top-2/3 right-1/3 w-20 h-20 bg-gradient-to-br from-teal-400/10 to-cyan-400/10 transform rotate-45 backdrop-blur-sm border border-teal-400/20 opacity-30" />
-        </div>
+        
 
       </div>
 

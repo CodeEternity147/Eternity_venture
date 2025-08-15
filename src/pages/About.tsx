@@ -192,73 +192,45 @@ const About = () => {
         </div>
       </div>
 
-      {/* Right Side - Visual Content */}
+      {/* Right Side - Hero Image */}
       <div className="relative">
-        {/* Stats Cards */}
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-pink-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500 mb-2">
-                50+
-              </div>
-              <div className="text-sm text-slate-600 font-medium">
-                Diverse Team Members
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/20 to-violet-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl border border-pink-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-2">
-                100+
-              </div>
-              <div className="text-sm text-slate-600 font-medium">
-                Successful Ventures
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-violet-500/20 to-blue-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl border border-violet-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-blue-500 mb-2">
-                25
-              </div>
-              <div className="text-sm text-slate-600 font-medium">
-                Countries Represented
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-green-500/20 to-orange-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-xl border border-green-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-orange-500 mb-2">
-                5+
-              </div>
-              <div className="text-sm text-slate-600 font-medium">
-                Years of Excellence
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Floating Elements */}
+        <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-400/15 to-pink-500/15 rounded-3xl backdrop-blur-xl border border-orange-200/50 z-10 opacity-80"></div>
+        
+        <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-emerald-400/15 to-cyan-500/15 rounded-3xl backdrop-blur-xl border border-emerald-200/50 z-10 opacity-60"></div>
+        
+        <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-violet-400/15 to-purple-500/15 rounded-2xl backdrop-blur-xl border border-violet-200/50 z-10 opacity-70"></div>
 
-        {/* Decorative Elements */}
-        <div className="relative">
-          <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/5 to-violet-500/5 rounded-3xl blur-2xl"></div>
-          <div className="relative bg-white/70 backdrop-blur-xl border border-orange-200/30 rounded-3xl p-8 shadow-2xl">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+        {/* Main Image Container */}
+        <div className="relative z-20">
+          {/* Enhanced Glow Effect */}
+          <div className="absolute -inset-6 bg-gradient-to-r from-orange-400/20 via-pink-500/20 to-violet-500/20 rounded-3xl blur-2xl opacity-40"></div>
+          
+          {/* Image Container */}
+          <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMG1lZXRpbmclMjBkaXZlcnNlfGVufDB8fDB8fHww"
+              alt="Diverse Team at Eternity Ventures"
+              className="w-full h-[500px] object-cover"
+            />
+            
+            {/* Overlay with Company Info */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl flex items-center justify-center">
+                    <Users className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold">Diverse Excellence</div>
+                    <div className="text-orange-200 text-sm">Global Team</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                  <span className="text-emerald-300 font-medium text-sm">Active</span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Innovation at Heart</h3>
-              <p className="text-slate-600">
-                Transforming bold ideas into reality through collaborative excellence and diverse perspectives.
-              </p>
             </div>
           </div>
         </div>
@@ -395,7 +367,7 @@ const About = () => {
       </section>
 
       {/* Core Divisions */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative  overflow-hidden">
         {/* Fresh Light Theme Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
           <div className="absolute inset-0">
@@ -506,7 +478,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative  overflow-hidden">
         {/* Fresh Light Theme Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
           <div className="absolute inset-0">
@@ -543,84 +515,7 @@ const About = () => {
           />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            {/* Culture Badge */}
-            <div className="inline-block mb-8">
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
-                <div className="relative flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-cyan-200 px-6 py-3 rounded-full shadow-xl">
-                  <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center">
-                    <Users className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-slate-700 font-bold">Our Culture</span>
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                </div>
-              </div>
-            </div>
-            
-            <h2 className="text-4xl md:text-6xl lg:text-7xl text-gray-800 font-black mb-6">
-              Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500">Values</span>
-            </h2>
-            
-            <div className="relative max-w-4xl mx-auto">
-              <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 rounded-2xl blur-lg"></div>
-              <div className="relative bg-white/95 backdrop-blur-xl border border-cyan-200/50 rounded-2xl p-6 lg:p-8 shadow-xl">
-                <p className="text-xl md:text-2xl text-slate-600 leading-relaxed">
-                  Guiding principles that shape our decisions and community engagement for sustainable growth.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {VALUES.map((value, index) => (
-              <div
-                key={value.title}
-                className="group relative transform transition-all duration-500 hover:scale-105 hover:-translate-y-2"
-              >
-                {/* Card Glow Effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${value.gradient} rounded-3xl opacity-0 blur group-hover:opacity-25 transition-all duration-500`}></div>
-                
-                {/* Main Card */}
-                <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-8 h-full hover:border-cyan-300/50 transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl">
-                  
-                  {/* Icon Container */}
-                  <div className="relative mb-6 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-2xl p-0.5 shadow-lg`}>
-                      <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center">
-                        <value.icon className="w-8 h-8 text-slate-700" />
-                      </div>
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full opacity-80"></div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="space-y-6">
-                    <h3 className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${value.gradient} mb-4`}>
-                      {value.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed">{value.content}</p>
-                    
-                    {/* Features List */}
-                    <div className="space-y-3">
-                      {value.items.map((item, idx) => (
-                        <div key={idx} className="flex items-start text-slate-600">
-                          <CheckCircle className="w-5 h-5 mt-0.5 mr-3 text-cyan-500 flex-shrink-0" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Floating Elements */}
-                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-cyan-500/10 backdrop-blur-xl border border-cyan-200/50 rounded-lg opacity-40"></div>
-                  <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-teal-500/10 backdrop-blur-xl border border-teal-200/50 rounded-lg opacity-30"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+       
       </section>
 
       {/* Enhanced Responsive Styles */}
