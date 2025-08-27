@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Zap, Shield, Sparkles } from 'lucide-react';
+import { Menu, X, ChevronDown, Zap, Shield, Sparkles, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -10,10 +10,17 @@ const navLinks = [
   { name: 'Contact', path: '/contact' },
 ];
 
+const ventureLinks = [
+  { name: 'CodeEternity', path: 'https://www.codeeternity.com/', description: 'Learning Platform', external: true },
+  { name: 'Adhira SoftTech', path: 'https://www.aadirasofttech.com/', description: 'Software Solutions', external: true },
+  { name: 'Flick Lifestyle', path: '/ventures/flick-lifestyle', description: 'Lifestyle Brand', external: false },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<number | null>(null);
+  const [ventureDropdownOpen, setVentureDropdownOpen] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const location = useLocation();
@@ -36,6 +43,7 @@ const Navbar = () => {
     // Close mobile menu when path changes
     setIsOpen(false);
     setDropdownOpen(null);
+    setVentureDropdownOpen(false);
     
     // Update active tab index based on current location
     const currentIndex = navLinks.findIndex(link => link.path === location.pathname);
@@ -45,6 +53,16 @@ const Navbar = () => {
   const handleNavClick = (path: string) => {
     navigate(path);
     setIsOpen(false);
+  };
+
+  const handleVentureClick = (venture: { path: string; external: boolean }) => {
+    if (venture.external) {
+      window.open(venture.path, '_blank', 'noopener,noreferrer');
+    } else {
+      navigate(venture.path);
+    }
+    setIsOpen(false);
+    setVentureDropdownOpen(false);
   };
 
   return (
@@ -186,6 +204,70 @@ const Navbar = () => {
                           }`} />
                         </button>
                       ))}
+                      
+                      {/* Our Venture Dropdown */}
+                      <div 
+                        className="relative group"
+                        onMouseEnter={() => setVentureDropdownOpen(true)}
+                        onMouseLeave={() => setVentureDropdownOpen(false)}
+                      >
+                        <button className="relative group px-3 lg:px-4 xl:px-6 py-2 xl:py-3 rounded-xl xl:rounded-2xl font-semibold text-xs lg:text-sm xl:text-base transition-all duration-500 text-slate-700 hover:text-slate-900">
+                          {/* Hover Background */}
+                          <div className="absolute inset-0 rounded-2xl transition-all duration-300 bg-gradient-to-r from-slate-100/50 to-slate-200/50 opacity-0 group-hover:opacity-100" />
+                          
+                          {/* Content */}
+                          <span className="relative z-10 flex items-center gap-2">
+                            Our Venture
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${ventureDropdownOpen ? 'rotate-180' : ''}`} />
+                          </span>
+                          
+                          {/* Bottom Border Indicator */}
+                          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 transition-all duration-300 group-hover:w-6 bg-slate-400" />
+                        </button>
+                        
+                        {/* Dropdown Menu */}
+                        <AnimatePresence>
+                          {ventureDropdownOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                              transition={{ duration: 0.2, ease: "easeOut" }}
+                              className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl shadow-blue-500/10 overflow-hidden"
+                            >
+                              <div className="p-2">
+                                {ventureLinks.map((venture, index) => (
+                                  <motion.button
+                                    key={venture.name}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -10 }}
+                                    transition={{ delay: index * 0.05, duration: 0.2 }}
+                                    onClick={() => handleVentureClick(venture)}
+                                    className="w-full text-left p-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 group"
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div>
+                                        <div className="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                          {venture.name}
+                                        </div>
+                                        <div className="text-sm text-slate-600 group-hover:text-slate-700">
+                                          {venture.description}
+                                        </div>
+                                      </div>
+                                      {venture.external ? (
+                                        <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-blue-500 transition-colors" />
+                                      ) : (
+                                        <div className="w-2 h-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                                      )}
+                                    </div>
+                                  </motion.button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
                     </nav>
 
                     {/* CTA Button */}
@@ -304,6 +386,45 @@ const Navbar = () => {
                               </button>
                             </motion.div>
                           ))}
+                          
+                          {/* Mobile Our Venture Section */}
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ 
+                              delay: navLinks.length * 0.05, 
+                              duration: 0.2,
+                              ease: "easeOut"
+                            }}
+                          >
+                            <div className="px-2 xs:px-3 sm:px-4 py-2 xs:py-2.5 sm:py-3">
+                              <div className="font-semibold text-sm xs:text-sm sm:text-base text-slate-700 mb-2">
+                                Our Venture
+                              </div>
+                              <div className="space-y-1">
+                                {ventureLinks.map((venture, index) => (
+                                  <button
+                                    key={venture.name}
+                                    onClick={() => handleVentureClick(venture)}
+                                    className="w-full text-left block px-3 xs:px-4 sm:px-5 py-2 xs:py-2.5 rounded-lg xs:rounded-lg sm:rounded-xl font-medium text-sm xs:text-sm sm:text-base text-slate-600 hover:text-slate-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200"
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div>
+                                        <div className="font-semibold">{venture.name}</div>
+                                        <div className="text-xs text-slate-500">{venture.description}</div>
+                                      </div>
+                                      {venture.external ? (
+                                        <ExternalLink className="w-4 h-4 text-slate-400" />
+                                      ) : (
+                                        <ChevronDown className="w-4 h-4 text-slate-400" />
+                                      )}
+                                    </div>
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          </motion.div>
                           
                           {/* Mobile CTA */}
                           <motion.div

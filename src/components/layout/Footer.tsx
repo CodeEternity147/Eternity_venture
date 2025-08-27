@@ -41,7 +41,7 @@ const Footer = () => {
                   <div className="text-2xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
                     Eternity Ventures
                   </div>
-                  <div className="text-slate-600 font-medium">Innovation Hub</div>
+                  <div className="text-slate-600 font-medium">capital and innovation hub</div>
                 </div>
               </div>
               <p className="text-slate-600 leading-relaxed">
@@ -96,7 +96,7 @@ const Footer = () => {
                     <MapPin className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-slate-800">Noida, UP, India</div>
+                    <div className="text-sm font-medium text-slate-800">Lucknow, UP, India</div>
                     <div className="text-xs text-slate-500">Visit our office</div>
                   </div>
                 </div>

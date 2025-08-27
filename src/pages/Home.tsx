@@ -4,6 +4,7 @@ import Services from '../components/home/Services';
 import Vision from '../components/home/Vision';
 import FeaturedVenture from '../components/home/FeaturedVenture';
 
+
 const Home = () => {
   useEffect(() => {
     document.title = 'Eternity Ventures | Your Vision, Our Venture';

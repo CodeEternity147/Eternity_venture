@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { 
   Code, 
   BookOpen, 
@@ -146,11 +147,11 @@ const About = () => {
     />
   </div>
    
-  <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 max-w-7xl pt-4 pb-24">
-    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+  <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 mt-2 sm:mt-4 max-w-7xl pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-24">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center min-h-[70vh] sm:min-h-[75vh] lg:min-h-[80vh] pt-8 sm:pt-12 lg:pt-16">
       {/* Left Side - Heading */}
-      <div className="space-y-8">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
+      <div className="space-y-6 sm:space-y-8 order-1 lg:order-1">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
           <div className="text-slate-800 mb-2">
             CELEBRATING
           </div>
@@ -164,8 +165,8 @@ const About = () => {
         
         <div className="relative">
           <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-2xl blur-lg"></div>
-          <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-xl">
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+          <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-4 sm:p-6 shadow-xl">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
               We're a diverse team committed to empowering visionary founders and transforming innovative ideas into{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">
                 successful ventures
@@ -175,64 +176,43 @@ const About = () => {
         </div>
 
         {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <button className="group relative px-8 py-4 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 transform hover:scale-105">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+          <button className="group relative px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 transform hover:scale-105">
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 group-hover:from-orange-600 group-hover:to-pink-600 transition-all duration-300"></div>
             <div className="relative flex items-center justify-center gap-2">
               Our Story
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </div>
           </button>
           
-          <button className="px-8 py-4 rounded-full font-semibold text-slate-700 bg-white/80 backdrop-blur-xl border border-orange-200/50 hover:bg-white/95 hover:border-orange-300/50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-semibold text-slate-700 bg-white/80 backdrop-blur-xl border border-orange-200/50 hover:bg-white/95 hover:border-orange-300/50 transition-all duration-300 transform hover:scale-105 shadow-lg">
             Meet Our Team
           </button>
         </div>
       </div>
 
-      {/* Right Side - Hero Image */}
-      <div className="relative">
-        {/* Floating Elements */}
-        <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-400/15 to-pink-500/15 rounded-3xl backdrop-blur-xl border border-orange-200/50 z-10 opacity-80"></div>
+      {/* Right Side - Hero Animation */}
+      <div className="relative order-2 lg:order-2">
+        {/* Floating Elements - Hidden on mobile */}
+        <div className="hidden lg:block absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-400/15 to-pink-500/15 rounded-3xl backdrop-blur-xl border border-orange-200/50 z-10 opacity-80"></div>
         
-        <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-emerald-400/15 to-cyan-500/15 rounded-3xl backdrop-blur-xl border border-emerald-200/50 z-10 opacity-60"></div>
+        <div className="hidden lg:block absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-emerald-400/15 to-cyan-500/15 rounded-3xl backdrop-blur-xl border border-emerald-200/50 z-10 opacity-60"></div>
         
-        <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-violet-400/15 to-purple-500/15 rounded-2xl backdrop-blur-xl border border-violet-200/50 z-10 opacity-70"></div>
+        <div className="hidden lg:block absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-violet-400/15 to-purple-500/15 rounded-2xl backdrop-blur-xl border border-violet-200/50 z-10 opacity-70"></div>
 
-        {/* Main Image Container */}
-        <div className="relative z-20">
+        {/* Main Animation Container */}
+        <div className="relative z-20 flex justify-center lg:justify-end">
           {/* Enhanced Glow Effect */}
           <div className="absolute -inset-6 bg-gradient-to-r from-orange-400/20 via-pink-500/20 to-violet-500/20 rounded-3xl blur-2xl opacity-40"></div>
           
-          {/* Image Container */}
-          <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMG1lZXRpbmclMjBkaXZlcnNlfGVufDB8fDB8fHww"
-              alt="Diverse Team at Eternity Ventures"
-              className="w-full h-[500px] object-cover"
-            />
-            
-            {/* Overlay with Company Info */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl flex items-center justify-center">
-                    <Users className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">Diverse Excellence</div>
-                    <div className="text-orange-200 text-sm">Global Team</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
-                  <span className="text-emerald-300 font-medium text-sm">Active</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <DotLottieReact
+            src="https://lottie.host/d168f8e1-45a6-4b75-abe7-a0016858d9c9/D1LwuXHCwu.lottie"
+            loop
+            autoplay
+            className='h-[250px] w-[400px] sm:h-[300px] sm:w-[500px] md:h-[350px] md:w-[600px] lg:h-[400px] lg:w-[700px]'
+          />
         </div>
       </div>
     </div>
@@ -240,7 +220,7 @@ const About = () => {
 </section>
 
       {/* Vision & Mission */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
         {/* Fresh Light Theme Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
           <div className="absolute inset-0">
@@ -277,52 +257,52 @@ const About = () => {
           />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             {/* Left Column */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {/* Story Badge */}
               <div className="inline-block">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
-                  <div className="relative flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-cyan-200 px-6 py-3 rounded-full shadow-xl">
-                    <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center">
-                      <Target className="w-4 h-4 text-white" />
+                  <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-cyan-200 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center">
+                      <Target className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                     </div>
-                    <span className="text-slate-700 font-bold">Our Story</span>
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span className="text-slate-700 font-bold text-sm sm:text-base">Our Story</span>
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
                   </div>
                 </div>
               </div>
               
-              <h2 className="text-4xl md:text-6xl lg:text-7xl text-gray-800  font-black mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-gray-800 font-black mb-4 sm:mb-6">
                 Vision & <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500">Mission</span>
               </h2>
               
               <div className="relative">
                 <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 rounded-2xl blur-lg"></div>
-                <div className="relative bg-white/95 backdrop-blur-xl border border-cyan-200/50 rounded-2xl p-6 lg:p-8 shadow-xl">
-                  <p className="text-xl md:text-2xl text-slate-600 leading-relaxed">
+                <div className="relative bg-white/95 backdrop-blur-xl border border-cyan-200/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed">
                     Founded in 2023 to identify and nurture promising entrepreneurs across India with a focus on early-stage startups with strong teams and scalable models.
                   </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="group relative transform transition-all duration-300 hover:scale-105">
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-2xl opacity-0 blur group-hover:opacity-25 transition-all duration-300"></div>
-                  <div className="relative bg-white/90 backdrop-blur-2xl border border-cyan-200/50 rounded-2xl p-6 hover:border-cyan-300/50 transition-all duration-300 shadow-xl">
-                    <h3 className="font-bold text-xl mb-3 text-slate-800">Our Vision</h3>
-                    <p className="text-slate-600">
+                  <div className="relative bg-white/90 backdrop-blur-2xl border border-cyan-200/50 rounded-2xl p-4 sm:p-6 hover:border-cyan-300/50 transition-all duration-300 shadow-xl">
+                    <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-slate-800">Our Vision</h3>
+                    <p className="text-slate-600 text-sm sm:text-base">
                       Catalyst for India's next generation of transformative companies.
                     </p>
                   </div>
                 </div>
                 <div className="group relative transform transition-all duration-300 hover:scale-105">
                   <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-2xl opacity-0 blur group-hover:opacity-25 transition-all duration-300"></div>
-                  <div className="relative bg-white/90 backdrop-blur-2xl border border-emerald-200/50 rounded-2xl p-6 hover:border-emerald-300/50 transition-all duration-300 shadow-xl">
-                    <h3 className="font-bold text-xl mb-3 text-slate-800">Our Mission</h3>
-                    <p className="text-slate-600">
+                  <div className="relative bg-white/90 backdrop-blur-2xl border border-emerald-200/50 rounded-2xl p-4 sm:p-6 hover:border-emerald-300/50 transition-all duration-300 shadow-xl">
+                    <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-slate-800">Our Mission</h3>
+                    <p className="text-slate-600 text-sm sm:text-base">
                       Empower entrepreneurs with capital, expertise, and connections.
                     </p>
                   </div>
@@ -334,28 +314,28 @@ const About = () => {
             <div className="relative">
               <div className="group relative transform transition-all duration-500 hover:scale-105">
                 <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-teal-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
-                <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-8 hover:border-cyan-300/50 transition-all duration-500 shadow-2xl">
-                  <div className="flex items-start mb-8">
-                    <div className="relative mr-4">
+                <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-4 sm:p-6 lg:p-8 hover:border-cyan-300/50 transition-all duration-500 shadow-2xl">
+                  <div className="flex items-start mb-6 sm:mb-8">
+                    <div className="relative mr-3 sm:mr-4">
                       <img
                         src={FOUNDER_INFO.image}
                         alt="Founder"
-                        className="h-16 w-16 rounded-xl object-cover"
+                        className="h-12 w-12 sm:h-16 sm:w-16 rounded-xl object-cover"
                       />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-slate-800">{FOUNDER_INFO.name}</h3>
-                      <p className="text-cyan-600 font-medium">{FOUNDER_INFO.position}</p>
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-800">{FOUNDER_INFO.name}</h3>
+                      <p className="text-cyan-600 font-medium text-sm sm:text-base">{FOUNDER_INFO.position}</p>
                     </div>
                   </div>
-                  <blockquote className="text-slate-600 italic mb-6 border-l-4 border-cyan-500 pl-4 text-lg">
+                  <blockquote className="text-slate-600 italic mb-4 sm:mb-6 border-l-4 border-cyan-500 pl-3 sm:pl-4 text-base sm:text-lg">
                     "{FOUNDER_INFO.quote}"
                   </blockquote>
-                  <div className="text-slate-600 space-y-4">
+                  <div className="text-slate-600 space-y-3 sm:space-y-4">
                     {FOUNDER_INFO.description.map((text, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" />
-                        <p>{text}</p>
+                      <div key={index} className="flex items-start gap-2 sm:gap-3">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-500 mt-0.5 flex-shrink-0" />
+                        <p className="text-sm sm:text-base">{text}</p>
                       </div>
                     ))}
                   </div>
@@ -367,7 +347,7 @@ const About = () => {
       </section>
 
       {/* Core Divisions */}
-      <section className="relative  overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
         {/* Fresh Light Theme Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
           <div className="absolute inset-0">
@@ -397,37 +377,37 @@ const About = () => {
           />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+        <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
             {/* Expertise Badge */}
-            <div className="inline-block mb-8">
+            <div className="inline-block mb-6 sm:mb-8">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
-                <div className="relative flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-cyan-200 px-6 py-3 rounded-full shadow-xl">
-                  <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center">
-                    <TrendingUp className="w-4 h-4 text-white" />
+                <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-cyan-200 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center">
+                    <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
-                  <span className="text-slate-700 font-bold">Our Expertise</span>
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                  <span className="text-slate-700 font-bold text-sm sm:text-base">Our Expertise</span>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-6xl lg:text-7xl text-gray-800 font-black mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-gray-800 font-black mb-4 sm:mb-6">
               Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500">Divisions</span>
             </h2>
             
             <div className="relative max-w-4xl mx-auto">
               <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 rounded-2xl blur-lg"></div>
-              <div className="relative bg-white/95 backdrop-blur-xl border border-cyan-200/50 rounded-2xl p-6 lg:p-8 shadow-xl">
-                <p className="text-xl md:text-2xl text-slate-600 leading-relaxed">
+              <div className="relative bg-white/95 backdrop-blur-xl border border-cyan-200/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed">
                   Comprehensive support across key business domains through multi-disciplinary approach and expert guidance.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {DIVISIONS.map((division, index) => (
               <div
                 key={division.id}
@@ -437,39 +417,39 @@ const About = () => {
                 <div className={`absolute -inset-1 bg-gradient-to-r ${division.gradient} rounded-3xl opacity-0 blur group-hover:opacity-25 transition-all duration-500`}></div>
                 
                 {/* Main Card */}
-                <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-8 h-full hover:border-cyan-300/50 transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl">
+                <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-4 sm:p-6 lg:p-8 h-full hover:border-cyan-300/50 transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl">
                   
                   {/* Status Indicator */}
-                  <div className="absolute top-4 right-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+                    <div className="flex items-center gap-1 sm:gap-2">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
                       <span className="text-emerald-600 font-medium text-xs">Active</span>
                     </div>
                   </div>
 
                   {/* Icon Container */}
-                  <div className="relative mb-6 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${division.gradient} rounded-2xl p-0.5 ${division.glowColor} shadow-lg`}>
+                  <div className="relative mb-4 sm:mb-6 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${division.gradient} rounded-2xl p-0.5 ${division.glowColor} shadow-lg`}>
                       <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center">
-                        <division.icon className="w-8 h-8 text-slate-700" />
+                        <division.icon className="w-6 h-6 sm:w-8 sm:h-8 text-slate-700" />
                       </div>
                     </div>
-                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full opacity-80"></div>
+                    <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-emerald-400 rounded-full opacity-80"></div>
                   </div>
 
                   {/* Content */}
-                  <div className="space-y-4">
-                    <h3 className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${division.gradient} mb-2`}>
+                  <div className="space-y-3 sm:space-y-4">
+                    <h3 className={`text-lg sm:text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${division.gradient} mb-1 sm:mb-2`}>
                       {division.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed">
+                    <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                       {division.description}
                     </p>
                   </div>
 
                   {/* Floating Elements */}
-                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-cyan-500/10 backdrop-blur-xl border border-cyan-200/50 rounded-lg opacity-40"></div>
-                  <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-teal-500/10 backdrop-blur-xl border border-teal-200/50 rounded-lg opacity-30"></div>
+                  <div className="absolute -top-3 sm:-top-4 -left-3 sm:-left-4 w-6 h-6 sm:w-8 sm:h-8 bg-cyan-500/10 backdrop-blur-xl border border-cyan-200/50 rounded-lg opacity-40"></div>
+                  <div className="absolute -bottom-3 sm:-bottom-4 -right-3 sm:-right-4 w-4 h-4 sm:w-6 sm:h-6 bg-teal-500/10 backdrop-blur-xl border border-teal-200/50 rounded-lg opacity-30"></div>
                 </div>
               </div>
             ))}
@@ -478,7 +458,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="relative  overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
         {/* Fresh Light Theme Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
           <div className="absolute inset-0">

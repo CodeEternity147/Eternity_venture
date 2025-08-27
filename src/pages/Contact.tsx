@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Users, MessageSquare, ArrowRight, Sparkles } from 'lucide-react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 const Contact = () => {
   useEffect(() => {
@@ -49,10 +51,10 @@ const Contact = () => {
   </div>
    
   <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 mt-2 sm:mt-4 max-w-7xl pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-24">
-    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center min-h-[70vh] sm:min-h-[75vh] lg:min-h-[80vh] pt-8 sm:pt-12 lg:pt-16">
       {/* Left Side - Heading */}
-      <div className="space-y-8">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
+      <div className="space-y-6 sm:space-y-8 order-1 lg:order-1">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
           <div className="text-slate-800 mb-2">
             GET IN
           </div>
@@ -63,8 +65,8 @@ const Contact = () => {
         
         <div className="relative">
           <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-2xl blur-lg"></div>
-          <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-6 shadow-xl">
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+          <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-4 sm:p-6 shadow-xl">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
               Get in touch with our team to discuss investment opportunities, 
               business partnerships, or learn more about our{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">
@@ -75,64 +77,42 @@ const Contact = () => {
         </div>
 
         {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <button className="group relative px-8 py-4 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 transform hover:scale-105">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+          <button className="group relative px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 transform hover:scale-105">
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 group-hover:from-orange-600 group-hover:to-pink-600 transition-all duration-300"></div>
             <div className="relative flex items-center justify-center gap-2">
               Start Conversation
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
             </div>
           </button>
           
-          <button className="px-8 py-4 rounded-full font-semibold text-slate-700 bg-white/80 backdrop-blur-xl border border-orange-200/50 hover:bg-white/95 hover:border-orange-300/50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-semibold text-slate-700 bg-white/80 backdrop-blur-xl border border-orange-200/50 hover:bg-white/95 hover:border-orange-300/50 transition-all duration-300 transform hover:scale-105 shadow-lg">
             Schedule Meeting
           </button>
         </div>
       </div>
 
-      {/* Right Side - Hero Image */}
-      <div className="relative">
-        {/* Floating Elements */}
-        <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-400/15 to-pink-500/15 rounded-3xl backdrop-blur-xl border border-orange-200/50 z-10 opacity-80"></div>
+      {/* Right Side - Hero Animation */}
+      <div className="relative order-2 lg:order-2">
+        {/* Floating Elements - Hidden on mobile */}
+        <div className="hidden lg:block absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-400/15 to-pink-500/15 rounded-3xl backdrop-blur-xl border border-orange-200/50 z-10 opacity-80"></div>
         
-        <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-emerald-400/15 to-cyan-500/15 rounded-3xl backdrop-blur-xl border border-emerald-200/50 z-10 opacity-60"></div>
+        <div className="hidden lg:block absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-emerald-400/15 to-cyan-500/15 rounded-3xl backdrop-blur-xl border border-emerald-200/50 z-10 opacity-60"></div>
         
-        <div className="absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-violet-400/15 to-purple-500/15 rounded-2xl backdrop-blur-xl border border-violet-200/50 z-10 opacity-70"></div>
+        <div className="hidden lg:block absolute top-1/4 -left-4 w-16 h-16 bg-gradient-to-br from-violet-400/15 to-purple-500/15 rounded-2xl backdrop-blur-xl border border-violet-200/50 z-10 opacity-70"></div>
 
-        {/* Main Image Container */}
-        <div className="relative z-20">
+        {/* Main Animation Container */}
+        <div className="relative z-20 flex justify-center lg:justify-end">
           {/* Enhanced Glow Effect */}
           <div className="absolute -inset-6 bg-gradient-to-r from-orange-400/20 via-pink-500/20 to-violet-500/20 rounded-3xl blur-2xl opacity-40"></div>
-          
-          {/* Image Container */}
-          <div className="relative bg-white/95 backdrop-blur-2xl border border-orange-200/50 rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1560264418-c4445382edbc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGNvbnRhY3QlMjB1c3xlbnwwfHwwfHx8MA%3D%3D"
-              alt="Contact Our Team"
-              className="w-full h-[500px] object-cover"
-            />
-            
-            {/* Overlay with Company Info */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl flex items-center justify-center">
-                    <MessageSquare className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">Get In Touch</div>
-                    <div className="text-orange-200 text-sm">Contact Us</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
-                  <span className="text-emerald-300 font-medium text-sm">Active</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <DotLottieReact
+            src="https://lottie.host/05776843-e392-45a2-8810-d50f7af08a44/NBAYrdIfA5.lottie"
+            loop
+            autoplay
+            className='h-[250px] w-[400px] sm:h-[300px] sm:w-[500px] md:h-[350px] md:w-[600px] lg:h-[400px] lg:w-[700px]'
+          />
         </div>
       </div>
     </div>
@@ -225,11 +205,11 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1 text-slate-800">Visit Us</h3>
-                      <address className="not-italic text-slate-600">
-                        Eternity Ventures<br />
-                        Sector 62, Noida<br />
-                        Uttar Pradesh, India
-                      </address>
+                                             <address className="not-italic text-slate-600">
+                         Eternity Ventures<br />
+                         Vibhuti Khand, Sector 3, Gomti Nagar<br />
+                         Lucknow, India
+                       </address>
                     </div>
                   </div>
                 </div>
