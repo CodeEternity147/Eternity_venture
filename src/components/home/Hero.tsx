@@ -78,7 +78,7 @@ const Hero = () => {
 
       <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 mt-2 sm:mt-4 max-w-7xl pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-24">
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center min-h-[70vh] sm:min-h-[75vh] lg:min-h-[80vh] pt-8 sm:pt-12 lg:pt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-1 sm:gap-8 items-center min-h-[70vh] sm:min-h-[75vh] lg:min-h-[80vh] ">
           {/* Main Hero Content */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 order-1 lg:order-1">
             {/* Enhanced Badge */}
