@@ -85,34 +85,32 @@ const Hero = () => {
             <div className="inline-block">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
-                <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-orange-200 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center">
-                    <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-orange-200 px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full shadow-xl">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 text-white" />
                   </div>
-                  <span className="text-slate-700 font-bold text-sm sm:text-base">Next-Gen Venture Capital collaboration and investment</span>
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                  <span className="text-slate-700 font-bold text-xs sm:text-sm md:text-base leading-tight">Next-Gen Venture Capital collaboration and investment</span>
+                  <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 bg-emerald-400 rounded-full animate-pulse flex-shrink-0"></div>
                 </div>
               </div>
             </div>
 
             {/* Hero Title */}
-            <div className="space-y-3 sm:space-y-4">
-              <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black leading-none">
-                <div className="text-slate-800 ">
+            <div className="space-y-4 sm:space-y-6 md:space-y-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-tight">
+                <div className="text-slate-800 mb-1 sm:mb-2 md:mb-1 lg:mb-0 xl:mb-0">
                   ETERNITY
                 </div>
                 {/* Tagline */}
-                <div className="text-sm transform translate-y-1 sm:text-sm md:text-md lg:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-800 italic">
+                <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-800 italic mb-1 sm:mb-2 md:mb-1 lg:mb-0 xl:mb-0">
                   your vision our venture!
                 </div>
-                <div className="text-transparent  bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
+                <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
                   VENTURES
                 </div>
               </h1>
 
-
-
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-2xl">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-slate-600 leading-relaxed max-w-2xl">
                 Empowering the next generation of{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">
                   innovative startups
@@ -122,7 +120,7 @@ const Hero = () => {
             </div>
 
             {/* Hero Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
               {[
                 { value: '₹50Cr+', label: 'Portfolio Value', icon: TrendingUp, gradient: 'from-orange-400 to-pink-500' },
                 { value: '25+', label: 'Startups Funded', icon: Zap, gradient: 'from-emerald-400 to-cyan-500' },
@@ -131,17 +129,17 @@ const Hero = () => {
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
                   <div className="relative">
-                    <div className={`absolute -inset-2 bg-gradient-to-r ${stat.gradient} rounded-xl blur-sm opacity-0 group-hover:opacity-25 transition-opacity duration-300`}></div>
-                    <div className="relative bg-white/90 backdrop-blur-xl border border-orange-200/50 rounded-xl p-2 sm:p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                    <div className={`absolute -inset-1 sm:-inset-2 bg-gradient-to-r ${stat.gradient} rounded-lg sm:rounded-xl blur-sm opacity-0 group-hover:opacity-25 transition-opacity duration-300`}></div>
+                    <div className="relative bg-white/90 backdrop-blur-xl border border-orange-200/50 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                       <div className="flex items-center justify-center mb-1 sm:mb-2">
-                        <div className={`w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-gradient-to-r ${stat.gradient} rounded-lg flex items-center justify-center`}>
-                          <stat.icon className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
+                        <div className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 bg-gradient-to-r ${stat.gradient} rounded-lg flex items-center justify-center`}>
+                          <stat.icon className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-white" />
                         </div>
                       </div>
-                      <div className={`text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${stat.gradient}`}>
+                      <div className={`text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${stat.gradient}`}>
                         {stat.value}
                       </div>
-                      <div className="text-slate-600 text-xs sm:text-sm font-medium">
+                      <div className="text-slate-600 text-xs sm:text-sm font-medium leading-tight">
                         {stat.label}
                       </div>
                     </div>
@@ -153,10 +151,10 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 pt-4">
               <div className="group relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl sm:rounded-2xl opacity-40 blur-sm group-hover:opacity-60 transition-opacity duration-300"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-lg sm:rounded-xl md:rounded-2xl opacity-40 blur-sm group-hover:opacity-60 transition-opacity duration-300"></div>
                 <a
                   href="/about"
-                  className="relative flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+                  className="relative flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-bold text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
                 >
                   <Play className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                   <span>About Us</span>
@@ -167,11 +165,10 @@ const Hero = () => {
               <div className="group">
                 <a
                   href="/services"
-                  className="flex items-center justify-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-violet-200 text-slate-700 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:scale-105 hover:border-violet-300 transition-all duration-300 shadow-lg"
+                  className="flex items-center justify-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-violet-200 text-slate-700 px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-bold text-xs sm:text-sm md:text-base lg:text-lg hover:bg-white hover:scale-105 hover:border-violet-300 transition-all duration-300 shadow-lg"
                 >
                   <Globe className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-violet-500" />
-                  <span>
-                    Our Services</span>
+                  <span>Our Services</span>
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300 text-violet-500" />
                 </a>
               </div>
