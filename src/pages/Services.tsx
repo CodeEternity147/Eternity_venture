@@ -33,114 +33,136 @@ const Services = () => {
 
   const services = [
     {
-      id: 'real-estate',
-      title: 'Real Estate Intelligence',
-      subtitle: 'Next-Gen Property Investment',
-      description: 'AI-powered real estate analytics and strategic development for maximum ROI through data-driven investment decisions and smart market timing.',
-      icon: Building2,
+      id: 'startup-mentorship',
+      title: 'Startup Mentorship',
+      subtitle: 'Expert Guidance & Strategy',
+      description: 'Comprehensive mentorship programs providing strategic guidance, business planning, and growth strategies to help startups navigate their journey from ideation to market success.',
+      icon: Target,
       gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
       glowColor: 'shadow-emerald-500/30',
       bgPattern: 'bg-gradient-to-br from-emerald-500/5 to-teal-500/10',
       features: [
-        'Smart Analytics',
-        'ROI Optimization', 
-        'Market Intelligence',
-        'Premium residential property development',
-        'Commercial real estate acquisition',
-        'Land banking and strategic investments',
+        'Strategic Planning',
+        'Business Development', 
+        'Market Entry',
+        'Business model validation and refinement',
+        'Growth strategy formulation',
+        'Team building and leadership development',
+        'Product-market fit optimization',
+        'Scaling strategy and execution',
+      ],
+      stats: { value: '100+', label: 'Startups Mentored' },
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVudG9yc2hpcHxlbnwwfHwwfHx8MA%3D%3D',
+    },
+    {
+      id: 'funding-support',
+      title: 'Funding Support',
+      subtitle: 'Capital • Connections • Growth',
+      description: 'End-to-end funding assistance including investor connections, pitch deck preparation, financial modeling, and strategic fundraising support for startups at every stage.',
+      icon: TrendingUp,
+      gradient: 'from-rose-400 via-pink-500 to-purple-600',
+      glowColor: 'shadow-rose-500/30',
+      bgPattern: 'bg-gradient-to-br from-rose-500/5 to-pink-500/10',
+      features: [
+        'Investor Network',
+        'Pitch Preparation',
+        'Financial Planning',
+        'Seed funding and angel investment connections',
+        'Venture capital fundraising support',
+        'Financial modeling and projections',
+        'Due diligence preparation',
+        'Investment term sheet negotiation',
+      ],
+      stats: { value: '₹25Cr+', label: 'Funds Raised' },
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVuZGluZ3xlbnwwfHwwfHx8MA%3D%3D',
+    },
+    {
+      id: 'legal-compliance',
+      title: 'Legal & Compliance',
+      subtitle: 'Regulatory Excellence',
+      description: 'Comprehensive legal support including company registration, compliance management, intellectual property protection, and regulatory guidance to ensure startups operate within legal frameworks.',
+      icon: Shield,
+      gradient: 'from-indigo-400 via-blue-500 to-cyan-600',
+      glowColor: 'shadow-indigo-500/30',
+      bgPattern: 'bg-gradient-to-br from-indigo-500/5 to-blue-500/10',
+      features: [
+        'Company Registration',
+        'IP Protection',
+        'Compliance Management',
+        'Business entity formation and structuring',
+        'Intellectual property strategy and protection',
+        'Regulatory compliance and licensing',
+        'Contract drafting and negotiation',
+        'Employment law and HR compliance',
+      ],
+      stats: { value: '50+', label: 'Legal Cases' },
+      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVnYWwlMjBjb21wbGlhbmNlfGVufDB8fDB8fHww',
+    },
+    {
+      id: 'it-consulting',
+      title: 'IT Consulting',
+      subtitle: 'Technology Solutions',
+      description: 'Comprehensive technology solutions for startups including digital transformation, software development, cloud infrastructure, and cybersecurity to build scalable tech foundations.',
+      icon: Layers,
+      gradient: 'from-amber-400 via-orange-500 to-red-600',
+      glowColor: 'shadow-amber-500/30',
+      bgPattern: 'bg-gradient-to-br from-amber-500/5 to-orange-500/10',
+      features: [
+        'Digital Transformation',
+        'Software Development',
+        'Cloud Infrastructure',
+        'Technology stack selection and implementation',
+        'Custom software development',
+        'Cloud migration and optimization',
+        'Cybersecurity and data protection',
+        'DevOps and infrastructure management',
+      ],
+      stats: { value: '75+', label: 'Tech Projects' },
+      image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aXQlMjBzZXJ2aWNlc3xlbnwwfHwwfHx8MA%3D%3D',
+    },
+    {
+      id: 'real-estate',
+      title: 'Real Estate Solutions',
+      subtitle: 'Strategic Property Support',
+      description: 'Strategic real estate solutions for startups including office space acquisition, property development consulting, and investment opportunities to support business growth.',
+      icon: Building2,
+      gradient: 'from-lime-400 via-green-500 to-emerald-600',
+      glowColor: 'shadow-lime-500/30',
+      bgPattern: 'bg-gradient-to-br from-lime-500/5 to-green-500/10',
+      features: [
+        'Office Space Acquisition',
+        'Property Development',
+        'Investment Opportunities',
+        'Commercial property sourcing and leasing',
+        'Real estate investment strategy',
+        'Property development consulting',
+        'Location analysis and site selection',
         'Real estate portfolio management',
-        'Property valuation and market analysis',
       ],
       stats: { value: '₹50Cr+', label: 'Assets Managed' },
       image: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UmVhbCUyMEVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D',
     },
     {
-      id: 'business-transformation',
-      title: 'Business Evolution',
-      subtitle: 'Transform • Scale • Dominate',
-      description: 'Complete business transformation using cutting-edge methodologies, AI automation, and strategic innovation frameworks.',
-      icon: Rocket,
-      gradient: 'from-rose-400 via-pink-500 to-purple-600',
-      glowColor: 'shadow-rose-500/30',
-      bgPattern: 'bg-gradient-to-br from-rose-500/5 to-pink-500/10',
-      features: [
-        'AI Integration',
-        'Process Automation',
-        'Growth Scaling',
-        'Business model development and validation',
-        'Growth strategy formulation',
-        'Process optimization and scaling',
-        'Technology stack selection and implementation',
-        'Organizational design and talent acquisition',
-      ],
-      stats: { value: '300%', label: 'Avg Growth' },
-      image: 'https://plus.unsplash.com/premium_photo-1661598804060-c8321e472092?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJ1c2luZXNzJTIwdHJhbnNmb3JtYXRpb258ZW58MHx8MHx8fDA%3D',
-    },
-    {
-      id: 'business-development-partnership',
-      title: 'Strategic Alliances',
-      subtitle: 'Power Through Partnership',
-      description: 'Build unstoppable network effects through strategic partnerships, collaborative ecosystems, and shared intelligence platforms.',
+      id: 'collaboration-support',
+      title: 'Collaboration Support',
+      subtitle: 'Partnership & Networking',
+      description: 'Strategic partnership and collaboration services including business development, networking opportunities, joint venture facilitation, and ecosystem building for startups.',
       icon: Users,
-      gradient: 'from-indigo-400 via-blue-500 to-cyan-600',
-      glowColor: 'shadow-indigo-500/30',
-      bgPattern: 'bg-gradient-to-br from-indigo-500/5 to-blue-500/10',
+      gradient: 'from-violet-400 via-purple-500 to-indigo-600',
+      glowColor: 'shadow-violet-500/30',
+      bgPattern: 'bg-gradient-to-br from-violet-500/5 to-purple-500/10',
       features: [
-        'Network Building',
-        'Ecosystem Design',
-        'Collaborative Growth',
-        'Strategic alliance formation and management',
-        'Channel partner identification and onboarding',
-        'Joint venture structuring',
-        'Co-marketing and co-development initiatives',
-        'Revenue share partnerships',
+        'Strategic Partnerships',
+        'Networking Opportunities',
+        'Joint Ventures',
+        'Business development and partnership building',
+        'Industry networking and connections',
+        'Joint venture structuring and facilitation',
+        'Ecosystem building and community development',
+        'Collaborative project management',
       ],
-      stats: { value: '500+', label: 'Partnerships' },
-      image: 'https://plus.unsplash.com/premium_photo-1661288459621-fabc38863ee6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJ1c2luZXNzJTIwZGV2ZWxvcG1lbnQlMjBwYXJ0bmVyc2hpcHxlbnwwfHwwfHx8MA%3D%3D',
-    },
-    {
-      id: 'market-expansion',
-      title: 'Global Domination',
-      subtitle: 'Worldwide Market Conquest',
-      description: 'Advanced market penetration strategies with local intelligence, cultural adaptation, and global scaling frameworks.',
-      icon: GlobeIcon,
-      gradient: 'from-amber-400 via-orange-500 to-red-600',
-      glowColor: 'shadow-amber-500/30',
-      bgPattern: 'bg-gradient-to-br from-amber-500/5 to-orange-500/10',
-      features: [
-        'Market Analysis',
-        'Cultural Intelligence',
-        'Global Scaling',
-        'Market entry strategy development',
-        'Localization and adaptation planning',
-        'Regulatory compliance guidance',
-        'Local partner identification',
-        'Go-to-market execution support',
-      ],
-      stats: { value: '25+', label: 'Countries' },
-      image: 'https://images.unsplash.com/photo-1641327524708-0246aa928f16?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGUlMjBtYXJrZXQlMjBleHBhbnNpb258ZW58MHx8MHx8fDA%3D',
-    },
-    {
-      id: 'capital-investment',
-      title: 'Capital Acceleration',
-      subtitle: 'Smart Money • Smart Growth',
-      description: 'Intelligent capital deployment with AI-driven investment strategies, risk optimization, and exponential growth models.',
-      icon: Coins,
-      gradient: 'from-lime-400 via-green-500 to-emerald-600',
-      glowColor: 'shadow-lime-500/30',
-      bgPattern: 'bg-gradient-to-br from-lime-500/5 to-green-500/10',
-      features: [
-        'Smart Investment',
-        'Risk Management',
-        'Growth Capital',
-        'Early-stage equity investment',
-        'Growth capital funding',
-        'Strategic M&A advisory',
-        'Financial restructuring',
-        'Investment portfolio management',
-      ],
-      stats: { value: '45%', label: 'Avg Returns' },
-      image: 'https://plus.unsplash.com/premium_photo-1661725369804-898807815b52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FwaXRhbCUyMGludmVzdG1lbnR8ZW58MHx8MHx8fDA%3D',
+      stats: { value: '200+', label: 'Partnerships' },
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGFib3JhdGlvbnxlbnwwfHwwfHx8MA%3D%3D',
     },
   ];
 
@@ -199,10 +221,10 @@ const Services = () => {
             <div className="space-y-6 sm:space-y-8 order-1 lg:order-1">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
                 <div className="text-slate-800 mb-2">
-                  STRATEGIC
+                  COMPREHENSIVE
                 </div>
                 <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
-                  SERVICES
+                  STARTUP SUPPORT
                 </div>
               </h1>
               
@@ -210,9 +232,9 @@ const Services = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-2xl blur-lg"></div>
                 <div className="relative bg-white/95 backdrop-blur-xl border border-orange-200/50 rounded-2xl p-4 sm:p-6 shadow-xl">
                   <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
-                    Comprehensive solutions designed to{' '}
+                    Holistic startup support designed to{' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">accelerate growth</span> and{' '}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 font-bold">maximize returns</span> through innovative strategies and cutting-edge technology.
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 font-bold">ensure success</span> through expert guidance and comprehensive assistance.
                   </p>
                 </div>
               </div>
@@ -302,7 +324,7 @@ const Services = () => {
               </span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-              Explore our comprehensive range of strategic services designed to accelerate your business growth
+              Explore our comprehensive range of startup support services designed to accelerate your business growth and success
             </p>
           </div>
 

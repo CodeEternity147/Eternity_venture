@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { 
   Building2, 
-  TrendingUp, 
-  Users, 
   Globe, 
   Coins, 
   ArrowRight, 
@@ -15,216 +13,248 @@ import {
   ChevronRight,
   Star,
   Award,
-  Layers
+  Layers,
+  Code,
+  BookOpen,
+  Building,
+  Scale,
+  TrendingUp,
+  Users,
 } from 'lucide-react';
 
-const servicesData = [
+// Constants
+const DIVISIONS = [
   {
     id: 1,
-    title: 'Real Estate Intelligence',
-    subtitle: 'Next-Gen Property Investment',
-    description: 'AI-powered real estate analytics and strategic development for maximum ROI through data-driven investment decisions and smart market timing.',
-    icon: Building2,
-    gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
-    glowColor: 'shadow-emerald-500/30',
-    bgPattern: 'bg-gradient-to-br from-emerald-500/5 to-teal-500/10',
-    features: ['Smart Analytics', 'ROI Optimization', 'Market Intelligence'],
-    stats: { value: '₹50Cr+', label: 'Assets Managed' },
-    delay: 0.1,
+    title: 'IT Consulting',
+    description: 'Comprehensive technology solutions for startups including digital transformation, software development, cloud infrastructure, and cybersecurity. We help startups build scalable tech foundations and digital products that drive growth and innovation.',
+    icon: Code,
+    gradient: 'from-violet-500 via-purple-500 to-indigo-600',
+    glowColor: 'shadow-violet-500/40',
+    bgColor: 'bg-violet-500/10',
+    borderColor: 'border-violet-500/20',
+    accentColor: 'text-violet-600',
   },
   {
     id: 2,
-    title: 'Business Evolution',
-    subtitle: 'Transform • Scale • Dominate',
-    description: 'Complete business transformation using cutting-edge methodologies, AI automation, and strategic innovation frameworks.',
-    icon: Rocket,
-    gradient: 'from-rose-400 via-pink-500 to-purple-600',
-    glowColor: 'shadow-rose-500/30',
-    bgPattern: 'bg-gradient-to-br from-rose-500/5 to-pink-500/10',
-    features: ['AI Integration', 'Process Automation', 'Growth Scaling'],
-    stats: { value: '300%', label: 'Avg Growth' },
-    delay: 0.2,
+    title: 'EdTech',
+    description: 'Revolutionary educational technology solutions for startups in the learning sector. We provide platform development, content creation, interactive learning tools, and market entry strategies to help EdTech startups scale and reach global audiences.',
+    icon: BookOpen,
+    gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
+    glowColor: 'shadow-emerald-500/40',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'border-emerald-500/20',
+    accentColor: 'text-emerald-600',
   },
   {
     id: 3,
-    title: 'Innovation Engine',
-    subtitle: 'Future-Ready Technology',
-    description: 'Bleeding-edge technology integration, AI/ML solutions, and innovation frameworks to dominate tomorrow\'s markets.',
-    icon: Brain,
-    gradient: 'from-violet-400 via-purple-500 to-fuchsia-600',
-    glowColor: 'shadow-violet-500/30',
-    bgPattern: 'bg-gradient-to-br from-violet-500/5 to-purple-500/10',
-    features: ['AI/ML Integration', 'Innovation Labs', 'Future Tech'],
-    stats: { value: '10x', label: 'Innovation Rate' },
-    delay: 0.6,
+    title: 'Real Estate',
+    description: 'Strategic real estate solutions for startups including office space acquisition, property development consulting, and investment opportunities. We help startups find optimal locations, negotiate leases, and develop sustainable real estate portfolios.',
+    icon: Building,
+    gradient: 'from-amber-500 via-orange-500 to-red-600',
+    glowColor: 'shadow-amber-500/40',
+    bgColor: 'bg-amber-500/10',
+    borderColor: 'border-amber-500/20',
+    accentColor: 'text-amber-600',
+  },
+  {
+    id: 4,
+    title: 'Legal Advisory',
+    description: 'Comprehensive legal support for startups including company registration, compliance management, intellectual property protection, contract negotiations, and regulatory guidance. We ensure startups operate within legal frameworks while protecting their interests.',
+    icon: Scale,
+    gradient: 'from-rose-500 via-pink-500 to-fuchsia-600',
+    glowColor: 'shadow-rose-500/40',
+    bgColor: 'bg-rose-500/10',
+    borderColor: 'border-rose-500/20',
+    accentColor: 'text-rose-600',
+  },
+  {
+    id: 5,
+    title: 'Funding & Financial',
+    description: 'End-to-end financial support for startups including seed funding, venture capital connections, financial planning, accounting services, and investment strategy. We help startups secure capital, manage finances, and build sustainable financial models.',
+    icon: TrendingUp,
+    gradient: 'from-green-500 via-emerald-500 to-teal-600',
+    glowColor: 'shadow-green-500/40',
+    bgColor: 'bg-green-500/10',
+    borderColor: 'border-green-500/20',
+    accentColor: 'text-green-600',
+  },
+  {
+    id: 6,
+    title: 'Collaboration Support',
+    description: 'Strategic partnership and collaboration services including business development, networking opportunities, joint venture facilitation, and ecosystem building. We connect startups with potential partners, mentors, and industry leaders.',
+    icon: Users,
+    gradient: 'from-blue-500 via-indigo-500 to-purple-600',
+    glowColor: 'shadow-blue-500/40',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/20',
+    accentColor: 'text-blue-600',
   },
 ];
 
 const Services = () => {
-  const [activeService, setActiveService] = useState(0);
-  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const updateWindowSize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight
-      });
-    };
-
-    updateWindowSize();
-    window.addEventListener('resize', updateWindowSize);
-
-    return () => {
-      window.removeEventListener('resize', updateWindowSize);
-    };
+    setIsVisible(true);
   }, []);
 
   return (
-    <section className="relative py-12 overflow-hidden">
-      {/* Fresh Light Theme Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
-        <div className="absolute inset-0">
-          {/* Colorful Background Blobs */}
-          <div
-            className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-15 blur-3xl"
-            style={{
-              background: 'radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(168, 85, 247, 0.1) 50%, transparent 100%)'
-            }}
-          />
-          
-          <div
-            className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-18 blur-3xl"
-            style={{
-              background: 'radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(16, 185, 129, 0.08) 50%, transparent 100%)'
-            }}
-          />
-
-          <div
-            className="absolute top-1/3 left-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-12 blur-3xl"
-            style={{
-              background: 'radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(59, 130, 246, 0.06) 50%, transparent 100%)'
-            }}
-          />
-        </div>
-
-        {/* Enhanced Grid Pattern */}
+    <section className="relative py-20 lg:py-32 overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+        {/* Floating Orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-violet-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-amber-400/15 to-orange-400/15 rounded-full blur-3xl animate-pulse delay-500"></div>
+        
+        {/* Grid Pattern */}
         <div 
-          className="absolute inset-0 opacity-6"
+          className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: 'linear-gradient(rgba(6, 182, 212, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.12) 1px, transparent 1px)',
-            backgroundSize: '60px 60px'
+            backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99, 102, 241, 0.3) 1px, transparent 0)',
+            backgroundSize: '40px 40px'
           }}
         />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Header Section */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          {/* Services Badge */}
-          <div className="inline-block mb-6 sm:mb-8">
+        <div className="text-center mb-16 lg:mb-20">
+          {/* Animated Badge */}
+          <div className="inline-block mb-8">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
-              <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-cyan-200 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center">
-                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-purple-600 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
+              <div className="relative flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-violet-200 px-6 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="w-8 h-8 bg-gradient-to-br from-violet-500 to-purple-600 rounded-full flex items-center justify-center animate-spin-slow">
+                  <Sparkles className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-slate-700 font-bold text-sm sm:text-base">Our Services</span>
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span className="text-slate-700 font-bold text-base">Our Expertise</span>
+                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
               </div>
             </div>
           </div>
-
-          {/* Section Title */}
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6">
-            <span className="text-slate-800">STRATEGIC</span>{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500">
-              SERVICES
+          
+          {/* Main Title */}
+          <h2 className={`text-4xl md:text-6xl lg:text-7xl font-black mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <span className="text-slate-800">Core</span>{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-600 animate-gradient">
+              Divisions
             </span>
           </h2>
           
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive solutions designed to{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-600 font-bold">accelerate growth</span> and{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 font-bold">maximize returns</span> through innovative strategies and cutting-edge technology.
-          </p>
+          {/* Subtitle */}
+          <div className={`relative max-w-4xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="absolute -inset-2 bg-gradient-to-r from-violet-500/10 to-purple-500/10 rounded-2xl blur-lg"></div>
+            <div className="relative bg-white/95 backdrop-blur-xl border border-violet-200/50 rounded-2xl p-6 lg:p-8 shadow-xl">
+              <p className="text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed">
+                Comprehensive support across key business domains through{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600 font-bold">
+                  multi-disciplinary approach
+                </span>{' '}
+                and expert guidance.
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {servicesData.map((service, index) => (
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {DIVISIONS.map((division, index) => (
             <div
-              key={service.id}
-              className={`group relative cursor-pointer transition-all duration-500 ${
-                activeService === index ? 'scale-105' : 'hover:scale-105'
+              key={division.id}
+              className={`group relative transform transition-all duration-700 hover:scale-105 hover:-translate-y-3 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
-              onMouseEnter={() => setActiveService(index)}
+              style={{ transitionDelay: `${index * 100}ms` }}
+              onMouseEnter={() => setHoveredCard(division.id)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Glow Effect */}
-              <div className={`absolute -inset-2 bg-gradient-to-r ${service.gradient} rounded-3xl blur opacity-0 group-hover:opacity-25 transition-opacity duration-500`}></div>
+              {/* Animated Background Glow */}
+              <div className={`absolute -inset-1 bg-gradient-to-r ${division.gradient} rounded-3xl opacity-0 blur-xl group-hover:opacity-30 transition-all duration-500`}></div>
+              
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-violet-400/20 to-purple-400/20 backdrop-blur-xl border border-violet-200/50 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200"></div>
+              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 backdrop-blur-xl border border-emerald-200/50 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300"></div>
               
               {/* Main Card */}
-              <div className="relative bg-white/90 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-8 hover:border-cyan-300/50 transition-all duration-500 shadow-xl hover:shadow-2xl">
+              <div className="relative bg-white/95 backdrop-blur-2xl border border-slate-200/50 rounded-3xl p-6 lg:p-8 h-full hover:border-violet-300/50 transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl">
                 
-                {/* Icon Container */}
-                <div className="relative mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl p-0.5 ${service.glowColor} shadow-lg`}>
-                    <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center">
-                      <service.icon className="w-8 h-8 text-slate-700" />
-                    </div>
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-400 rounded-full opacity-90 flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                {/* Status Indicator */}
+                <div className="absolute top-4 right-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span className="text-emerald-600 font-medium text-xs">Active</span>
                   </div>
                 </div>
-                
+
+                {/* Icon Container */}
+                <div className="relative mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${division.gradient} rounded-2xl p-0.5 ${division.glowColor} shadow-lg group-hover:shadow-xl transition-all duration-500`}>
+                    <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-slate-50 transition-all duration-500">
+                      <division.icon className={`w-8 h-8 ${division.accentColor} group-hover:scale-110 transition-transform duration-500`} />
+                    </div>
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full opacity-80 animate-ping"></div>
+                </div>
+
                 {/* Content */}
                 <div className="space-y-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-slate-800 mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 font-medium mb-3">
-                      {service.subtitle}
-                    </p>
-                    <p className="text-slate-700 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                  
-                  {/* Features */}
-                  <div className="space-y-2">
-                    {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                        <span className="text-slate-700 text-sm font-medium">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Stats */}
-                  <div className="pt-4 border-t border-cyan-200/50">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${service.gradient}`}>
-                          {service.stats.value}
-                        </div>
-                        <div className="text-slate-600 text-sm">{service.stats.label}</div>
-                      </div>
-                      <div className="group-hover:translate-x-2 transition-transform duration-300">
-                        <ArrowRight className="w-6 h-6 text-cyan-500" />
-                      </div>
-                    </div>
-                  </div>
+                  <h3 className={`text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${division.gradient} mb-2 group-hover:scale-105 transition-transform duration-300`}>
+                    {division.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed text-sm lg:text-base group-hover:text-slate-700 transition-colors duration-300">
+                    {division.description}
+                  </p>
                 </div>
+
+                {/* Hover Effect Line */}
+                <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-violet-500 to-purple-600 group-hover:w-full transition-all duration-500"></div>
               </div>
             </div>
           ))}
         </div>
 
-        
+        {/* Bottom CTA */}
+        <div className={`text-center mt-16 lg:mt-20 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-block group">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-purple-600 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
+                             <a href="/services" className="relative flex items-center gap-3 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-violet-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                 <span>Explore All Services</span>
+                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+               </a>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Custom Animations */}
+      <style>{`
+        @keyframes gradient {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+        
+        .animate-spin-slow {
+          animation: spin 3s linear infinite;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 };

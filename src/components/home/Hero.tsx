@@ -89,7 +89,7 @@ const Hero = () => {
                   <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center">
                     <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
-                  <span className="text-slate-700 font-bold text-sm sm:text-base">Next-Gen Venture Capital</span>
+                  <span className="text-slate-700 font-bold text-sm sm:text-base">Next-Gen Venture Capital collaboration and investment</span>
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
@@ -97,21 +97,27 @@ const Hero = () => {
 
             {/* Hero Title */}
             <div className="space-y-3 sm:space-y-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black leading-none">
-                <div className="text-slate-800 mb-2 sm:mb-4">
-                  FUTURE
+              <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black leading-none">
+                <div className="text-slate-800 ">
+                  ETERNITY
                 </div>
-                <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
+                {/* Tagline */}
+                <div className="text-sm transform translate-y-1 sm:text-sm md:text-md lg:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-800 italic">
+                  your vision our venture!
+                </div>
+                <div className="text-transparent  bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
                   VENTURES
                 </div>
               </h1>
+
+
 
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-2xl">
                 Empowering the next generation of{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 font-bold">
                   innovative startups
                 </span>{' '}
-                with cutting-edge technology and strategic investment.
+                with cutting-edge technology and strategic investment and collaboration.
               </p>
             </div>
 
@@ -149,22 +155,23 @@ const Hero = () => {
               <div className="group relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl sm:rounded-2xl opacity-40 blur-sm group-hover:opacity-60 transition-opacity duration-300"></div>
                 <a
-                  href="/contact"
+                  href="/about"
                   className="relative flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
                 >
                   <Play className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                  <span>Start Your Journey</span>
+                  <span>About Us</span>
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </div>
 
               <div className="group">
                 <a
-                  href="/portfolio"
+                  href="/services"
                   className="flex items-center justify-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-violet-200 text-slate-700 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:scale-105 hover:border-violet-300 transition-all duration-300 shadow-lg"
                 >
                   <Globe className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-violet-500" />
-                  <span>View Portfolio</span>
+                  <span>
+                    Our Services</span>
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300 text-violet-500" />
                 </a>
               </div>

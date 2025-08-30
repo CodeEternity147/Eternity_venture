@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { 
   Code, 
@@ -19,7 +19,9 @@ import {
   Eye,
   Crown,
   Briefcase,
-  Lightbulb
+  Lightbulb,
+  Building2,
+  Brain
 } from 'lucide-react';
 
 const About = () => {
@@ -32,7 +34,7 @@ const About = () => {
     {
       id: 1,
       title: 'IT Consulting',
-      description: 'Strategic technological solutions and digital transformation services for modern businesses.',
+      description: 'Comprehensive technology solutions for startups including digital transformation, software development, cloud infrastructure, and cybersecurity. We help startups build scalable tech foundations and digital products that drive growth and innovation.',
       icon: Code,
       gradient: 'from-cyan-400 via-blue-500 to-indigo-600',
       glowColor: 'shadow-cyan-500/30',
@@ -42,7 +44,7 @@ const About = () => {
     {
       id: 2,
       title: 'EdTech',
-      description: 'Revolutionizing education through innovative technology solutions and interactive learning.',
+      description: 'Revolutionary educational technology solutions for startups in the learning sector. We provide platform development, content creation, interactive learning tools, and market entry strategies to help EdTech startups scale and reach global audiences.',
       icon: BookOpen,
       gradient: 'from-emerald-400 via-green-500 to-teal-600',
       glowColor: 'shadow-emerald-500/30',
@@ -52,7 +54,7 @@ const About = () => {
     {
       id: 3,
       title: 'Real Estate',
-      description: 'Premium residential/commercial properties with sustainability focus and modern amenities.',
+      description: 'Strategic real estate solutions for startups including office space acquisition, property development consulting, and investment opportunities. We help startups find optimal locations, negotiate leases, and develop sustainable real estate portfolios.',
       icon: Building,
       gradient: 'from-purple-400 via-violet-500 to-indigo-600',
       glowColor: 'shadow-purple-500/30',
@@ -62,12 +64,74 @@ const About = () => {
     {
       id: 4,
       title: 'Legal Advisory',
-      description: 'Comprehensive legal services for regulatory compliance and business protection.',
+      description: 'Comprehensive legal support for startups including company registration, compliance management, intellectual property protection, contract negotiations, and regulatory guidance. We ensure startups operate within legal frameworks while protecting their interests.',
       icon: Scale,
       gradient: 'from-orange-400 via-red-500 to-pink-600',
       glowColor: 'shadow-orange-500/30',
       bgColor: 'bg-orange-500/10',
       borderColor: 'border-orange-500/20',
+    },
+    {
+      id: 5,
+      title: 'Funding & Financial',
+      description: 'End-to-end financial support for startups including seed funding, venture capital connections, financial planning, accounting services, and investment strategy. We help startups secure capital, manage finances, and build sustainable financial models.',
+      icon: TrendingUp,
+      gradient: 'from-green-400 via-emerald-500 to-teal-600',
+      glowColor: 'shadow-green-500/30',
+      bgColor: 'bg-green-500/10',
+      borderColor: 'border-green-500/20',
+    },
+    {
+      id: 6,
+      title: 'Collaboration Support',
+      description: 'Strategic partnership and collaboration services including business development, networking opportunities, joint venture facilitation, and ecosystem building. We connect startups with potential partners, mentors, and industry leaders.',
+      icon: Users,
+      gradient: 'from-blue-400 via-indigo-500 to-purple-600',
+      glowColor: 'shadow-blue-500/30',
+      bgColor: 'bg-blue-500/10',
+      borderColor: 'border-blue-500/20',
+    },
+  ];
+
+  const startupSupportData = [
+    {
+      id: 1,
+      title: 'Startup Mentorship',
+      subtitle: 'Expert Guidance & Strategy',
+      description: 'Comprehensive mentorship programs providing strategic guidance, business planning, and growth strategies to help startups navigate their journey from ideation to market success.',
+      icon: Users,
+      gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
+      glowColor: 'shadow-emerald-500/30',
+      bgPattern: 'bg-gradient-to-br from-emerald-500/5 to-teal-500/10',
+      features: ['Strategic Planning', 'Business Development', 'Market Entry'],
+      stats: { value: '100+', label: 'Startups Mentored' },
+      delay: 0.1,
+    },
+    {
+      id: 2,
+      title: 'Funding Support',
+      subtitle: 'Capital • Connections • Growth',
+      description: 'End-to-end funding assistance including investor connections, pitch deck preparation, financial modeling, and strategic fundraising support for startups at every stage.',
+      icon: TrendingUp,
+      gradient: 'from-rose-400 via-pink-500 to-purple-600',
+      glowColor: 'shadow-rose-500/30',
+      bgPattern: 'bg-gradient-to-br from-rose-500/5 to-pink-500/10',
+      features: ['Investor Network', 'Pitch Preparation', 'Financial Planning'],
+      stats: { value: '₹25Cr+', label: 'Funds Raised' },
+      delay: 0.2,
+    },
+    {
+      id: 3,
+      title: 'Legal & Compliance',
+      subtitle: 'Regulatory Excellence',
+      description: 'Comprehensive legal support including company registration, compliance management, intellectual property protection, and regulatory guidance to ensure startups operate within legal frameworks.',
+      icon: Scale,
+      gradient: 'from-violet-400 via-purple-500 to-fuchsia-600',
+      glowColor: 'shadow-violet-500/30',
+      bgPattern: 'bg-gradient-to-br from-violet-500/5 to-purple-500/10',
+      features: ['Company Registration', 'IP Protection', 'Compliance Management'],
+      stats: { value: '50+', label: 'Legal Cases' },
+      delay: 0.6,
     },
   ];
 
@@ -106,6 +170,26 @@ const About = () => {
       'Led investments in 5+ companies across diverse sectors.',
     ],
   };
+
+  const [activeService, setActiveService] = useState(0);
+  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
+
+  useEffect(() => {
+    const updateWindowSize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    updateWindowSize();
+    window.addEventListener('resize', updateWindowSize);
+
+    return () => {
+      window.removeEventListener('resize', updateWindowSize);
+    };
+  }, []);
+
 
   return (
     <div>
@@ -346,158 +430,113 @@ const About = () => {
         </div>
       </section>
 
-      {/* Core Divisions */}
-      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
-        {/* Fresh Light Theme Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
-          <div className="absolute inset-0">
-            {/* Colorful Background Blobs */}
-            <div
-              className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-15 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(168, 85, 247, 0.1) 50%, transparent 100%)'
-              }}
-            />
-            
-            <div
-              className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-18 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(16, 185, 129, 0.08) 50%, transparent 100%)'
-              }}
-            />
-          </div>
-
-          {/* Enhanced Grid Pattern */}
-          <div 
-            className="absolute inset-0 opacity-6"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(6, 182, 212, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.12) 1px, transparent 1px)',
-              backgroundSize: '60px 60px'
-            }}
-          />
-        </div>
-        
-        <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            {/* Expertise Badge */}
-            <div className="inline-block mb-6 sm:mb-8">
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
-                <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-cyan-200 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center">
-                    <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                  </div>
-                  <span className="text-slate-700 font-bold text-sm sm:text-base">Our Expertise</span>
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+     {/* Header Section */}
+     <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          {/* Services Badge */}
+          <div className="inline-block mb-6 sm:mb-8">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
+              <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-cyan-200 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center">
+                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </div>
-              </div>
-            </div>
-            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-gray-800 font-black mb-4 sm:mb-6">
-              Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500">Divisions</span>
-            </h2>
-            
-            <div className="relative max-w-4xl mx-auto">
-              <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 rounded-2xl blur-lg"></div>
-              <div className="relative bg-white/95 backdrop-blur-xl border border-cyan-200/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl">
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed">
-                  Comprehensive support across key business domains through multi-disciplinary approach and expert guidance.
-                </p>
+                <span className="text-slate-700 font-bold text-sm sm:text-base">Startup Support</span>
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {DIVISIONS.map((division, index) => (
-              <div
-                key={division.id}
-                className="group relative transform transition-all duration-500 hover:scale-105 hover:-translate-y-2"
-              >
-                {/* Card Glow Effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${division.gradient} rounded-3xl opacity-0 blur group-hover:opacity-25 transition-all duration-500`}></div>
+
+
+
+          {/* Section Title */}
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6">
+            <span className="text-slate-800">COMPREHENSIVE</span>{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500">
+              SUPPORT
+            </span>
+          </h2>
+          
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Holistic startup support designed to{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-600 font-bold">accelerate growth</span> and{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 font-bold">ensure success</span> through expert guidance and comprehensive assistance.
+          </p>
+        </div>
+
+        {/* Startup Support Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {startupSupportData.map((service, index) => (
+            <div
+              key={service.id}
+              className={`group relative cursor-pointer transition-all duration-500 ${
+                activeService === index ? 'scale-105' : 'hover:scale-105'
+              }`}
+              onMouseEnter={() => setActiveService(index)}
+            >
+              {/* Glow Effect */}
+              <div className={`absolute -inset-2 bg-gradient-to-r ${service.gradient} rounded-3xl blur opacity-0 group-hover:opacity-25 transition-opacity duration-500`}></div>
+              
+              {/* Main Card */}
+              <div className="relative bg-white/90 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-8 hover:border-cyan-300/50 transition-all duration-500 shadow-xl hover:shadow-2xl">
                 
-                {/* Main Card */}
-                <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-4 sm:p-6 lg:p-8 h-full hover:border-cyan-300/50 transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl">
-                  
-                  {/* Status Indicator */}
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                      <span className="text-emerald-600 font-medium text-xs">Active</span>
+                {/* Icon Container */}
+                <div className="relative mb-6">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl p-0.5 ${service.glowColor} shadow-lg`}>
+                    <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center">
+                      <service.icon className="w-8 h-8 text-slate-700" />
                     </div>
                   </div>
-
-                  {/* Icon Container */}
-                  <div className="relative mb-4 sm:mb-6 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                    <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${division.gradient} rounded-2xl p-0.5 ${division.glowColor} shadow-lg`}>
-                      <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center">
-                        <division.icon className="w-6 h-6 sm:w-8 sm:h-8 text-slate-700" />
-                      </div>
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-emerald-400 rounded-full opacity-80"></div>
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-400 rounded-full opacity-90 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-
-                  {/* Content */}
-                  <div className="space-y-3 sm:space-y-4">
-                    <h3 className={`text-lg sm:text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${division.gradient} mb-1 sm:mb-2`}>
-                      {division.title}
+                </div>
+                
+                {/* Content */}
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                      {service.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                      {division.description}
+                    <p className="text-sm text-slate-600 font-medium mb-3">
+                      {service.subtitle}
+                    </p>
+                    <p className="text-slate-700 leading-relaxed">
+                      {service.description}
                     </p>
                   </div>
-
-                  {/* Floating Elements */}
-                  <div className="absolute -top-3 sm:-top-4 -left-3 sm:-left-4 w-6 h-6 sm:w-8 sm:h-8 bg-cyan-500/10 backdrop-blur-xl border border-cyan-200/50 rounded-lg opacity-40"></div>
-                  <div className="absolute -bottom-3 sm:-bottom-4 -right-3 sm:-right-4 w-4 h-4 sm:w-6 sm:h-6 bg-teal-500/10 backdrop-blur-xl border border-teal-200/50 rounded-lg opacity-30"></div>
+                  
+                  {/* Features */}
+                  <div className="space-y-2">
+                    {service.features.map((feature, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+                        <span className="text-slate-700 text-sm font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Stats */}
+                  <div className="pt-4 border-t border-cyan-200/50">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${service.gradient}`}>
+                          {service.stats.value}
+                        </div>
+                        <div className="text-slate-600 text-sm">{service.stats.label}</div>
+                      </div>
+                      <div className="group-hover:translate-x-2 transition-transform duration-300">
+                        <ArrowRight className="w-6 h-6 text-cyan-500" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
 
-      {/* Values Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
-        {/* Fresh Light Theme Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
-          <div className="absolute inset-0">
-            {/* Colorful Background Blobs */}
-            <div
-              className="absolute -top-32 -right-32 w-96 h-96 lg:w-[600px] lg:h-[600px] rounded-full opacity-15 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(168, 85, 247, 0.1) 50%, transparent 100%)'
-              }}
-            />
-            
-            <div
-              className="absolute -bottom-40 -left-40 w-80 h-80 lg:w-[500px] lg:h-[500px] rounded-full opacity-18 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(16, 185, 129, 0.08) 50%, transparent 100%)'
-              }}
-            />
-
-            <div
-              className="absolute top-1/3 left-1/4 w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full opacity-12 blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(59, 130, 246, 0.06) 50%, transparent 100%)'
-              }}
-            />
-          </div>
-
-          {/* Enhanced Grid Pattern */}
-          <div 
-            className="absolute inset-0 opacity-6"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(6, 182, 212, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.12) 1px, transparent 1px)',
-              backgroundSize: '60px 60px'
-            }}
-          />
-        </div>
-        
-       
-      </section>
-
+ 
       {/* Enhanced Responsive Styles */}
       <style>{`
         @media (max-width: 1024px) {

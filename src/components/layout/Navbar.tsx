@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Zap, Shield, Sparkles, ExternalLink } from 'lucide-react';
+import { Menu, X, ChevronDown, Shield, Sparkles, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
+import logoImage from '../../assets/logo.jpg';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -111,31 +112,18 @@ const Navbar = () => {
                       onClick={() => handleNavClick('/')}
                       className="flex items-center gap-2 xs:gap-3 sm:gap-4 group relative z-10"
                     >
-                      <motion.div 
-                        whileHover={{ scale: 1.1, rotateY: 10 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="relative"
-                      >
-                        <div className="w-8 xs:w-10 sm:w-12 h-8 xs:h-10 sm:h-12 rounded-lg xs:rounded-xl sm:rounded-2xl bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 p-0.5 shadow-lg">
-                          <div className="w-full h-full rounded-lg xs:rounded-xl sm:rounded-2xl bg-white flex items-center justify-center relative overflow-hidden">
+                           <div className="w-full h-full rounded-lg xs:rounded-xl sm:rounded-2xl bg-white flex items-center justify-center relative overflow-hidden">
                             <motion.div
                               animate={{ scale: [1, 1.05, 1] }}
                               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                               className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10"
                             />
-                            <Zap className="w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6 text-blue-600 relative z-10" />
+                            <img 
+                              src={logoImage} 
+                              alt="Eternity Ventures Logo" 
+                              className="w-8 xs:w-10 sm:w-12 h-8 xs:h-10 sm:h-12 object-contain"
+                            />
                           </div>
-                        </div>
-                        <motion.div
-                          animate={{
-                            scale: [1, 1.1, 1],
-                            opacity: [0.2, 0.3, 0.2]
-                          }}
-                          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                          className="absolute -inset-1 xs:-inset-2 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl xs:rounded-2xl blur-lg"
-                        />
-                      </motion.div>
-                      
                       <div className="hidden xs:block">
                         <div className="text-base xs:text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                           Eternity

@@ -1,4 +1,5 @@
-import { Mail, Phone, MapPin, ArrowUp, Sparkles, Heart, Globe, Rocket } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUp, Heart, Globe, Rocket } from 'lucide-react';
+import logoImage from '../../assets/logo.jpg';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -8,7 +9,7 @@ const Footer = () => {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = '+918874700800';
+    const phoneNumber = '+916391555666';
     const message = 'Hello! I would like to know more about Eternity Ventures.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -31,17 +32,16 @@ const Footer = () => {
             {/* Company Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <Sparkles className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
-                </div>
+              <img 
+                      src={logoImage} 
+                      alt="Eternity Ventures Logo" 
+                      className="w-12 h-12 object-contain rounded-2xl"
+                    />
                 <div>
                   <div className="text-2xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
                     Eternity Ventures
                   </div>
-                  <div className="text-slate-600 font-medium">capital and innovation hub</div>
+                  <div className="text-slate-600 font-medium">your vision our venture!</div>
                 </div>
               </div>
               <p className="text-slate-600 leading-relaxed">
@@ -86,7 +86,7 @@ const Footer = () => {
                     <Phone className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-slate-800">+91 8874 700 800</div>
+                    <div className="text-sm font-medium text-slate-800">+91 6391 555 666</div>
                     <div className="text-xs text-slate-500">Call us now</div>
                   </div>
                 </div>
