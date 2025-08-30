@@ -96,13 +96,13 @@ const Hero = () => {
             </div>
 
             {/* Hero Title */}
-            <div className="space-y-4 sm:space-y-6 md:space-y-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-tight">
-                <div className="text-slate-800 mb-1 sm:mb-2 md:mb-1 lg:mb-0 xl:mb-0">
+            <div className="space-y-1 sm:space-y-2 md:space-y-0">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-none tracking-tighter">
+                <div className="text-slate-800 mb-0.5 sm:mb-1 md:mb-0">
                   ETERNITY
                 </div>
                 {/* Tagline */}
-                <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-800 italic mb-1 sm:mb-2 md:mb-1 lg:mb-0 xl:mb-0">
+                <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-800 italic mb-0.5 sm:mb-1 md:mb-0 tracking-tighter">
                   your vision our venture!
                 </div>
                 <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500">
