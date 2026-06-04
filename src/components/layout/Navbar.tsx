@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Shield, Sparkles, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
-import logoImage from '../../assets/logo.jpg';
+import logoImage from '../../assets/evlogo.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -110,36 +110,36 @@ const Navbar = () => {
                     {/* Enhanced Logo */}
                     <button 
                       onClick={() => handleNavClick('/')}
-                      className="flex items-center gap-2 xs:gap-3 sm:gap-4 group relative z-10"
+                      className="flex items-center gap-3 xs:gap-4 sm:gap-5 group relative z-10"
                     >
-                           <div className="w-full h-full rounded-lg xs:rounded-xl sm:rounded-2xl bg-white flex items-center justify-center relative overflow-hidden">
-                            <motion.div
-                              animate={{ scale: [1, 1.05, 1] }}
-                              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                              className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10"
-                            />
-                            <img 
-                              src={logoImage} 
-                              alt="Eternity Ventures Logo" 
-                              className="w-8 xs:w-10 sm:w-12 h-8 xs:h-10 sm:h-12 object-contain"
-                            />
-                          </div>
-                      <div className="hidden xs:block">
+                      <div className="flex-shrink-0 w-auto h-full rounded-lg xs:rounded-xl sm:rounded-2xl bg-white flex items-center justify-center relative overflow-hidden">
+                        <motion.div
+                          animate={{ scale: [1, 1.05, 1] }}
+                          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                          className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10"
+                        />
+                        <img 
+                          src={logoImage} 
+                          alt="Eternity Ventures Logo" 
+                          className="w-10 xs:w-12 sm:w-14 h-10 xs:h-12 sm:h-14 object-contain"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-0.5 min-w-[8rem] sm:min-w-[10rem]">
                         <div className="text-base xs:text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                          Eternity
+                          Eternity Ventures
                         </div>
-                        <div className="flex items-center gap-1 sm:gap-2">
-                          <div className="text-xs text-gray-600 font-medium">Ventures</div>
-                          {location.pathname !== '/' && (
-                            <motion.div
-                              initial={{ opacity: 0, scale: 0 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              transition={{ delay: 0.3, type: "spring", stiffness: 500 }}
-                              className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-                            />
-                          )}
+                        <div className="text-xs xs:text-sm text-slate-600 font-medium">
+                          your vision our venture!
                         </div>
                       </div>
+                      {location.pathname !== '/' && (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.3, type: "spring", stiffness: 500 }}
+                          className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+                        />
+                      )}
                     </button>
 
                     {/* Desktop Navigation */}

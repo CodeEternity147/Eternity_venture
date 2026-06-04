@@ -27,11 +27,11 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'team@eternityventures.co.in',
-    href: 'mailto:team@eternityventures.co.in',
+    value: 'eternityventures@outlook.com',
+    href: 'mailto:eternityventures@outlook.com',
     color: 'from-purple-500 to-pink-500',
     bgColor: 'from-purple-100/60 to-pink-100/60',
-    description: 'We reply within 24 hours'
+    description: 'We reply within 48 hours'
   },
   {
     icon: MapPin,

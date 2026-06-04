@@ -1,0 +1,31 @@
+---
+*** Begin Patch
+*** Update File: c:\Users\91979\Documents\CET GIT\eternity ventures\Eternity_venture\src\components\layout\Navbar.tsx
+@@
+-                    <button 
+-                      onClick={() => handleNavClick('/')}
+-                      className="flex items-center gap-2 xs:gap-3 sm:gap-4 group relative z-10"
+-                    >
+-                      <div className="w-auto h-full rounded-lg xs:rounded-xl sm:rounded-2xl bg-white flex items-center justify-center relative overflow-hidden">
++                    <button 
++                      onClick={() => handleNavClick('/')}
++                      className="flex items-center gap-3 xs:gap-4 sm:gap-5 group relative z-10"
++                    >
++                      <div className="flex-shrink-0 w-auto h-full rounded-lg xs:rounded-xl sm:rounded-2xl bg-white flex items-center justify-center relative overflow-hidden">
+                         <motion.div
+                           animate={{ scale: [1, 1.05, 1] }}
+                           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                           className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10"
+                         />
+                         <img 
+                           src={logoImage} 
+                           alt="Eternity Ventures Logo" 
+                           className="w-10 xs:w-12 sm:w-14 h-10 xs:h-12 sm:h-14 object-contain"
+                         />
+                       </div>
+-                      <div className="flex flex-col gap-0.5">
++                      <div className="flex flex-col gap-0.5 min-w-[8rem] sm:min-w-[10rem]">
+                         <div className="text-base xs:text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                           Eternity Ventures
+                         </div>
+*** End Patch

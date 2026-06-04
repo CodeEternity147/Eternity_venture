@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import a2Image from '../assets/a2.jpeg';
+import s1Image from '../assets/s1.jpeg';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { 
   Code, 
@@ -162,12 +164,27 @@ const About = () => {
   const FOUNDER_INFO = {
     name: 'Adarsh Srivastava',
     position: 'Founder & CEO',
-    image: 'https://media.licdn.com/dms/image/v2/D5603AQECRqG2QDJNOg/profile-displayphoto-shrink_200_200/B56ZRAjzR0H0Ac-/0/1736249916228?e=2147483647&v=beta&t=UlbblVSE25loL7zmB4epaUUJfzjGZy-HP9gLqVTVhWY',
+    image: a2Image,
     quote: 'We believe in the power of entrepreneurship to solve pressing challenges and create lasting impact.',
     description: [
       '3+ years experience in entrepreneurship and venture capital.',
       'Founded two successful startups prior to Eternity Ventures.',
       'Led investments in 5+ companies across diverse sectors.',
+      'MBA in Entrepreneurship and Strategy.',
+      'Regular mentor and advisor for early-stage founders.',
+      'Awarded "Young Founder of the Year" for innovation in 2024.',
+    ],
+  };
+
+  const COFOUNDER_INFO = {
+    name: 'Shambhavi Singh',
+    position: 'Co-founder • HRBP Head',
+    image: s1Image,
+    quote: 'Building great teams and culture is at the heart of scaling sustainable ventures.',
+    description: [
+      '10+ years experience in HR and talent strategy.',
+      'Leads recruitment, culture and people operations.',
+      'Expert in leadership development and organizational design.',
     ],
   };
 
@@ -299,9 +316,61 @@ const About = () => {
           />
         </div>
       </div>
+
+      
     </div>
   </div>
 </section>
+
+      
+
+      {/* Leadership — Founder & Co-Founder */}
+      <section className="relative py-12 sm:py-16 lg:py-20">
+        <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            {[FOUNDER_INFO, COFOUNDER_INFO].map((person, idx) => (
+              <div key={idx} className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col">
+                <div className="flex items-start gap-4">
+                  <img src={person.image} alt={person.name} className="h-28 w-28 sm:h-32 sm:w-32 rounded-xl object-cover flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-800">{person.name}</h3>
+                    <p className="text-cyan-600 font-medium text-sm sm:text-base">{person.position}</p>
+                    <blockquote className="text-slate-600 italic mt-2">"{person.quote}"</blockquote>
+                  </div>
+                </div>
+
+                <div className="mt-4 text-slate-600 space-y-2 flex-grow">
+                  {person.description.map((text, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-cyan-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm sm:text-base">{text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
+
+      {/* Our Story — Full Width */}
+      <section className="relative py-8 bg-transparent">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="relative bg-white/95 backdrop-blur-xl border border-cyan-200/50 rounded-3xl p-6 sm:p-8 shadow-xl">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-10 h-10 flex-shrink-0 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center">
+                <Target className="w-4 h-4 text-white" />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-800">Our Story</h2>
+            </div>
+            <p className="text-slate-600 leading-relaxed">
+              Eternity Ventures was founded to identify and nurture promising entrepreneurs across India. We combine strategic capital, industry expertise, and hands-on support to help early-stage founders scale products, teams, and businesses for long-term impact.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Vision & Mission */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
@@ -344,9 +413,11 @@ const About = () => {
         <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             {/* Left Column */}
-            <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-6 sm:space-y-8 flex flex-col justify-center min-h-[320px] lg:min-h-[420px]">
+              
+              
               {/* Story Badge */}
-              <div className="inline-block">
+              <div className="inline-block mb-6 sm:mb-8">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full opacity-30 blur-sm group-hover:opacity-50 transition-all duration-300"></div>
                   <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-xl border border-cyan-200 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl">
@@ -358,7 +429,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              
+
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-gray-800 font-black mb-4 sm:mb-6">
                 Vision & <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500">Mission</span>
               </h2>
@@ -399,27 +470,27 @@ const About = () => {
               <div className="group relative transform transition-all duration-500 hover:scale-105">
                 <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-teal-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
                 <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-4 sm:p-6 lg:p-8 hover:border-cyan-300/50 transition-all duration-500 shadow-2xl">
-                  <div className="flex items-start mb-6 sm:mb-8">
-                    <div className="relative mr-3 sm:mr-4">
-                      <img
-                        src={FOUNDER_INFO.image}
-                        alt="Founder"
-                        className="h-12 w-12 sm:h-16 sm:w-16 rounded-xl object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-800">{FOUNDER_INFO.name}</h3>
-                      <p className="text-cyan-600 font-medium text-sm sm:text-base">{FOUNDER_INFO.position}</p>
-                    </div>
-                  </div>
-                  <blockquote className="text-slate-600 italic mb-4 sm:mb-6 border-l-4 border-cyan-500 pl-3 sm:pl-4 text-base sm:text-lg">
-                    "{FOUNDER_INFO.quote}"
-                  </blockquote>
-                  <div className="text-slate-600 space-y-3 sm:space-y-4">
-                    {FOUNDER_INFO.description.map((text, index) => (
-                      <div key={index} className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-500 mt-0.5 flex-shrink-0" />
-                        <p className="text-sm sm:text-base">{text}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
+                    {[FOUNDER_INFO, COFOUNDER_INFO].map((person, idx) => (
+                      <div key={idx} className="flex items-start gap-4">
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="h-24 w-24 sm:h-28 sm:w-28 rounded-xl object-cover"
+                        />
+                        <div>
+                          <h3 className="text-lg sm:text-xl font-bold text-slate-800">{person.name}</h3>
+                          <p className="text-cyan-600 font-medium text-sm sm:text-base">{person.position}</p>
+                          <blockquote className="text-slate-600 italic mt-2">"{person.quote}"</blockquote>
+                          <div className="text-slate-600 space-y-2 mt-3">
+                            {person.description.map((text, index) => (
+                              <div key={index} className="flex items-start gap-2 sm:gap-3">
+                                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-500 mt-0.5 flex-shrink-0" />
+                                <p className="text-sm sm:text-base">{text}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -432,6 +503,7 @@ const About = () => {
 
      {/* Header Section */}
      <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+ 
           {/* Services Badge */}
           <div className="inline-block mb-6 sm:mb-8">
             <div className="relative group">

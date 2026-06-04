@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, ArrowUp, Heart, Globe, Rocket } from 'lucide-react';
-import logoImage from '../../assets/logo.jpg';
+import logoImage from '../../assets/evlogo.png';
 
 const Footer = () => {
   const year = new Date().getFullYear();
