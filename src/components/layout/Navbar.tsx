@@ -8,6 +8,7 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
   { name: 'Services', path: '/services' },
+  { name: 'Gallery', path: '/gallery' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -15,6 +16,7 @@ const ventureLinks = [
   { name: 'CodeEternity', path: 'https://www.codeeternity.com/', description: 'Learning Platform', external: true },
   { name: 'Adhira SoftTech', path: 'https://www.aadirasofttech.com/', description: 'Software Solutions', external: true },
   { name: 'Flick Lifestyle', path: '/ventures/flick-lifestyle', description: 'Lifestyle Brand', external: false },
+  { name: 'Medivore', path: '/ventures/medivore', description: 'Hospital Management System', external: false },
 ];
 
 const Navbar = () => {

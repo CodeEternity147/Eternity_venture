@@ -76,7 +76,7 @@ const Footer = () => {
                     <Mail className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-slate-800">hello@eternityventures.com</div>
+                    <div className="text-sm font-medium text-slate-800">team@eternityventures.co.in</div>
                     <div className="text-xs text-slate-500">Email us anytime</div>
                   </div>
                 </div>
@@ -96,8 +96,18 @@ const Footer = () => {
                     <MapPin className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-slate-800">Lucknow, UP, India</div>
-                    <div className="text-xs text-slate-500">Visit our office</div>
+                    <div className="text-sm font-medium text-slate-800">Sec 63, Noida, Uttar Pradesh, India</div>
+                    <div className="text-xs text-slate-500">India Office</div>
+                  </div>
+                </div>
+
+                <div className="group flex items-center gap-3 p-3 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl hover:from-green-100 hover:to-teal-100 transition-all duration-300">
+                  <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-teal-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <MapPin className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-slate-800">Tbilisi, Georgia, Europe</div>
+                    <div className="text-xs text-slate-500">Georgia Office</div>
                   </div>
                 </div>
               </div>

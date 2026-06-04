@@ -411,7 +411,7 @@ const About = () => {
         </div>
         
         <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:gap-16 items-center">
             {/* Left Column */}
             <div className="space-y-6 sm:space-y-8 flex flex-col justify-center min-h-[320px] lg:min-h-[420px]">
               
@@ -438,7 +438,7 @@ const About = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 rounded-2xl blur-lg"></div>
                 <div className="relative bg-white/95 backdrop-blur-xl border border-cyan-200/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl">
                   <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed">
-                    Founded in 2023 to identify and nurture promising entrepreneurs across India with a focus on early-stage startups with strong teams and scalable models.
+                    Founded in 2023 with a singular purpose: to unlock India's entrepreneurial potential by identifying and nurturing exceptional founders building scalable, high-impact ventures. We partner with visionary entrepreneurs who dare to challenge the status quo and create lasting change across India and beyond.
                   </p>
                 </div>
               </div>
@@ -449,7 +449,7 @@ const About = () => {
                   <div className="relative bg-white/90 backdrop-blur-2xl border border-cyan-200/50 rounded-2xl p-4 sm:p-6 hover:border-cyan-300/50 transition-all duration-300 shadow-xl">
                     <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-slate-800">Our Vision</h3>
                     <p className="text-slate-600 text-sm sm:text-base">
-                      Catalyst for India's next generation of transformative companies.
+                      To be the catalyst that transforms brilliant ideas into globally competitive companies, creating a thriving ecosystem where Indian entrepreneurs lead innovation and drive sustainable growth across industries.
                     </p>
                   </div>
                 </div>
@@ -458,41 +458,8 @@ const About = () => {
                   <div className="relative bg-white/90 backdrop-blur-2xl border border-emerald-200/50 rounded-2xl p-4 sm:p-6 hover:border-emerald-300/50 transition-all duration-300 shadow-xl">
                     <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-slate-800">Our Mission</h3>
                     <p className="text-slate-600 text-sm sm:text-base">
-                      Empower entrepreneurs with capital, expertise, and connections.
+                      Empower ambitious founders with strategic capital, deep industry expertise, mentorship, and a powerful network—enabling them to accelerate growth, overcome challenges, and build businesses that create meaningful impact for society.
                     </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Founder Card */}
-            <div className="relative">
-              <div className="group relative transform transition-all duration-500 hover:scale-105">
-                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-teal-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
-                <div className="relative bg-white/95 backdrop-blur-2xl border border-cyan-200/50 rounded-3xl p-4 sm:p-6 lg:p-8 hover:border-cyan-300/50 transition-all duration-500 shadow-2xl">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
-                    {[FOUNDER_INFO, COFOUNDER_INFO].map((person, idx) => (
-                      <div key={idx} className="flex items-start gap-4">
-                        <img
-                          src={person.image}
-                          alt={person.name}
-                          className="h-24 w-24 sm:h-28 sm:w-28 rounded-xl object-cover"
-                        />
-                        <div>
-                          <h3 className="text-lg sm:text-xl font-bold text-slate-800">{person.name}</h3>
-                          <p className="text-cyan-600 font-medium text-sm sm:text-base">{person.position}</p>
-                          <blockquote className="text-slate-600 italic mt-2">"{person.quote}"</blockquote>
-                          <div className="text-slate-600 space-y-2 mt-3">
-                            {person.description.map((text, index) => (
-                              <div key={index} className="flex items-start gap-2 sm:gap-3">
-                                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-500 mt-0.5 flex-shrink-0" />
-                                <p className="text-sm sm:text-base">{text}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    ))}
                   </div>
                 </div>
               </div>

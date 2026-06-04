@@ -203,13 +203,28 @@ const Contact = () => {
                     <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-3 rounded-lg mr-4">
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-1 text-slate-800">Visit Us</h3>
-                                             <address className="not-italic text-slate-600">
-                         Eternity Ventures<br />
-                         Vibhuti Khand, Sector 3, Gomti Nagar<br />
-                         Lucknow, India
-                       </address>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-4 text-slate-800">Visit Us</h3>
+                      <div className="space-y-4">
+                        <div className="relative group">
+                          <div className="absolute -inset-3 bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <address className="not-italic relative bg-gradient-to-br from-orange-50 to-pink-50 border-2 border-orange-200 rounded-xl p-4 text-slate-700 font-medium hover:border-orange-300 transition-all duration-300">
+                            <span className="block font-bold text-orange-600 mb-1">India Office</span>
+                            Eternity Ventures<br />
+                            Sec 63, Noida<br />
+                            Uttar Pradesh, India
+                          </address>
+                        </div>
+                        <div className="relative group">
+                          <div className="absolute -inset-3 bg-gradient-to-r from-emerald-100 to-cyan-100 rounded-xl blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <address className="not-italic relative bg-gradient-to-br from-emerald-50 to-cyan-50 border-2 border-emerald-200 rounded-xl p-4 text-slate-700 font-medium hover:border-emerald-300 transition-all duration-300">
+                            <span className="block font-bold text-emerald-600 mb-1">Georgia Office</span>
+                            Eternity Ventures<br />
+                            Tbilisi<br />
+                            Georgia, Europe
+                          </address>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
