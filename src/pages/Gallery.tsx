@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Image, Grid, Sparkles } from 'lucide-react';
+import img1 from '../assets/WhatsApp Image 2026-06-08 at 3.36.25 PM (1).jpeg';
+import img2 from '../assets/WhatsApp Image 2026-06-08 at 3.36.25 PM.jpeg';
+import img3 from '../assets/WhatsApp Image 2026-06-08 at 3.36.26 PM (1).jpeg';
+import img4 from '../assets/WhatsApp Image 2026-06-08 at 3.36.26 PM (2).jpeg';
+import img5 from '../assets/WhatsApp Image 2026-06-08 at 3.36.26 PM.jpeg';
+import img6 from '../assets/WhatsApp Image 2026-06-08 at 3.36.27 PM.jpeg';
+import img7 from '../assets/WhatsApp Image 2026-06-08 at 3.36.28 PM.jpeg';
 
 const Gallery = () => {
   useEffect(() => {
@@ -8,12 +15,13 @@ const Gallery = () => {
   }, []);
 
   const galleryItems = [
-    { title: 'Innovative Workspaces', description: 'Modern design thinking and collaborative energy.' },
-    { title: 'Community Impact', description: 'Projects that drive growth and social value.' },
-    { title: 'Creative Partnerships', description: 'Strategic alliances that expand possibility.' },
-    { title: 'Digital Experiences', description: 'Immersive campaigns built for every audience.' },
-    { title: 'Brand Craft', description: 'Visual stories and identity systems with purpose.' },
-    { title: 'Future Ventures', description: 'Bold ideas ready for the next phase of growth.' },
+    { title: 'Innovative Workspaces', description: 'Modern design thinking and collaborative energy.', image: img1 },
+    { title: 'Community Impact', description: 'Projects that drive growth and social value.', image: img2 },
+    { title: 'Creative Partnerships', description: 'Strategic alliances that expand possibility.', image: img3 },
+    { title: 'Digital Experiences', description: 'Immersive campaigns built for every audience.', image: img4 },
+    { title: 'Brand Craft', description: 'Visual stories and identity systems with purpose.', image: img5 },
+    { title: 'Future Ventures', description: 'Bold ideas ready for the next phase of growth.', image: img6 },
+    { title: 'Emerging Trends', description: 'Exploring new frontiers in venture development.', image: img7 },
   ];
 
   return (
@@ -60,19 +68,29 @@ const Gallery = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.08 }}
-                className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/30"
+                className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/95 shadow-xl shadow-slate-200/30 hover:shadow-2xl transition-shadow group"
               >
-                <div className="flex items-center justify-between mb-5">
-                  <div className="rounded-3xl bg-blue-500/10 p-3 text-blue-600">
-                    <Grid className="h-5 w-5" />
-                  </div>
-                  <div className="text-xs uppercase tracking-[0.24em] font-semibold text-slate-400">
-                    {index + 1}
-                  </div>
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-                <h2 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h2>
-                <p className="text-sm leading-6 text-slate-600">{item.description}</p>
-                <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-gradient-to-br from-blue-400/15 to-cyan-400/15 blur-3xl" />
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="rounded-3xl bg-blue-500/10 p-3 text-blue-600">
+                      <Grid className="h-5 w-5" />
+                    </div>
+                    <div className="text-xs uppercase tracking-[0.24em] font-semibold text-slate-400">
+                      {index + 1}
+                    </div>
+                  </div>
+                  <h2 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h2>
+                  <p className="text-sm leading-6 text-slate-600">{item.description}</p>
+                  <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-gradient-to-br from-blue-400/15 to-cyan-400/15 blur-3xl" />
+                </div>
               </motion.article>
             ))}
           </div>
